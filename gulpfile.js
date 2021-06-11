@@ -48,22 +48,22 @@ gulp.task(`sprite`, function () {
 
 gulp.task(`images`, function () {
   return gulp
-    .src(`src/img/**/*.{png,jpg,svg}`)
+    .src(`source/img/**/*.{png,jpg,svg}`)
     .pipe(
       imagemin([
         imagemin.optipng({ optimizationLevel: 3 }),
-        imagemin.jpegtran({ progressive: true }),
+        imagemin.mozjpeg({ progressive: true }),
         imagemin.svgo(),
       ])
     )
-    .pipe(gulp.dest(`src/img`));
+    .pipe(gulp.dest(`source/img`));
 });
 
 gulp.task(`webp`, function () {
   return gulp
     .src(`src/img/**/*.{png,jpg}`)
     .pipe(webp({ quality: 95 }))
-    .pipe(gulp.dest(`src/img`));
+    .pipe(gulp.dest(`build/img`));
 });
 
 gulp.task(`server`, function () {
@@ -95,12 +95,15 @@ gulp.task(`copy`, function () {
     .src(
       [`src/fonts/**/*.{woff,woff2}`, `src/img/**`, `src/js/**`, `src/*.ico`],
       {
-        base: `source`,
+        base: `src`,
       }
     )
     .pipe(gulp.dest(`build`));
 });
 
-gulp.task(`build`, gulp.series(`clean`, `copy`, `css`, `sprite`, `html`));
+gulp.task(
+  `build`,
+  gulp.series(`clean`, `copy`, `css`, `sprite`, `images`, `webp`, `html`)
+);
 
 gulp.task(`start`, gulp.series(`build`, `server`));
