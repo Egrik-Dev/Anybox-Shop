@@ -1,0 +1,138 @@
+.page-header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 72px 40px;
+  align-items: center;
+}
+
+.page-header__logo {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.page-header__open-btn {
+  position: relative;
+
+  grid-column: 2/3;
+  grid-row: 1/2;
+  justify-self: end;
+  width: 18px;
+  height: 3px;
+  margin-right: 15px;
+
+  border: none;
+  border-radius: 2px;
+  background-color: #3b3d42;
+
+  &::after,
+  &::before {
+    position: absolute;
+    left: 0;
+
+    width: 18px;
+    height: 3px;
+    content: "";
+
+    border-radius: 2px;
+    background-color: #3b3d42;
+  }
+
+  &::after {
+    top: 6px;
+  }
+
+  &::before {
+    bottom: 6px;
+  }
+}
+
+.page-header__close-btn {
+  position: relative;
+
+  width: 18px;
+  height: 3px;
+  margin-right: 20px;
+  margin-bottom: 35px;
+  align-self: flex-end;
+
+  border: none;
+  border-radius: 2px;
+  background-color: #3b3d42;
+  transform: rotate(45deg);
+
+  &::before {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 18px;
+    height: 3px;
+    content: "";
+
+    border-radius: 2px;
+    background-color: #3b3d42;
+    transform: rotate(90deg);
+  }
+}
+
+.page-header__nav {
+  position: fixed;
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding-top: 35px;
+
+  background-color: white;
+  transition: 0.7s;
+  transform: translateX(100%);
+
+  &--open {
+    transform: translateX(0);
+  }
+}
+
+.page-header__nav-list {
+  @include reset-list;
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+
+  font-size: 16px;
+  gap: 10px;
+}
+
+.page-header__nav-link {
+  font-size: 16px;
+  color: #454545;
+  text-decoration: none;
+
+  &--active {
+    color: #fb395c;
+  }
+}
+
+.page-header__cart {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 15px;
+  grid-column: 1/2;
+  grid-row: 2/3;
+
+  text-decoration: none;
+}
+
+.page-header__cart-qty {
+  font-size: 16px;
+  color: #fb395c;
+}
+
+.page-header__search {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  justify-self: end;
+  margin-right: 15px;
+}
