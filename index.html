@@ -8,6 +8,56 @@
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
-  <h1 class="title">Main Page</h1>
+  <header class="page-header">
+    <a class="page-header__logo">
+      <picture>
+        <source type="image/webp" srcset="img/icon-logo@1x.webp 1x, img/icon-logo@2x.webp 2x">
+        <img class="page-header__logo" src="img/icon-logo@1x.png" srcset="img/icon-logo@2x.png 2x" alt="Логотип магазина AnyBox">
+      </picture>
+    </a>
+    <button class="page-header__open-btn">
+      <span class="visually-hidden">Открыть меню</span>
+    </button>
+    <nav class="page-header__nav">
+      <button class="page-header__close-btn">
+        <span class="visually-hidden">Закрыть меню</span>
+      </button>
+      <ul class="page-header__nav-list">
+        <li class="page-header__nav-item">
+          <a class="page-header__nav-link page-header__nav-link--active">Главная</a>
+        </li>
+        <li class="page-header__nav-item">
+          <a href="/for-her" class="page-header__nav-link">Подарки для неё</a>
+        </li>
+        <li class="page-header__nav-item">
+          <a href="/for-him" class="page-header__nav-link">Подарки для него</a>
+        </li>
+        <li class="page-header__nav-item">
+          <a href="/posts" class="page-header__nav-link">Блог</a>
+        </li>
+        <li class="page-header__nav-item">
+          <a href="/catalog" class="page-header__nav-link">Каталог</a>
+        </li>
+        <li class="page-header__nav-item">
+          <a href="/contacts" class="page-header__nav-link">Контакты</a>
+        </li>
+      </ul>
+    </nav>
+    <a href="/cart" class="page-header__cart"><span class="visually-hidden">Корзина</span>
+      <svg class="page-header__cart-icon" width="16" height="16">
+        <use xlink:href="img/sprite.svg#icon-cart"></use>
+      </svg>
+      <span class="page-header__cart-qty">0</span>
+    </a>
+    <a href="/search" class="page-header__search"><span class="visually-hidden">Поиск</span>
+      <svg class="page-header__search-icon" width="16" height="16">
+        <use xlink:href="img/sprite.svg#icon-search"></use>
+      </svg>
+    </a>
+  </header>
+  <main class="page-main">
+    <h1 class="title">Интернет-магазин эко товаров AnyBox</h1>
+  </main>
+  <script type="module" src="js/page-header.js"></script>
 </body>
 </html>
