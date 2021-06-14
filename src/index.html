@@ -56,56 +56,99 @@
     </a>
   </header>
   <main class="page-main">
-    <h1 class="title">Интернет-магазин эко товаров AnyBox</h1>
+    <h1 class="visually-hidden">Интернет-магазин эко товаров AnyBox</h1>
+    <section class="page-main__banners banners">
+      <h2 class="visually-hidden">Спец предложения нашего магазина</h2>
+        <div class="banners__offer banners__offer--big">
+          <a href="/holiday-gifts.html" class="banners__link banners__link--big-offer">
+            <div class="banners__offer-big-block">
+              <p class="banners__text-adv">Подарки к празднику</p>
+              <h3 class="banners__title">Нужна идея для подарка?</h3>
+              <p class="banners__text-special">Спец предложения</p>
+              <p class="banners__text-price">От 250 ₽</p>
+            </div>
+            <span class="banners__text-delivery">Бесплатная доставка</span>
+          </a>
+        </div>
+      <div class="banners__offer banners__offer--medium">
+        <a href="/boxes.html" class="banners__link banners__link--medium-offer">
+          <img class="banners__img banners__img--medium" src="./img/box-opened.jpg" alt="Открытый это бокс">
+          <div class="banners__desc-block">
+            <h3 class="banners__title">Эко боксы</h3>
+            <p class="banners__text-price banners__text-price--red">От 2250 ₽</p>
+          </div>
+        </a>
+      </div>
+      <div class="banners__offer">
+        <a href="/holiday-gifts.html" class="banners__link">
+          <div class="banners__offer-wrapper">
+            <p class="banners__tect-occasions">Подарачные наборы на любой случай</p>
+            <h2 class="banners__title banners__title--small">- На любой случай -</h2>
+          </div>
+        </a>
+      </div>
+      <div class="banners__offer banners__offer--small">
+        <a href="/holiday-gifts.html" class="banners__link banners__link--small-offer">
+          <h3 class="banners__title banners__title--mini">Лучшие подарки</h3>
+          <img class="banners__img banners__img--small" src="./img/string-bag-heart.jpg" alt="Авоська в виде сердца">
+        </a>
+      </div>
+    </section>
   </main>
   <footer class="page-footer">
     <h2 class="visually-hidden">Подвал сайта AnyBox</h2>
-    <h3 class="page-footer__title">О нас</h2>
-    <ul class="page-footer__list">
-      <li class="page-footer__item-list">
-        <a class="page-footer__item-link page-footer__item-link--active">Главная</a>
-      </li>
-      <li class="page-footer__item-list">
-        <a class="page-footer__item-link">Подарки для неё</a>
-      </li>
-      <li class="page-footer__item-list">
-        <a class="page-footer__item-link">Подарки для него</a>
-      </li>
-      <li class="page-footer__item-list">
-        <a class="page-footer__item-link">Блог</a>
-      </li>
-      <li class="page-footer__item-list">
-        <a class="page-footer__item-link">Каталог</a>
-      </li>
-      <li class="page-footer__item-list">
-        <a class="page-footer__item-link">Контакты</a>
-      </li>
-    </ul>
-    <h3 class="page-footer__title">Для покупателей</h2>
-    <ul class="page-footer__list">
-      <li class="page-footer__item-list">
-        <a class="page-footer__item-link">Доставка</a>
-      </li>
-      <li class="page-footer__item-list">
-        <a class="page-footer__item-link">Политика конфиденциальности</a>
-      </li>
-      <li class="page-footer__item-list">
-        <a class="page-footer__item-link">Условия возврата</a>
-      </li>
-      <li class="page-footer__item-list">
-        <a class="page-footer__item-link">FAQs</a>
-      </li>
-    </ul>
-    <h3 class="page-footer__title">Контакты</h2>
-    <ul class="page-footer__list">
-      <li class="page-footer__contacts-item">
-        Телефон: <a href="tel:+74951234567" class="page-footer__contacts-link">+7 495 123 4567</a>
-      </li>
-      <li class="page-footer__contacts-item">
-        E-mail: <a href="email:info@anybox.ru" class="page-footer__contacts-link">info@anybox.ru</a>
-      </li>
-    </ul>
-    <div class="page-footer__social-block">
+    <div class="page-footer__container">
+      <h3 class="page-footer__title">О нас</h2>
+      <ul class="page-footer__list">
+        <li class="page-footer__item-list">
+          <a class="page-footer__item-link page-footer__item-link--active">Главная</a>
+        </li>
+        <li class="page-footer__item-list">
+          <a href="/for-her" class="page-footer__item-link">Подарки для неё</a>
+        </li>
+        <li class="page-footer__item-list">
+          <a href="/for-him" class="page-footer__item-link">Подарки для него</a>
+        </li>
+        <li class="page-footer__item-list">
+          <a href="/posts" class="page-footer__item-link">Блог</a>
+        </li>
+        <li class="page-footer__item-list">
+          <a href="/catalog" class="page-footer__item-link">Каталог</a>
+        </li>
+        <li class="page-footer__item-list">
+          <a href="/contacts" class="page-footer__item-link">Контакты</a>
+        </li>
+      </ul>
+    </div>
+    <div class="page-footer__container">
+      <h3 class="page-footer__title">Для покупателей</h2>
+      <ul class="page-footer__list">
+        <li class="page-footer__item-list">
+          <a href="/delivery" class="page-footer__item-link">Доставка</a>
+        </li>
+        <li class="page-footer__item-list">
+          <a href="/privacy-policy" class="page-footer__item-link">Политика конфиденциальности</a>
+        </li>
+        <li class="page-footer__item-list">
+          <a href="refund-conditions" class="page-footer__item-link">Условия возврата</a>
+        </li>
+        <li class="page-footer__item-list">
+          <a href="faq" class="page-footer__item-link">FAQs</a>
+        </li>
+      </ul>
+    </div>
+    <div class="page-footer__container">
+      <h3 class="page-footer__title">Контакты</h2>
+      <ul class="page-footer__list">
+        <li class="page-footer__contacts-item">
+          Телефон: <a href="tel:+74951234567" class="page-footer__contacts-link">+7 495 123 4567</a>
+        </li>
+        <li class="page-footer__contacts-item">
+          E-mail: <a href="email:info@anybox.ru" class="page-footer__contacts-link">info@anybox.ru</a>
+        </li>
+      </ul>
+    </div>
+    <div class="page-footer__container page-footer__container--social">
       <h3 class="page-footer__title page-footer__title--social">Мы в соцсетях</h3>
       <ul class="page-footer__social-list">
         <li class="page-footer__social-item">

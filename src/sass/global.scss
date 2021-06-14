@@ -21,3 +21,9 @@ input[type="radio"].visually-hidden {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+img {
+  border-style: none;
+  max-width: 100%;
+  height: auto;
+}
