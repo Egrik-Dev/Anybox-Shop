@@ -1,11 +1,14 @@
 .banners {
+  background: grey url(../img/banners-bg.png) no-repeat center center;
+  background-attachment: fixed;
+}
+
+.banners__wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, 135px);
   gap: 20px;
   padding: 15px;
-
-  background: grey url(../img/banners-bg.png) no-repeat center center;
 }
 
 .banners__offer {
@@ -13,6 +16,8 @@
 
   background-color: #ffffff;
   border-radius: 8px;
+
+  transition: 0.7s;
 
   &--big {
     display: flex;
@@ -29,7 +34,15 @@
   }
 
   &--small {
-    padding: 10px;
+    padding: 15px;
+  }
+
+  &--upper-title {
+    padding-top: 5px;
+  }
+
+  &:hover {
+    transform: translateY(-10px);
   }
 }
 
@@ -93,10 +106,10 @@
   text-transform: capitalize;
   text-align: center;
 
-  &--small {
+  &--lower {
     position: absolute;
     left: 50%;
-    bottom: -20px;
+    bottom: -19px;
 
     margin-left: -50px;
 
@@ -104,7 +117,7 @@
     color: #939292;
   }
 
-  &--mini {
+  &--upper {
     font-size: 12px;
   }
 }
@@ -159,7 +172,7 @@
   }
 
   &--small {
-    height: 85px;
+    height: 92px;
   }
 }
 
@@ -172,7 +185,7 @@
 }
 
 .banners__tect-occasions {
-  margin: 0 -20px;
+  margin: 0 -15px;
   padding: 5px 0;
 
   font-size: 10px;
@@ -180,4 +193,110 @@
   line-height: 14px;
 
   background-color: #ffe4d1;
+}
+
+@media (min-width: $tablet-width) {
+  .banners__wrapper {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 165px);
+    padding: 45px 20px;
+  }
+
+  .banners__offer {
+    &--big {
+      grid-column: 1/3;
+      grid-row: 1/3;
+    }
+
+    &--medium {
+      grid-column: 3/5;
+      grid-row: 1/2;
+    }
+  }
+
+  .banners__img--small {
+    height: 123px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .banners__wrapper {
+    width: 1210px;
+    margin: auto;
+    grid-template-rows: repeat(2, 270px);
+  }
+
+  .banners__offer {
+    padding: 40px;
+
+    &--medium {
+      padding: 0;
+    }
+
+    &--small {
+      padding: 30px;
+    }
+
+    &--upper-title {
+      padding-top: 10px;
+    }
+  }
+
+  .banners__offer-big-block {
+    padding: 25px;
+    gap: 15px;
+
+    border-radius: 15px;
+  }
+
+  .banners__text-adv {
+    font-size: 14px;
+  }
+
+  .banners__title {
+    font-size: 24px;
+
+    &--lower {
+      bottom: -25px;
+
+      margin-left: -60px;
+
+      font-size: 12px;
+    }
+  }
+
+  .banners__text-special {
+    font-size: 16px;
+  }
+
+  .banners__text-price {
+    font-size: 16px;
+  }
+
+  .banners__text-delivery {
+    width: 170px;
+    margin-left: -95px;
+
+    font-size: 14px;
+  }
+
+  .banners__desc-block {
+    gap: 10px;
+  }
+
+  .banners__tect-occasions {
+    margin: 0 -30px;
+    padding: 10px 0;
+
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .banners__link--small-offer {
+    gap: 10px;
+  }
+
+  .banners__img--small {
+    height: inherit;
+  }
 }
