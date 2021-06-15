@@ -2,9 +2,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 80px;
 
   background: url(../img/the-perfect-Gift-Ideas.webp) no-repeat center center;
-  background-position: 50px 0px;
+  // background-position: 50px 0px;
 }
 
 .about-us__title {
@@ -25,6 +26,7 @@
   .about-us {
     width: 800px;
     margin: auto;
+    padding: 100px 15px;
 
     background-position: center;
   }

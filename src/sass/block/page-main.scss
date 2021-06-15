@@ -1,9 +1,30 @@
 .page-main__about-us {
-  padding: 80px 15px;
+  padding: 0 15px;
+  margin-bottom: 80px;
+}
+
+.page-main__elementor-divider {
+  margin-bottom: 80px;
+}
+
+.page-main__categories {
+  padding: 0 15px;
+  margin-bottom: 80px;
 }
 
 @media (min-width: $desktop-width) {
   .page-main__about-us {
-    padding: 100px 15px;
+    padding: 0 20px;
+  }
+
+  .page-main__categories {
+    @include desktop-wrapper;
+    margin-bottom: 80px;
+    padding: 0 20px;
+  }
+
+  .page-main__elementor-divider {
+    @include desktop-wrapper;
+    margin-bottom: 80px;
   }
 }

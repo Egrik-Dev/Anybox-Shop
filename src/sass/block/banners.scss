@@ -1,6 +1,5 @@
 .banners {
   background: grey url(../img/banners-bg.png) no-repeat center center;
-  background-attachment: fixed;
   background-size: cover;
 }
 
@@ -130,7 +129,7 @@
   }
 
   &--upper {
-    font-size: 12px;
+    font-size: 10px;
   }
 }
 
@@ -208,6 +207,7 @@
   font-size: 12px;
   text-align: center;
   line-height: 14px;
+  font-weight: 700;
 
   background-color: #ffe4d1;
 }
@@ -231,12 +231,20 @@
     }
   }
 
+  .banners__title--upper {
+    font-size: 14px;
+  }
+
   .banners__img--small {
     height: 123px;
   }
 }
 
 @media (min-width: $desktop-width) {
+  .banners {
+    background-attachment: fixed;
+  }
+
   .banners__wrapper {
     @include desktop-wrapper;
     grid-template-rows: repeat(2, 270px);
