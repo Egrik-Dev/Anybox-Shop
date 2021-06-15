@@ -1,6 +1,7 @@
 .banners {
   background: grey url(../img/banners-bg.png) no-repeat center center;
   background-attachment: fixed;
+  background-size: cover;
 }
 
 .banners__wrapper {
@@ -166,7 +167,7 @@
   object-fit: cover;
 
   &--medium {
-    flex-basis: 60%;
+    width: 60%;
 
     border-radius: 8px 0 0 8px;
   }
