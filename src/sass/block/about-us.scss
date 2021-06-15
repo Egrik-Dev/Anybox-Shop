@@ -1,0 +1,31 @@
+.about-us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: url(../img/the-perfect-Gift-Ideas.webp) no-repeat center center;
+  background-position: 50px 0px;
+}
+
+.about-us__title {
+  margin-bottom: 24px;
+}
+
+.about-us_desc {
+  text-align: center;
+  color: #939292;
+  font-size: 15px;
+  text-transform: capitalize;
+  line-height: 1.69em;
+
+  margin: 0;
+}
+
+@media (min-width: $desktop-width) {
+  .about-us {
+    width: 800px;
+    margin: auto;
+
+    background-position: center;
+  }
+}

@@ -195,8 +195,8 @@
 }
 @media (min-width: $desktop-width) {
   .page-header {
-    width: 1210px;
-    margin: auto;
+    @include desktop-wrapper;
+
     grid-template-columns: 177px 1fr 30px 16px;
     justify-items: end;
     gap: 20px;

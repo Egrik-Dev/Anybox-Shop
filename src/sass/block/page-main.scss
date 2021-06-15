@@ -1,0 +1,9 @@
+.page-main__about-us {
+  padding: 80px 15px;
+}
+
+@media (min-width: $desktop-width) {
+  .page-main__about-us {
+    padding: 100px 15px;
+  }
+}

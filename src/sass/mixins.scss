@@ -4,3 +4,8 @@
 
   list-style: none;
 }
+
+@mixin desktop-wrapper {
+  width: 1210px;
+  margin: auto;
+}
