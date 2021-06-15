@@ -61,8 +61,14 @@
     height: 100%;
     padding: 0 10px;
 
-    background: grey url(../img/green-leaves.jpg) no-repeat center center;
+    background: grey url(../img/green-leaves@1x.webp) no-repeat center center;
     background-size: cover;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background: grey url("../img/green-leaves@2x.webp") no-repeat center
+        center;
+      background-size: cover;
+    }
   }
 
   &--medium-offer {
@@ -85,8 +91,13 @@
   flex-direction: column;
   justify-content: center;
 
-  background: grey url(../img/anybox-box.jpg) no-repeat center center;
+  background: grey url(../img/anybox-box@1x.webp) no-repeat center center;
   background-size: cover;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background: grey url("../img/anybox-box@2x.webp") no-repeat center center;
+    background-size: cover;
+  }
 }
 
 .banners__offer-big-block {
@@ -163,11 +174,16 @@
   border-radius: 8px 8px 0 0;
 }
 
+.banners__img-block {
+  width: 60%;
+}
+
 .banners__img {
   object-fit: cover;
+  width: max-content;
 
   &--medium {
-    width: 60%;
+    height: 100%;
 
     border-radius: 8px 0 0 8px;
   }
@@ -298,6 +314,6 @@
   }
 
   .banners__img--small {
-    height: inherit;
+    height: 200px;
   }
 }

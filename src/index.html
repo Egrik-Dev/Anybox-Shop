@@ -73,7 +73,12 @@
         </div>
         <div class="banners__offer banners__offer--medium">
           <a href="/boxes.html" class="banners__link banners__link--medium-offer">
-            <img class="banners__img banners__img--medium" src="./img/box-opened.jpg" alt="Открытый это бокс">
+            <div class="banners__img-block">
+              <picture>
+                <source type="image/webp" srcset="img/box-opened@1x.webp 1x, img/box-opened@1x.webp 2x">
+                <img class="banners__img banners__img--medium" src="./img/box-opened@1x.jpg" srcset="./img/box-opened@2x.jpg 2x" alt="Открытый это бокс">
+              </picture>
+            </div>
             <div class="banners__desc-block">
               <h3 class="banners__title">Эко боксы</h3>
               <p class="banners__text-price banners__text-price--red">От 2250 ₽</p>
@@ -81,9 +86,9 @@
           </a>
         </div>
         <div class="banners__offer banners__offer--small">
-          <a href="/holiday-gifts.html" class="banners__link">
+          <a href="/create-box.html" class="banners__link">
             <div class="banners__offer-wrapper">
-              <p class="banners__tect-occasions">Подарачные наборы на любой случай</p>
+              <p class="banners__tect-occasions">Собери свой подарочный бокс</p>
               <h3 class="banners__title banners__title--lower">- На любой случай -</h3>
             </div>
           </a>
@@ -91,7 +96,10 @@
         <div class="banners__offer banners__offer--small banners__offer--upper-title">
           <a href="/holiday-gifts.html" class="banners__link banners__link--small-offer">
             <h3 class="banners__title banners__title--upper">Лучшие подарки</h3>
-            <img class="banners__img banners__img--small" src="./img/string-bag-heart.jpg" alt="Авоська в виде сердца">
+            <picture>
+              <source type="image/webp" srcset="img/string-bag-heart@1x.webp 1x, img/string-bag-heart@2x.webp 2x">
+              <img class="banners__img banners__img--small" src="./img/string-bag-heart@1x.jpg" srcset="./img/string-bag-heart@2x.jpg 2x" alt="Авоська в виде сердца">
+            </picture>
           </a>
         </div>
       </div>
