@@ -19,6 +19,10 @@
 
   transition: 0.7s;
 
+  &--fullscreen {
+    background-color: #fbf3ef;
+  }
+
   &--big {
     display: flex;
     flex-direction: column;
@@ -49,6 +53,19 @@
 .banners__link {
   color: #383838;
   text-decoration: none;
+
+  &--fullscreen {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 200px;
+    padding-left: 10px;
+
+    background: right / cover no-repeat url("../img/create-box.webp");
+  }
 
   &--big-offer {
     position: relative;
@@ -108,6 +125,10 @@
 
   background-color: #fffdc7;
   border-radius: 7px;
+
+  &--radius {
+    border-radius: 0 0 7px 7px;
+  }
 }
 
 .banners__title {
@@ -171,6 +192,12 @@
 
   background-color: white;
   border-radius: 8px 8px 0 0;
+
+  &--left-corner {
+    left: 110px;
+
+    background-color: #fbf3ef;
+  }
 }
 
 .banners__img-block {
@@ -271,6 +298,10 @@
     gap: 15px;
 
     border-radius: 15px;
+
+    &--radius {
+      border-radius: 0 0 15px 15px;
+    }
   }
 
   .banners__text-adv {
@@ -302,6 +333,10 @@
     margin-left: -95px;
 
     font-size: 14px;
+
+    &--left-corner {
+      left: 185px;
+    }
   }
 
   .banners__desc-block {
@@ -316,8 +351,15 @@
     line-height: 20px;
   }
 
-  .banners__link--small-offer {
-    gap: 10px;
+  .banners__link {
+    &--small-offer {
+      gap: 10px;
+    }
+
+    &--fullscreen {
+      padding-left: 20px;
+      height: 270px;
+    }
   }
 
   .banners__img--small {
