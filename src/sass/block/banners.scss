@@ -60,9 +60,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     height: 200px;
-    padding-left: 20px;
 
     background: right / cover no-repeat url("../img/create-box.webp");
   }
@@ -194,8 +193,6 @@
   border-radius: 8px 8px 0 0;
 
   &--left-corner {
-    left: 120px;
-
     background-color: #fbf3ef;
   }
 }
@@ -267,6 +264,7 @@
   }
 
   .banners__link--fullscreen {
+    align-items: flex-start;
     padding-left: 40px;
     height: 240px;
   }
