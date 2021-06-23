@@ -44,6 +44,13 @@
 .product-list__category-list-link {
   color: #a4a9ab;
   text-decoration: none;
+
+  transition: 0.3s;
+
+  &:hover,
+  &:active {
+    color: #fb395c;
+  }
 }
 
 .product-list__prdocut-title {
@@ -65,6 +72,13 @@
 .product-list__prdocut-title-link {
   color: #383838;
   text-decoration: none;
+
+  transition: 0.3s;
+
+  &:hover,
+  &:active {
+    color: #fb395c;
+  }
 }
 
 .product-list__price {
@@ -76,7 +90,14 @@
 
 .product-list__img {
   width: 132px;
+  height: 132px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 20px;
+}
+
+@media (min-width: $tablet-width) {
+  .product-list__list {
+    grid-template-columns: repeat(auto-fill, minmax(354px, 1fr));
+  }
 }

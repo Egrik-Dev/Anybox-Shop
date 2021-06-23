@@ -14,6 +14,7 @@
 
 .page-main__product-list {
   padding: 0 15px;
+  margin-bottom: 80px;
 }
 
 @media (min-width: $desktop-width) {
@@ -28,6 +29,11 @@
   }
 
   .page-main__elementor-divider {
+    @include desktop-wrapper;
+    margin-bottom: 80px;
+  }
+
+  .page-main__product-list {
     @include desktop-wrapper;
     margin-bottom: 80px;
   }
