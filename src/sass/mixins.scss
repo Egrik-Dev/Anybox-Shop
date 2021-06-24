@@ -9,3 +9,8 @@
   width: 1210px;
   margin: auto;
 }
+
+@mixin mobile-margins {
+  padding: 0 15px;
+  margin-bottom: 80px;
+}
