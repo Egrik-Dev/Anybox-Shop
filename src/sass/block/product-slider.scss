@@ -108,11 +108,17 @@
   text-decoration: none;
 }
 
+.product-slider__action-popup:hover,
+.product-slider__action-popup:active {
+  background-color: #a4a9ab;
+}
+
 .product-slider__action-popup:hover .prouct-slider__action-word,
 .product-slider__action-popup:active .prouct-slider__action-word,
 .product-slider__action-popup:hover .product-slider__action-img,
 .product-slider__action-popup:active .product-slider__action-img {
   color: #fbf3ef;
+
   fill: #fbf3ef;
 
   transition: 0.3s;
@@ -143,5 +149,15 @@
   &[data-toggle-status="active"] {
     background-color: #ffc0b8;
     cursor: initial;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .product-slider__action-popup {
+    opacity: 0;
+  }
+
+  .product-slider__img-link:hover ~ .product-slider__action-popup {
+    opacity: 1;
   }
 }
