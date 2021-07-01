@@ -99,7 +99,7 @@ export class Slider {
       this.sliderListElement.style.transform = `translateX(${
         this.currentPositionSlider + this.walkX * 1.5
       }px)`;
-    } else if (this.walkY > 2 || this.walkY < -2) {
+    } else if (this.walkY > 5 || this.walkY < -5) {
       this.isVerticalScroll = true;
     } else {
       this.isSwiping = true;
