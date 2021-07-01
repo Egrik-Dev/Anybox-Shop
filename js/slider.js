@@ -113,8 +113,6 @@ export class Slider {
   swipeEnd(evt) {
     const endPos = Math.ceil(evt.changedTouches[0].clientX + this.walkX);
 
-    console.log(`Work`);
-
     if (endPos > this.startX) {
       this.changeCurrentPosition(Direction.LEFT);
     } else if (endPos < this.startX) {
@@ -128,8 +126,6 @@ export class Slider {
   }
 
   changeCurrentPosition(direction) {
-    console.log(`Work`);
-
     switch (direction) {
       case Direction.LEFT:
         this.currentPositionSlider += this.slideWidth;
