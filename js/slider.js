@@ -18,6 +18,8 @@ const Mode = {
   ADAPTIVE: `adaptive`,
 };
 
+const MIN_SWIPE_SIZE = 30; // В процентах
+
 export class Slider {
   constructor(container, options = { mode: Mode.LOOP }) {
     this.container = container;
@@ -89,22 +91,21 @@ export class Slider {
     this.walkY = Math.ceil(evt.touches[0].clientY) - this.startY;
     this.walkX = Math.ceil(evt.touches[0].clientX) - this.startX;
 
-    // if (this.isVerticalScroll) {
-    //   this.sliderListElement.style.touchAction = `pan-y`;
-    // } else if (this.isSwiping) {
-    //   disableBodyScroll(this.sliderListElement);
-    //   this.sliderListElement.style.transition = `0ms linear`;
-    //   this.sliderListElement.style.transform = `translateX(${
-    //     this.currentPositionSlider + this.walkX * 1.5
-    //   }px)`;
-    // } else if (this.walkY > 3 || this.walkY < -3) {
-    //   this.isVerticalScroll = true;
-    // } else {
-    //   this.isSwiping = true;
-    // }
+    if (this.isVerticalScroll) {
+      this.sliderListElement.style.touchAction = `pan-y`;
+    } else if (this.isSwiping) {
+      disableBodyScroll(this.sliderListElement);
+      this.sliderListElement.style.transition = `0ms`;
+      this.sliderListElement.style.transform = `translateX(${
+        this.currentPositionSlider + this.walkX * 1.5
+      }px)`;
+    } else if (this.walkY > 3 || this.walkY < -3) {
+      this.isVerticalScroll = true;
+    } else {
+      this.isSwiping = true;
+    }
 
-    disableBodyScroll(this.sliderListElement);
-    this.sliderListElement.style.transition = `0ms linear`;
+    this.sliderListElement.style.transition = `0ms`;
     this.sliderListElement.style.transform = `translateX(${
       this.currentPositionSlider + this.walkX * 1.5
     }px)`;
@@ -112,17 +113,20 @@ export class Slider {
 
   swipeEnd(evt) {
     const endPos = Math.ceil(evt.changedTouches[0].clientX + this.walkX);
+    const swipeSize = Math.ceil((this.walkX / this.slideWidth) * 100);
 
-    if (endPos > this.startX) {
+    if (endPos > this.startX && swipeSize > MIN_SWIPE_SIZE) {
       this.changeCurrentPosition(Direction.LEFT);
-    } else if (endPos < this.startX) {
+    } else if (endPos < this.startX && swipeSize < -MIN_SWIPE_SIZE) {
       this.changeCurrentPosition(Direction.RIGHT);
+    } else {
+      this.switchSLide();
     }
 
     enableBodyScroll(this.sliderListElement);
-    // this.isSwiping = false;
-    // this.isVerticalScroll = false;
-    // this.sliderListElement.style.touchAction = `auto`;
+    this.isSwiping = false;
+    this.isVerticalScroll = false;
+    this.sliderListElement.style.touchAction = `auto`;
   }
 
   changeCurrentPosition(direction) {
@@ -146,7 +150,7 @@ export class Slider {
   }
 
   switchSLide() {
-    this.sliderListElement.style.transition = `0.3s linear`;
+    this.sliderListElement.style.transition = `0.3s`;
     this.sliderListElement.style.transform = `translateX(${this.currentPositionSlider}px)`;
   }
 
