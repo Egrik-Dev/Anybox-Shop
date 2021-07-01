@@ -92,23 +92,20 @@ export class Slider {
     this.walkX = Math.ceil(evt.touches[0].clientX) - this.startX;
 
     if (this.isVerticalScroll) {
+      console.log(`Work touchAction`);
       this.sliderListElement.style.touchAction = `pan-y`;
     } else if (this.isSwiping) {
+      console.log(`Work isSwiping`);
       disableBodyScroll(this.sliderListElement);
       this.sliderListElement.style.transition = `0ms`;
       this.sliderListElement.style.transform = `translateX(${
         this.currentPositionSlider + this.walkX * 1.5
       }px)`;
-    } else if (this.walkY > 3 || this.walkY < -3) {
+    } else if (this.walkY > 2 || this.walkY < -2) {
       this.isVerticalScroll = true;
     } else {
       this.isSwiping = true;
     }
-
-    this.sliderListElement.style.transition = `0ms`;
-    this.sliderListElement.style.transform = `translateX(${
-      this.currentPositionSlider + this.walkX * 1.5
-    }px)`;
   }
 
   swipeEnd(evt) {
