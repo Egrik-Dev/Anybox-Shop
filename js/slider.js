@@ -103,7 +103,7 @@ export class Slider {
     //   this.isSwiping = true;
     // }
 
-    // disableBodyScroll(this.sliderListElement);
+    disableBodyScroll(this.sliderListElement);
     this.sliderListElement.style.transition = `0ms linear`;
     this.sliderListElement.style.transform = `translateX(${
       this.currentPositionSlider + this.walkX * 1.5
@@ -121,7 +121,7 @@ export class Slider {
       this.changeCurrentPosition(Direction.RIGHT);
     }
 
-    // enableBodyScroll(this.sliderListElement);
+    enableBodyScroll(this.sliderListElement);
     // this.isSwiping = false;
     // this.isVerticalScroll = false;
     // this.sliderListElement.style.touchAction = `auto`;
