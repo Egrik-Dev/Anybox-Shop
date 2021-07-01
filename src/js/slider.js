@@ -92,10 +92,8 @@ export class Slider {
     this.walkX = Math.ceil(evt.touches[0].clientX) - this.startX;
 
     if (this.isVerticalScroll) {
-      console.log(`Work touchAction`);
       this.sliderListElement.style.touchAction = `pan-y`;
     } else if (this.isSwiping) {
-      console.log(`Work isSwiping`);
       disableBodyScroll(this.sliderListElement);
       this.sliderListElement.style.transition = `0ms`;
       this.sliderListElement.style.transform = `translateX(${
@@ -112,9 +110,13 @@ export class Slider {
     const endPos = Math.ceil(evt.changedTouches[0].clientX + this.walkX);
     const swipeSize = Math.ceil((this.walkX / this.slideWidth) * 100);
 
-    if (endPos > this.startX && swipeSize > MIN_SWIPE_SIZE) {
+    if (endPos > this.startX && swipeSize > MIN_SWIPE_SIZE && this.isSwiping) {
       this.changeCurrentPosition(Direction.LEFT);
-    } else if (endPos < this.startX && swipeSize < -MIN_SWIPE_SIZE) {
+    } else if (
+      endPos < this.startX &&
+      swipeSize < -MIN_SWIPE_SIZE &&
+      this.isSwiping
+    ) {
       this.changeCurrentPosition(Direction.RIGHT);
     } else {
       this.switchSLide();
