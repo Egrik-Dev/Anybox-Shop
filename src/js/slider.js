@@ -89,37 +89,47 @@ export class Slider {
     this.walkY = Math.ceil(evt.touches[0].clientY) - this.startY;
     this.walkX = Math.ceil(evt.touches[0].clientX) - this.startX;
 
-    if (this.isVerticalScroll) {
-      this.sliderListElement.style.touchAction = `pan-y`;
-    } else if (this.isSwiping) {
-      disableBodyScroll(this.sliderListElement);
-      this.sliderListElement.style.transition = `0ms linear`;
-      this.sliderListElement.style.transform = `translateX(${
-        this.currentPositionSlider + this.walkX * 1.5
-      }px)`;
-    } else if (this.walkY > 3 || this.walkY < -3) {
-      this.isVerticalScroll = true;
-    } else {
-      this.isSwiping = true;
-    }
+    // if (this.isVerticalScroll) {
+    //   this.sliderListElement.style.touchAction = `pan-y`;
+    // } else if (this.isSwiping) {
+    //   disableBodyScroll(this.sliderListElement);
+    //   this.sliderListElement.style.transition = `0ms linear`;
+    //   this.sliderListElement.style.transform = `translateX(${
+    //     this.currentPositionSlider + this.walkX * 1.5
+    //   }px)`;
+    // } else if (this.walkY > 3 || this.walkY < -3) {
+    //   this.isVerticalScroll = true;
+    // } else {
+    //   this.isSwiping = true;
+    // }
+
+    // disableBodyScroll(this.sliderListElement);
+    this.sliderListElement.style.transition = `0ms linear`;
+    this.sliderListElement.style.transform = `translateX(${
+      this.currentPositionSlider + this.walkX * 1.5
+    }px)`;
   }
 
   swipeEnd(evt) {
     const endPos = Math.ceil(evt.changedTouches[0].clientX + this.walkX);
 
-    if (endPos > this.startX && this.isSwiping) {
+    console.log(`Work`);
+
+    if (endPos > this.startX) {
       this.changeCurrentPosition(Direction.LEFT);
-    } else if (endPos < this.startX && this.isSwiping) {
+    } else if (endPos < this.startX) {
       this.changeCurrentPosition(Direction.RIGHT);
     }
 
-    enableBodyScroll(this.sliderListElement);
-    this.isSwiping = false;
-    this.isVerticalScroll = false;
-    this.sliderListElement.style.touchAction = `auto`;
+    // enableBodyScroll(this.sliderListElement);
+    // this.isSwiping = false;
+    // this.isVerticalScroll = false;
+    // this.sliderListElement.style.touchAction = `auto`;
   }
 
   changeCurrentPosition(direction) {
+    console.log(`Work`);
+
     switch (direction) {
       case Direction.LEFT:
         this.currentPositionSlider += this.slideWidth;
