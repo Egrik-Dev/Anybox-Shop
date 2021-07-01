@@ -6,7 +6,8 @@
 }
 
 @mixin desktop-wrapper {
-  width: 1210px;
+  box-sizing: border-box;
+  max-width: 1210px;
   margin: auto;
 }
 

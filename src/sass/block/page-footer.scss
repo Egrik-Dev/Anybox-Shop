@@ -1,9 +1,6 @@
 .page-footer {
   margin: 0 15px;
   padding: 35px 0;
-
-  border: none;
-  border-top: 3px dotted #a3c6da;
 }
 
 .page-footer__title {
@@ -104,5 +101,6 @@
 @media (min-width: $desktop-width) {
   .page-footer {
     @include desktop-wrapper;
+    padding: 50px 20px 20px;
   }
 }

@@ -110,10 +110,13 @@
       </div>
     </section>
     <section class="page-main__about-us about-us">
-      <h2 class="about-us__title title">Магазин AnyBox</h2>
-      <p class="about-us_desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus, facere cum
-        culpa quod dignissimos minima architecto vitae excepturi soluta debitis officiis beatae. Temporibus fugiat velit
-        aperiam sapiente eveniet iusto placeat.</p>
+      <div class="about-us__wrapper">
+        <h2 class="about-us__title title">Магазин AnyBox</h2>
+        <p class="about-us_desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus, facere cum
+          culpa quod dignissimos minima architecto vitae excepturi soluta debitis officiis beatae. Temporibus fugiat
+          velit
+          aperiam sapiente eveniet iusto placeat.</p>
+      </div>
     </section>
     <div class="page-main__elementor-divider elementor-divider">
       <span class="elementor-divider__separator">
@@ -314,74 +317,357 @@
     </section>
     <section class="page-main__product-slider product-slider">
       <h2 class="product-slider__title title">Популярные товары</h2>
-      <div class="product-slider__wrapper">
-        <ul class="product-slider__list">
-          <li class="product-slider__item">
-            <a class="product-slider__img-link" href="/product">
-              <img class="product-slider__img" src="./img/prodcut-hibiscus-washcloth.webp"
-                alt="Бамбуковые ватные палочки">
-            </a>
-            <ul class="product-info__category-list product-info__category-list--left">
-              <li class="product-info__category-list-item product-info__category-list-item--biggest">
-                <a href="/category.html" class="product-info__category-list-link">Личная гигиена,</a>
-              </li>
-              <li class="product-info__category-list-item product-info__category-list-item--biggest">
-                <a href="/category.html" class="product-info__category-list-link">Ватно-бумажная продукция</a>
-              </li>
-            </ul>
-            <h3 class="product-info__title product-info__title--left">
-              <a href="/product-cutton-buds-pink.html" class="product-info__title-link">Бамбуковые ватные
-                палочки
-              </a>
-            </h3>
-            <p class="product-info__price">390 ₽</p>
-            <ul class="product-slider__rating-stars">
-              <li class="product-slider__rating-item">
-                <svg class="product-slider__rating-img product-slider__rating-img--gold" width="17" height="17">
-                  <use xlink:href="img/sprite.svg#icon-star"></use>
-                </svg>
-              </li>
-              <li class="product-slider__rating-item">
-                <svg class="product-slider__rating-img product-slider__rating-img--gold" width="17" height="17">
-                  <use xlink:href="img/sprite.svg#icon-star"></use>
-                </svg>
-              </li>
-              <li class="product-slider__rating-item">
-                <svg class="product-slider__rating-img product-slider__rating-img--gold" width="17" height="17">
-                  <use xlink:href="img/sprite.svg#icon-star"></use>
-                </svg>
-              </li>
-              <li class="product-slider__rating-item">
-                <svg class="product-slider__rating-img product-slider__rating-img--gold" width="17" height="17">
-                  <use xlink:href="img/sprite.svg#icon-star"></use>
-                </svg>
-              </li>
-              <li class="product-slider__rating-item">
-                <svg class="product-slider__rating-img" width="17" height="17">
-                  <use xlink:href="img/sprite.svg#icon-star"></use>
-                </svg>
-              </li>
-            </ul>
-            <div class="product-slider__action-popup">
-              <a href="/to-cart.html" class="product-slider__action-link">
-                <svg class="product-slider__action-img" width="12" height="12">
-                  <use xlink:href="img/sprite.svg#icon-cart"></use>
-                </svg>
-                <span class="prouct-slider__action-word">Добавить в корзину</span>
-              </a>
-            </div>
-          </li>
+      <div class="product-slider__container">
+        <div class="product-slider__wrapper">
+          <ul class="product-slider__list" data-slider="list">
+            <li class="product-slider__item" data-slider="slide">
+              <div class="product-slider__img-wrapper">
+                <a class=" product-slider__img-link" href="/product">
+                  <img class="product-slider__img" src="./img/prodcut-hibiscus-washcloth.webp"
+                    alt="Мочалка для тела из гибискуса">
+                </a>
+                <div class="product-slider__action-popup">
+                  <a href="/to-cart.html" class="product-slider__action-link">
+                    <svg class="product-slider__action-img" width="12" height="12">
+                      <use xlink:href="img/sprite.svg#icon-cart"></use>
+                    </svg>
+                    <span class="prouct-slider__action-word">Добавить в корзину</span>
+                  </a>
+                </div>
+              </div>
+              <ul class="product-info__category-list product-info__category-list--left">
+                <li class="product-info__category-list-item product-info__category-list-item--biggest">
+                  <a href="/category.html" class="product-info__category-list-link">Личная гигиена,</a>
+                </li>
+                <li class="product-info__category-list-item product-info__category-list-item--biggest">
+                  <a href="/category.html" class="product-info__category-list-link">Уход за телом</a>
+                </li>
+              </ul>
+              <h3 class="product-info__title product-info__title--left">
+                <a href="/product-cutton-buds-pink.html" class="product-info__title-link">Мочалка для тела из гибискуса
+                </a>
+              </h3>
+              <p class="product-info__price">370 ₽</p>
+              <ul class="product-slider__rating-stars">
+                <li class="product-slider__rating-item">
+                  <svg class="product-slider__rating-img product-slider__rating-img--gold" width="17" height="17">
+                    <use xlink:href="img/sprite.svg#icon-star"></use>
+                  </svg>
+                </li>
+                <li class="product-slider__rating-item">
+                  <svg class="product-slider__rating-img product-slider__rating-img--gold" width="17" height="17">
+                    <use xlink:href="img/sprite.svg#icon-star"></use>
+                  </svg>
+                </li>
+                <li class="product-slider__rating-item">
+                  <svg class="product-slider__rating-img product-slider__rating-img--gold" width="17" height="17">
+                    <use xlink:href="img/sprite.svg#icon-star"></use>
+                  </svg>
+                </li>
+                <li class="product-slider__rating-item">
+                  <svg class="product-slider__rating-img product-slider__rating-img--gold" width="17" height="17">
+                    <use xlink:href="img/sprite.svg#icon-star"></use>
+                  </svg>
+                </li>
+                <li class="product-slider__rating-item">
+                  <svg class="product-slider__rating-img" width="17" height="17">
+                    <use xlink:href="img/sprite.svg#icon-star"></use>
+                  </svg>
+                </li>
+              </ul>
+            </li>
+            <li class="product-slider__item" data-slider="slide">
+              <div class="product-slider__img-wrapper">
+                <a class=" product-slider__img-link" href="/product">
+                  <img class="product-slider__img" src="./img/product-cutton-buds-pink.webp"
+                    alt="Бамбуковые ватные палочки">
+                </a>
+                <div class="product-slider__action-popup">
+                  <a href="/to-cart.html" class="product-slider__action-link">
+                    <svg class="product-slider__action-img" width="12" height="12">
+                      <use xlink:href="img/sprite.svg#icon-cart"></use>
+                    </svg>
+                    <span class="prouct-slider__action-word">Добавить в корзину</span>
+                  </a>
+                </div>
+              </div>
+              <ul class="product-info__category-list product-info__category-list--left">
+                <li class="product-info__category-list-item product-info__category-list-item--biggest">
+                  <a href="/category.html" class="product-info__category-list-link">Личная гигиена,</a>
+                </li>
+                <li class="product-info__category-list-item product-info__category-list-item--biggest">
+                  <a href="/category.html" class="product-info__category-list-link">Ватно-бумажная продукция</a>
+                </li>
+              </ul>
+              <h3 class="product-info__title product-info__title--left">
+                <a href="/product-cutton-buds-pink.html" class="product-info__title-link">Бамбуковые ватные
+                  палочки
+                </a>
+              </h3>
+              <p class="product-info__price">390 ₽</p>
+              <ul class="product-slider__rating-stars">
+                <li class="product-slider__rating-item">
+                  <svg class="product-slider__rating-img product-slider__rating-img--gold" width="17" height="17">
+                    <use xlink:href="img/sprite.svg#icon-star"></use>
+                  </svg>
+                </li>
+                <li class="product-slider__rating-item">
+                  <svg class="product-slider__rating-img product-slider__rating-img--gold" width="17" height="17">
+                    <use xlink:href="img/sprite.svg#icon-star"></use>
+                  </svg>
+                </li>
+                <li class="product-slider__rating-item">
+                  <svg class="product-slider__rating-img product-slider__rating-img--gold" width="17" height="17">
+                    <use xlink:href="img/sprite.svg#icon-star"></use>
+                  </svg>
+                </li>
+                <li class="product-slider__rating-item">
+                  <svg class="product-slider__rating-img" width="17" height="17">
+                    <use xlink:href="img/sprite.svg#icon-star"></use>
+                  </svg>
+                </li>
+                <li class="product-slider__rating-item">
+                  <svg class="product-slider__rating-img" width="17" height="17">
+                    <use xlink:href="img/sprite.svg#icon-star"></use>
+                  </svg>
+                </li>
+              </ul>
+            </li>
+            <li class="product-slider__item" data-slider="slide">
+              <div class="product-slider__img-wrapper">
+                <a class=" product-slider__img-link" href="/product">
+                  <img class="product-slider__img" src="./img/product-eco-friendly-gift-set.webp"
+                    alt="Подарочный ЭКО набор EveryDay в крафтовой коробке">
+                </a>
+                <div class="product-slider__action-popup">
+                  <a href="/to-cart.html" class="product-slider__action-link">
+                    <svg class="product-slider__action-img" width="12" height="12">
+                      <use xlink:href="img/sprite.svg#icon-cart"></use>
+                    </svg>
+                    <span class="prouct-slider__action-word">Добавить в корзину</span>
+                  </a>
+                </div>
+              </div>
+              <ul class="product-info__category-list product-info__category-list--left">
+                <li class="product-info__category-list-item product-info__category-list-item--biggest">
+                  <a href="/category.html" class="product-info__category-list-link">Декор и интерьер,</a>
+                </li>
+                <li class="product-info__category-list-item product-info__category-list-item--biggest">
+                  <a href="/category.html" class="product-info__category-list-link">Сувениры и подарки,</a>
+                </li>
+                <li class="product-info__category-list-item product-info__category-list-item--biggest">
+                  <a href="/category.html" class="product-info__category-list-link">Подарочные наборы</a>
+                </li>
+              </ul>
+              <h3 class="product-info__title product-info__title--left">
+                <a href="/product-cutton-buds-pink.html" class="product-info__title-link">Подарочный ЭКО набор
+                  "EveryDay" в крафтовой коробке
+                </a>
+              </h3>
+              <p class="product-info__price">2440 ₽</p>
+              <ul class="product-slider__rating-stars">
+                <li class="product-slider__rating-item">
+                  <svg class="product-slider__rating-img product-slider__rating-img--gold" width="17" height="17">
+                    <use xlink:href="img/sprite.svg#icon-star"></use>
+                  </svg>
+                </li>
+                <li class="product-slider__rating-item">
+                  <svg class="product-slider__rating-img product-slider__rating-img--gold" width="17" height="17">
+                    <use xlink:href="img/sprite.svg#icon-star"></use>
+                  </svg>
+                </li>
+                <li class="product-slider__rating-item">
+                  <svg class="product-slider__rating-img product-slider__rating-img--gold" width="17" height="17">
+                    <use xlink:href="img/sprite.svg#icon-star"></use>
+                  </svg>
+                </li>
+                <li class="product-slider__rating-item">
+                  <svg class="product-slider__rating-img product-slider__rating-img--gold" width="17" height="17">
+                    <use xlink:href="img/sprite.svg#icon-star"></use>
+                  </svg>
+                </li>
+                <li class="product-slider__rating-item">
+                  <svg class="product-slider__rating-img" width="17" height="17">
+                    <use xlink:href="img/sprite.svg#icon-star"></use>
+                  </svg>
+                </li>
+              </ul>
+            </li>
+            <li class="product-slider__item" data-slider="slide">
+              <div class="product-slider__img-wrapper">
+                <a class=" product-slider__img-link" href="/product">
+                  <img class="product-slider__img" src="./img/product-metal-cocktail-tubes.webp"
+                    alt="Трубочки для коктейлей многоразовые, 21.5 см, 5 шт">
+                </a>
+                <div class="product-slider__action-popup">
+                  <a href="/to-cart.html" class="product-slider__action-link">
+                    <svg class="product-slider__action-img" width="12" height="12">
+                      <use xlink:href="img/sprite.svg#icon-cart"></use>
+                    </svg>
+                    <span class="prouct-slider__action-word">Добавить в корзину</span>
+                  </a>
+                </div>
+              </div>
+              <ul class="product-info__category-list product-info__category-list--left">
+                <li class="product-info__category-list-item product-info__category-list-item--biggest">
+                  <a href="/category.html" class="product-info__category-list-link">Аксессуары для напитков,</a>
+                </li>
+                <li class="product-info__category-list-item product-info__category-list-item--biggest">
+                  <a href="/category.html" class="product-info__category-list-link">Посуда</a>
+                </li>
+              </ul>
+              <h3 class="product-info__title product-info__title--left">
+                <a href="/product-cutton-buds-pink.html" class="product-info__title-link">Трубочки для коктейлей
+                  многоразовые, 21.5 см, 5 шт</a>
+              </h3>
+              <p class="product-info__price">390 ₽</p>
+              <ul class="product-slider__rating-stars">
+                <li class="product-slider__rating-item">
+                  <svg class="product-slider__rating-img product-slider__rating-img--gold" width="17" height="17">
+                    <use xlink:href="img/sprite.svg#icon-star"></use>
+                  </svg>
+                </li>
+                <li class="product-slider__rating-item">
+                  <svg class="product-slider__rating-img product-slider__rating-img--gold" width="17" height="17">
+                    <use xlink:href="img/sprite.svg#icon-star"></use>
+                  </svg>
+                </li>
+                <li class="product-slider__rating-item">
+                  <svg class="product-slider__rating-img product-slider__rating-img--gold" width="17" height="17">
+                    <use xlink:href="img/sprite.svg#icon-star"></use>
+                  </svg>
+                </li>
+                <li class="product-slider__rating-item">
+                  <svg class="product-slider__rating-img product-slider__rating-img--gold" width="17" height="17">
+                    <use xlink:href="img/sprite.svg#icon-star"></use>
+                  </svg>
+                </li>
+                <li class="product-slider__rating-item">
+                  <svg class="product-slider__rating-img product-slider__rating-img--gold" width="17" height="17">
+                    <use xlink:href="img/sprite.svg#icon-star"></use>
+                  </svg>
+                </li>
+              </ul>
+            </li>
+            <li class="product-slider__item" data-slider="slide">
+              <div class="product-slider__img-wrapper">
+                <a class=" product-slider__img-link" href="/product">
+                  <img class="product-slider__img" src="./img/product-string-bag.webp" alt="Сумка-шоппер">
+                </a>
+                <div class="product-slider__action-popup">
+                  <a href="/to-cart.html" class="product-slider__action-link">
+                    <svg class="product-slider__action-img" width="12" height="12">
+                      <use xlink:href="img/sprite.svg#icon-cart"></use>
+                    </svg>
+                    <span class="prouct-slider__action-word">Добавить в корзину</span>
+                  </a>
+                </div>
+              </div>
+              <ul class="product-info__category-list product-info__category-list--left">
+                <li class="product-info__category-list-item product-info__category-list-item--biggest">
+                  <a href="/category.html" class="product-info__category-list-link">Сумки на плечо</a>
+                </li>
+              </ul>
+              <h3 class="product-info__title product-info__title--left">
+                <a href="/product-cutton-buds-pink.html" class="product-info__title-link">Сумка-шоппер
+                </a>
+              </h3>
+              <p class="product-info__price">700 ₽</p>
+              <ul class="product-slider__rating-stars">
+                <li class="product-slider__rating-item">
+                  <svg class="product-slider__rating-img product-slider__rating-img--gold" width="17" height="17">
+                    <use xlink:href="img/sprite.svg#icon-star"></use>
+                  </svg>
+                </li>
+                <li class="product-slider__rating-item">
+                  <svg class="product-slider__rating-img product-slider__rating-img--gold" width="17" height="17">
+                    <use xlink:href="img/sprite.svg#icon-star"></use>
+                  </svg>
+                </li>
+                <li class="product-slider__rating-item">
+                  <svg class="product-slider__rating-img product-slider__rating-img--gold" width="17" height="17">
+                    <use xlink:href="img/sprite.svg#icon-star"></use>
+                  </svg>
+                </li>
+                <li class="product-slider__rating-item">
+                  <svg class="product-slider__rating-img product-slider__rating-img--gold" width="17" height="17">
+                    <use xlink:href="img/sprite.svg#icon-star"></use>
+                  </svg>
+                </li>
+                <li class="product-slider__rating-item">
+                  <svg class="product-slider__rating-img" width="17" height="17">
+                    <use xlink:href="img/sprite.svg#icon-star"></use>
+                  </svg>
+                </li>
+              </ul>
+            </li>
+            <li class="product-slider__item" data-slider="slide">
+              <div class="product-slider__img-wrapper">
+                <a class=" product-slider__img-link" href="/product">
+                  <img class="product-slider__img" src="./img/product-wax-napkins.webp"
+                    alt="Восковые салфетки ANYBOX-ECO, 0.3м х 32 см">
+                </a>
+                <div class="product-slider__action-popup">
+                  <a href="/to-cart.html" class="product-slider__action-link">
+                    <svg class="product-slider__action-img" width="12" height="12">
+                      <use xlink:href="img/sprite.svg#icon-cart"></use>
+                    </svg>
+                    <span class="prouct-slider__action-word">Добавить в корзину</span>
+                  </a>
+                </div>
+              </div>
+              <ul class="product-info__category-list product-info__category-list--left">
+                <li class="product-info__category-list-item product-info__category-list-item--biggest">
+                  <a href="/category.html" class="product-info__category-list-link">Кухонные аксессуары,</a>
+                </li>
+                <li class="product-info__category-list-item product-info__category-list-item--biggest">
+                  <a href="/category.html" class="product-info__category-list-link">Посуда</a>
+                </li>
+              </ul>
+              <h3 class="product-info__title product-info__title--left">
+                <a href="/product-cutton-buds-pink.html" class="product-info__title-link">Восковые салфетки ANYBOX-ECO,
+                  0.3м х 32 см
+                </a>
+              </h3>
+              <p class="product-info__price">960 ₽</p>
+              <ul class="product-slider__rating-stars">
+                <li class="product-slider__rating-item">
+                  <svg class="product-slider__rating-img product-slider__rating-img--gold" width="17" height="17">
+                    <use xlink:href="img/sprite.svg#icon-star"></use>
+                  </svg>
+                </li>
+                <li class="product-slider__rating-item">
+                  <svg class="product-slider__rating-img product-slider__rating-img--gold" width="17" height="17">
+                    <use xlink:href="img/sprite.svg#icon-star"></use>
+                  </svg>
+                </li>
+                <li class="product-slider__rating-item">
+                  <svg class="product-slider__rating-img product-slider__rating-img--gold" width="17" height="17">
+                    <use xlink:href="img/sprite.svg#icon-star"></use>
+                  </svg>
+                </li>
+                <li class="product-slider__rating-item">
+                  <svg class="product-slider__rating-img product-slider__rating-img--gold" width="17" height="17">
+                    <use xlink:href="img/sprite.svg#icon-star"></use>
+                  </svg>
+                </li>
+                <li class="product-slider__rating-item">
+                  <svg class="product-slider__rating-img" width="17" height="17">
+                    <use xlink:href="img/sprite.svg#icon-star"></use>
+                  </svg>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <ul class="product-slider__toggles-list" data-toggle="list">
         </ul>
       </div>
-      <ul class="product-slider__toggles-list" data-toggle="list">
-        <li class="product-slider__toggles-item" data-toggle-status="active"></li>
-        <li class="product-slider__toggles-item" data-toggle-status="none"></li>
-        <li class="product-slider__toggles-item" data-toggle-status="none"></li>
-        <li class="product-slider__toggles-item" data-toggle-status="none"></li>
-        <li class="product-slider__toggles-item" data-toggle-status="none"></li>
-        <li class="product-slider__toggles-item" data-toggle-status="none"></li>
-      </ul>
     </section>
+    <div class="page-main__elementor-divider elementor-divider elementor-divider--no-margin">
+      <span class="elementor-divider__separator">
+      </span>
+    </div>
   </main>
   <footer class="page-footer">
     <h2 class="visually-hidden">Подвал сайта AnyBox</h2>
@@ -467,6 +753,7 @@
     </div>
   </footer>
   <script type="module" src="js/page-header.js"></script>
+  <script type="module" src="js/index.js"></script>
 </body>
 
 </html>

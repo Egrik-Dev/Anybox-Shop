@@ -7,7 +7,7 @@
 .categories__list {
   @include reset-list;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(233px, 1fr));
   gap: 20px;
 }
 
@@ -42,8 +42,14 @@
   border-radius: 10px;
 }
 
+@media (min-width: $tablet-width) {
+  .categories__list {
+    grid-template-columns: repeat(4, minmax(169px, 1fr));
+  }
+}
+
 @media (min-width: $desktop-width) {
   .categories__list {
-    grid-template-columns: repeat(auto-fill, minmax(278px, 1fr));
+    grid-template-columns: repeat(4, minmax(232px, 1fr));
   }
 }

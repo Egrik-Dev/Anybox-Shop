@@ -1,6 +1,10 @@
 .elementor-divider {
   display: flex;
   padding: 0 20px;
+
+  &--no-margin {
+    margin-bottom: 0;
+  }
 }
 
 .elementor-divider__separator {

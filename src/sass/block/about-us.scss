@@ -1,11 +1,11 @@
 .about-us {
+  background: url(../img/the-perfect-Gift-Ideas.webp) no-repeat center center;
+}
+
+.about-us__wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 80px;
-
-  background: url(../img/the-perfect-Gift-Ideas.webp) no-repeat center center;
-  // background-position: 50px 0px;
 }
 
 .about-us__title {
@@ -24,10 +24,13 @@
 
 @media (min-width: $desktop-width) {
   .about-us {
-    width: 800px;
-    margin: auto;
     padding: 100px 15px;
 
     background-position: center;
+  }
+
+  .about-us__wrapper {
+    margin: auto;
+    width: 800px;
   }
 }

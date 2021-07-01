@@ -1,5 +1,6 @@
 .page-main__about-us {
-  @include mobile-margins;
+  margin-bottom: 30px;
+  padding: 80px 20px;
 }
 
 .page-main__elementor-divider {
@@ -19,12 +20,14 @@
 }
 
 .page-main__product-slider {
-  @include mobile-margins;
+  margin-bottom: 80px;
 }
 
 @media (min-width: $desktop-width) {
   .page-main__about-us {
-    padding: 0 20px;
+    @include desktop-wrapper;
+    margin-bottom: 20px;
+    padding: 80px 20px;
   }
 
   .page-main__categories {
@@ -46,5 +49,10 @@
   .page-main__big-banner {
     @include desktop-wrapper;
     margin-bottom: 80px;
+  }
+
+  .page-main__product-slider {
+    @include desktop-wrapper;
+    margin-bottom: 79px;
   }
 }

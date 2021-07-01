@@ -1,4 +1,7 @@
 .product-slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .product-slider__title {
@@ -6,23 +9,48 @@
   margin-bottom: 26px;
 }
 
+.product-slider__container {
+  width: 100%;
+}
+
 .product-slider__wrapper {
+  margin-bottom: 25px;
+
+  overflow: hidden;
 }
 
 .product-slider__list {
+  display: flex;
+  width: 100%;
+
   @include reset-list;
 }
 
 .product-slider__item {
   position: relative;
+
+  width: 100%;
+  padding: 15px;
+}
+
+.product-slider__img-wrapper {
+  position: relative;
+
+  width: 100%;
+  padding-top: 100%;
+  margin-bottom: 10px;
 }
 
 .product-slider__img-link {
+  display: flex;
 }
 
 .product-slider__img {
-  width: 290px;
-  height: 290px;
+  position: absolute;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
 
   aspect-ratio: 1/1;
   object-fit: cover;
@@ -46,12 +74,9 @@
   }
 }
 
-.product-slider__rating-img--gold {
-}
-
 .product-slider__action-popup {
   position: absolute;
-  top: 230px;
+  bottom: 25px;
   left: 0;
   right: 0;
 
@@ -61,6 +86,12 @@
   opacity: 0.8;
   background-color: #383838;
   border-radius: 30px;
+  transition: 0.3s;
+
+  &:hover,
+  &:active {
+    opacity: 1;
+  }
 }
 
 .product-slider__action-img {
@@ -77,13 +108,40 @@
   text-decoration: none;
 }
 
+.product-slider__action-popup:hover .prouct-slider__action-word,
+.product-slider__action-popup:active .prouct-slider__action-word,
+.product-slider__action-popup:hover .product-slider__action-img,
+.product-slider__action-popup:active .product-slider__action-img {
+  color: #fbf3ef;
+  fill: #fbf3ef;
+
+  transition: 0.3s;
+}
+
 .prouct-slider__action-word {
   color: white;
   text-transform: uppercase;
 }
 
 .product-slider__toggles-list {
+  display: flex;
+  justify-content: center;
+
+  @include reset-list;
 }
 
-.product-slider__toggles-item {
+.product-slider__toggles-list li {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 5px;
+
+  background-color: #e5e5e5;
+
+  cursor: pointer;
+
+  &[data-toggle-status="active"] {
+    background-color: #ffc0b8;
+    cursor: initial;
+  }
 }
