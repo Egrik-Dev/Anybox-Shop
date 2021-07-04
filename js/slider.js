@@ -2,6 +2,10 @@ import { createElement } from "./utils.js";
 import { TABLET_WIDTH, DESKTOP_WIDTH } from "./const.js";
 import { disableBodyScroll, enableBodyScroll } from "./bodyScrollLock.es6.js";
 
+// * Слайдер сам задаёт ширину элементов  списка в зависимости от размеров экрана
+// * По умолчанию на мобилах 1 элемент, на таблетках 3 и на десктопах 4
+// * Элементы тоглов отрисовывается без класса (дефолтные li) поэтому стили для тоглов нужно задавать через каскад ul li
+
 // Создадим пустой объект без прототипа
 const Direction = Object.create(null);
 Direction.LEFT = `left`;
@@ -47,7 +51,6 @@ export class Slider {
     this.swipeStart = this.swipeStart.bind(this);
     this.swipeMove = this.swipeMove.bind(this);
     this.swipeEnd = this.swipeEnd.bind(this);
-    // this.onToggleClick = this.onToggleClick.bind(this);
 
     // Слушатели событий
     window.addEventListener(`resize`, this.calculateWidthContainer);

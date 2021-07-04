@@ -1,15 +1,24 @@
-const navOpenBtnElement = document.querySelector(`.page-header__open-btn`);
-const navElement = document.querySelector(`.page-header__nav`);
-const bodyElement = document.querySelector(`body`);
+export class PageHeader {
+  constructor() {
+    this.navOpenBtnElement = document.querySelector(`.page-header__open-btn`);
+    this.navElement = document.querySelector(`.page-header__nav`);
+    this.bodyElement = document.querySelector(`body`);
+    this.navCloseBtnElement = document.querySelector(`.page-header__close-btn`);
 
-navOpenBtnElement.addEventListener(`click`, () => {
-  navElement.classList.add(`page-header__nav--open`);
-  bodyElement.style = `overflow: hidden;`;
-});
+    this.openMenu = this.openMenu.bind(this);
+    this.closeMenu = this.closeMenu.bind(this);
 
-const navCloseBtnElement = document.querySelector(`.page-header__close-btn`);
+    this.navOpenBtnElement.addEventListener(`click`, this.openMenu);
+    this.navCloseBtnElement.addEventListener(`click`, this.closeMenu);
+  }
 
-navCloseBtnElement.addEventListener(`click`, () => {
-  navElement.classList.remove(`page-header__nav--open`);
-  bodyElement.style = ``;
-});
+  openMenu() {
+    this.navElement.classList.add(`page-header__nav--open`);
+    this.bodyElement.style = `overflow: hidden;`;
+  }
+
+  closeMenu() {
+    this.navElement.classList.remove(`page-header__nav--open`);
+    this.bodyElement.style = ``;
+  }
+}
