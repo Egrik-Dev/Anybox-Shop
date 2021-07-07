@@ -11,7 +11,7 @@
 
 <body>
   <header class="page-header">
-    <a class="page-header__logo">
+    <a href="/" class="page-header__logo">
       <picture>
         <source type="image/webp" srcset="img/icon-logo@1x.webp 1x, img/icon-logo@2x.webp 2x">
         <img class="page-header__logo" src="img/icon-logo@1x.png" srcset="img/icon-logo@2x.png 2x"
@@ -58,10 +58,65 @@
       </svg>
     </a>
   </header>
-  <main class="page-main">
-    <h1 class="page-main__title">Каталог</h1>
+  <main class="page-main page-main--catalog">
+    <h1 class="page-main__title page-main__title--catalog">Каталог</h1>
     <aside class="page-main__aside">
-      <section class="page-main__filters filters"></section>
+      <section class="page-main__filters filters">
+        <form class="filters__form filters__form--sorting" action="https://js.dump/anybox" method="POST">
+          <input class="filters__search-input" type="search" name="search-product" placeholder="Поиск ..."
+            maxlength="255">
+          <button class="filters__search-btn" type="submit">
+            <svg class="filters__search-icon" width="12" height="12">
+              <use xlink:href="img/sprite.svg#icon-search-strong"></use>
+            </svg>
+          </button>
+        </form>
+        <form class="filters__form filters__form--column" action="https://js.dump/anybox" method="POST">
+          <h2 class="filters__form-title">Фильтр по категориям</h2>
+          <ul class="filters__list">
+            <li class="filters__item-list">
+              <input type="checkbox" class="filters__input-checkbox visually-hidden" name="gift-boxes"
+                id="gift-boxes-field">
+              <label for="gift-boxes-field" class="filters__label">Подарочные наборы</label>
+            </li>
+            <li class="filters__item-list">
+              <input type="checkbox" class="filters__input-checkbox visually-hidden" name="shoulder-bags"
+                id="shoulder-bags-field">
+              <label for="shoulder-bags-field" class="filters__label">Сумки через плечо</label>
+            </li>
+            <li class="filters__item-list">
+              <input type="checkbox" class="filters__input-checkbox visually-hidden" name="body-care"
+                id="body-care-field">
+              <label for="body-care-field" class="filters__label">Уход за телом</label>
+            </li>
+            <li class="filters__item-list">
+              <input type="checkbox" class="filters__input-checkbox visually-hidden" name="cookware"
+                id="cookware-field">
+              <label for="cookware-field" class="filters__label">Посуда</label>
+            </li>
+          </ul>
+        </form>
+        <form class="filters__form filters__form--column" action="https://js.dump/anybox" method="POST"
+          data-price="container">
+          <h2 class="filters__form-title">Фильтр по цене</h2>
+          <div class="filters__range-controls">
+            <div class="filters__scale-bar"></div>
+            <div class="filters__bar-toggle" data-price-toggle="min"></div>
+            <div class="filters__bar-toggle" data-price-toggle="max"></div>
+          </div>
+          <div class="filters__price-value">
+            <div class="filters__price-indicator">
+              <span class="filters__price-indicator-word">От</span>
+              <span class="filters__price-number" data-price-num="min">0 ₽</span>
+            </div>
+            <div class="filters__price-indicator">
+              <span class="filters__price-indicator-word">До</span>
+              <span class="filters__price-number" data-price-num="max">7800 ₽</span>
+            </div>
+          </div>
+          <button class="filters__price-btn" type="button">Фильтр</button>
+        </form>
+      </section>
     </aside>
     <section class="page-main__sorting sorting"></section>
     <section class="page-main__products products">
