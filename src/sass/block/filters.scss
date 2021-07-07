@@ -38,6 +38,8 @@
   border: none;
   border-radius: 4px;
   background-color: #fb395c;
+
+  cursor: pointer;
 }
 
 .filters__search-icon {
@@ -56,6 +58,11 @@
 
 .filters__list {
   @include reset-list;
+
+  display: grid;
+  gap: 10px;
+  align-items: start;
+  grid-template-columns: repeat(auto-fill, minmax(180px, auto));
 }
 
 .filters__item-list {
@@ -72,10 +79,12 @@
 .filters__label {
   position: relative;
 
+  padding-left: 30px;
+
   color: #fb395c;
   text-transform: capitalize;
 
-  padding-left: 30px;
+  cursor: pointer;
 
   &::before {
     position: absolute;
@@ -163,4 +172,8 @@
   background-color: #fb395c;
   border: none;
   border-radius: 4px;
+  cursor: pointer;
+}
+
+@media (min-width: $desktop-width) {
 }

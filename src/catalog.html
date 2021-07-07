@@ -58,12 +58,12 @@
       </svg>
     </a>
   </header>
-  <main class="page-main page-main--inner">
-    <h1 class="page-main__title">Каталог</h1>
+  <main class="page-main page-main--catalog">
+    <h1 class="page-main__title page-main__title--catalog">Каталог</h1>
     <aside class="page-main__aside">
       <section class="page-main__filters filters">
-        <form class="filters__form" action="https://js.dump/anybox" method="POST">
-          <input class="filters__search-input" type="search" name="search-product" placeholder="Search ..."
+        <form class="filters__form filters__form--sorting" action="https://js.dump/anybox" method="POST">
+          <input class="filters__search-input" type="search" name="search-product" placeholder="Поиск ..."
             maxlength="255">
           <button class="filters__search-btn" type="submit">
             <svg class="filters__search-icon" width="12" height="12">
@@ -96,7 +96,8 @@
             </li>
           </ul>
         </form>
-        <form class="filters__form filters__form--column" action="https://js.dump/anybox" method="POST">
+        <form class="filters__form filters__form--column" action="https://js.dump/anybox" method="POST"
+          data-price="container">
           <h2 class="filters__form-title">Фильтр по цене</h2>
           <div class="filters__range-controls">
             <div class="filters__scale-bar"></div>
@@ -106,11 +107,11 @@
           <div class="filters__price-value">
             <div class="filters__price-indicator">
               <span class="filters__price-indicator-word">От</span>
-              <span class="filters__price-number">0 ₽</span>
+              <span class="filters__price-number" data-price-num="min">0 ₽</span>
             </div>
             <div class="filters__price-indicator">
               <span class="filters__price-indicator-word">До</span>
-              <span class="filters__price-number">7800 ₽</span>
+              <span class="filters__price-number" data-price-num="max">7800 ₽</span>
             </div>
           </div>
           <button class="filters__price-btn" type="button">Фильтр</button>
