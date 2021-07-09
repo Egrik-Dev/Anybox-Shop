@@ -42,14 +42,6 @@ export class PriceScale {
     this.onToggleStop = this.onToggleStop.bind(this);
     this.onScaleHandler = this.onScaleHandler.bind(this);
 
-    // this.leftToggleElement.addEventListener(this.EventsToggle.START, (evt) =>
-    //   this.touchFilterToggle(evt, this.leftToggleElement)
-    // );
-
-    // this.rightToggleElement.addEventListener(this.EventsToggle.START, (evt) =>
-    //   this.touchFilterToggle(evt, this.rightToggleElement)
-    // );
-
     this.rangeElement.addEventListener(
       this.EventsToggle.START,
       this.onScaleHandler
@@ -104,8 +96,8 @@ export class PriceScale {
   }
 
   touchFilterToggle(evt, toggle) {
-    // evt.preventDefault();
-    // this.leftToggleElement.style.left = `${scalePositionTouch}px`;
+    evt.preventDefault();
+
     this.toggle = toggle;
     this.startX = evt.clientX || evt.touches[0].clientX;
     this.positionToggle = toggle.offsetLeft;
@@ -125,7 +117,7 @@ export class PriceScale {
     }
 
     document.addEventListener(this.EventsToggle.MOVE, this.onToggleMove);
-    document.addEventListener(this.EventsToggle.END, () => this.onToggleStop);
+    document.addEventListener(this.EventsToggle.END, this.onToggleStop);
   }
 
   onToggleMove(moveEvt) {
@@ -199,7 +191,7 @@ export class PriceScale {
     movingScaleAndToggle();
   }
 
-  onToggleStop() {
+  onToggleStop(evt) {
     // Проверим находятся ли оба тоггла на max значении
     if (this.leftToggleElement.offsetLeft === this.WIDTH_SCALE) {
       this.leftToggleElement.classList.add(`filters__bar-toggle--up`);
@@ -210,87 +202,4 @@ export class PriceScale {
     document.removeEventListener(this.EventsToggle.MOVE, this.onToggleMove);
     document.removeEventListener(this.EventsToggle.END, this.onToggleStop);
   }
-
-  // const onToggleMove = (moveEvt) => {
-  //   let walkX =
-  //     Math.ceil(moveEvt.clientX || moveEvt.touches[0].clientX) - startX;
-
-  //   let coordXToggle = positionToggle + walkX;
-  //   toggle.style.left = coordXToggle + `px`;
-  //   this.scaleBarElement.style.width =
-  //     this.rightToggleElement.offsetLeft -
-  //     this.leftToggleElement.offsetLeft +
-  //     this.rightToggleElement.offsetWidth +
-  //     `px`;
-
-  //   const movingScaleAndToggle = () => {
-  //     switch (toggle.dataset.priceToggle) {
-  //       case Toggles.MIN:
-  //         this.scaleBarElement.style.left = coordXToggle + `px`;
-  //         this.inputMin.innerHTML = `${this.calculatePriceValue(
-  //           coordXToggle
-  //         )} ₽`;
-
-  //         // Сделаем чтобы при упирания левого тоггла в край шкалы движение останавливалось
-  //         if (coordXToggle < 0) {
-  //           toggle.style.left = `0px`;
-  //           this.scaleBarElement.style.left = `0px`;
-  //           this.scaleBarElement.style.width =
-  //             this.rightToggleElement.offsetLeft +
-  //             this.rightToggleElement.offsetWidth +
-  //             `px`;
-  //           this.inputMin.innerHTML = `${0} ₽`;
-  //         }
-
-  //         if (coordXToggle >= this.rightToggleElement.offsetLeft) {
-  //           toggle.style.left = this.rightToggleElement.offsetLeft + `px`;
-  //           this.scaleBarElement.style.left =
-  //             this.rightToggleElement.offsetLeft + `px`;
-  //           this.scaleBarElement.style.width = `0px`;
-  //           this.inputMin.innerHTML = `${this.calculatePriceValue(
-  //             this.rightToggleElement.offsetLeft
-  //           )} ₽`;
-  //         }
-  //         break;
-  //       case Toggles.MAX:
-  //         this.inputMax.innerHTML = `${this.calculatePriceValue(
-  //           this.rightToggleElement.offsetLeft
-  //         )} ₽`;
-
-  //         // Сделаем чтобы при упирания правого тоггла в край шкалы движение останавливалось
-  //         if (coordXToggle > this.WIDTH_SCALE) {
-  //           toggle.style.left = this.WIDTH_SCALE + `px`;
-  //           this.scaleBarElement.style.width =
-  //             this.WIDTH_SCALE -
-  //             this.leftToggleElement.offsetLeft +
-  //             this.rightToggleElement.offsetWidth +
-  //             `px`;
-  //           this.inputMax.innerHTML = `${this.MAX_PRICE} ₽`;
-  //         }
-
-  //         if (coordXToggle <= this.leftToggleElement.offsetLeft) {
-  //           toggle.style.left = this.leftToggleElement.offsetLeft + `px`;
-  //           this.scaleBarElement.style.width = `0px`;
-  //           this.inputMax.innerHTML = `${this.calculatePriceValue(
-  //             this.leftToggleElement.offsetLeft
-  //           )} ₽`;
-  //         }
-  //         break;
-  //     }
-  //   };
-
-  //   movingScaleAndToggle();
-  // };
-
-  // const onToggleStop = () => {
-  //   // Проверим находятся ли оба тоггла на max значении
-  //   if (this.leftToggleElement.offsetLeft === this.WIDTH_SCALE) {
-  //     this.leftToggleElement.classList.add(`filters__bar-toggle--up`);
-  //   } else {
-  //     this.leftToggleElement.classList.remove(`filters__bar-toggle--up`);
-  //   }
-  //   enableBodyScroll(evt.target);
-  //   document.removeEventListener(this.EventsToggle.MOVE, onToggleMove);
-  //   document.removeEventListener(this.EventsToggle.END, onToggleStop);
-  // };
 }
