@@ -119,6 +119,7 @@
 
   background-color: #ebeced;
   border-radius: 30px;
+  cursor: pointer;
 }
 
 .filters__scale-bar {
@@ -142,7 +143,6 @@
 
   background-color: #fb395c;
   border-radius: 30px;
-  cursor: pointer;
 
   &[data-price-toggle="min"] {
     left: 78px;
