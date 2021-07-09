@@ -25,19 +25,35 @@ export class PriceScale {
     this.inputMin = container.querySelector(`[data-price-num="min"]`);
     this.inputMax = container.querySelector(`[data-price-num="max"]`);
 
+    this.toggle = null;
+    this.startX = null;
+    this.walkX = null;
+    this.positionToggle = null;
+
     this.EventsToggle = {
       START: this.isTouchDevice() ? `touchstart` : `mousedown`,
       MOVE: this.isTouchDevice() ? `touchmove` : `mousemove`,
       END: this.isTouchDevice() ? `touchend` : `mouseup`,
     };
 
-    this.leftToggleElement.addEventListener(this.EventsToggle.START, (evt) => {
-      this.touchFilterToggle(evt, this.leftToggleElement);
-    });
+    // Байндинг методов
+    this.touchFilterToggle = this.touchFilterToggle.bind(this);
+    this.onToggleMove = this.onToggleMove.bind(this);
+    this.onToggleStop = this.onToggleStop.bind(this);
+    this.onScaleHandler = this.onScaleHandler.bind(this);
 
-    this.rightToggleElement.addEventListener(this.EventsToggle.START, (evt) => {
-      this.touchFilterToggle(evt, this.rightToggleElement);
-    });
+    // this.leftToggleElement.addEventListener(this.EventsToggle.START, (evt) =>
+    //   this.touchFilterToggle(evt, this.leftToggleElement)
+    // );
+
+    // this.rightToggleElement.addEventListener(this.EventsToggle.START, (evt) =>
+    //   this.touchFilterToggle(evt, this.rightToggleElement)
+    // );
+
+    this.rangeElement.addEventListener(
+      this.EventsToggle.START,
+      this.onScaleHandler
+    );
   }
 
   init() {
@@ -47,8 +63,6 @@ export class PriceScale {
     this.inputMax.innerHTML = `${this.calculatePriceValue(
       this.rightToggleElement.offsetLeft
     )} ₽`;
-
-    console.log(this);
   }
 
   calculatePriceValue(togglePosition) {
@@ -62,98 +76,221 @@ export class PriceScale {
     return !!(`ontouchstart` in window);
   }
 
+  onScaleHandler(evt) {
+    const scalePositionTouch = Math.ceil(
+      (evt.clientX || evt.touches[0].clientX) - this.rangeElement.offsetLeft
+    );
+
+    const diffLeftToggle = Math.abs(
+      scalePositionTouch - this.leftToggleElement.offsetLeft
+    );
+    const diffRightToggle = Math.abs(
+      scalePositionTouch - this.rightToggleElement.offsetLeft
+    );
+
+    if (diffLeftToggle < diffRightToggle) {
+      this.leftToggleElement.style.left = `${scalePositionTouch}px`;
+      this.inputMin.innerHTML = `${this.calculatePriceValue(
+        scalePositionTouch
+      )} ₽`;
+      this.touchFilterToggle(evt, this.leftToggleElement);
+    } else {
+      this.rightToggleElement.style.left = `${scalePositionTouch}px`;
+      this.inputMax.innerHTML = `${this.calculatePriceValue(
+        scalePositionTouch
+      )} ₽`;
+      this.touchFilterToggle(evt, this.rightToggleElement);
+    }
+  }
+
   touchFilterToggle(evt, toggle) {
-    evt.preventDefault();
-    let startX = evt.clientX || evt.touches[0].clientX;
-    const positionToggle = toggle.offsetLeft;
+    // evt.preventDefault();
+    // this.leftToggleElement.style.left = `${scalePositionTouch}px`;
+    this.toggle = toggle;
+    this.startX = evt.clientX || evt.touches[0].clientX;
+    this.positionToggle = toggle.offsetLeft;
+
+    this.scaleBarElement.style.width =
+      this.rightToggleElement.offsetLeft -
+      this.leftToggleElement.offsetLeft +
+      this.rightToggleElement.offsetWidth +
+      `px`;
+
+    if (this.toggle.dataset.priceToggle === Toggles.MIN) {
+      this.scaleBarElement.style.left = toggle.offsetLeft + `px`;
+    }
 
     if (this.clientWidth < DESKTOP_WIDTH) {
       disableBodyScroll(evt.target);
     }
 
-    const onToggleMove = (moveEvt) => {
-      let walkX =
-        Math.ceil(moveEvt.clientX || moveEvt.touches[0].clientX) - startX;
-      let coordXToggle = positionToggle + walkX;
-      toggle.style.left = coordXToggle + `px`;
-      this.scaleBarElement.style.width =
-        this.rightToggleElement.offsetLeft -
-        this.leftToggleElement.offsetLeft +
-        this.rightToggleElement.offsetWidth +
-        `px`;
+    document.addEventListener(this.EventsToggle.MOVE, this.onToggleMove);
+    document.addEventListener(this.EventsToggle.END, () => this.onToggleStop);
+  }
 
-      const movingScaleAndToggle = () => {
-        switch (toggle.dataset.priceToggle) {
-          case Toggles.MIN:
-            this.scaleBarElement.style.left = coordXToggle + `px`;
+  onToggleMove(moveEvt) {
+    this.walkX =
+      Math.ceil(moveEvt.clientX || moveEvt.touches[0].clientX) - this.startX;
+    let coordXToggle = this.positionToggle + this.walkX;
+
+    this.toggle.style.left = coordXToggle + `px`;
+    this.scaleBarElement.style.width =
+      this.rightToggleElement.offsetLeft -
+      this.leftToggleElement.offsetLeft +
+      this.rightToggleElement.offsetWidth +
+      `px`;
+
+    const movingScaleAndToggle = () => {
+      switch (this.toggle.dataset.priceToggle) {
+        case Toggles.MIN:
+          this.scaleBarElement.style.left = coordXToggle + `px`;
+          this.inputMin.innerHTML = `${this.calculatePriceValue(
+            coordXToggle
+          )} ₽`;
+
+          // Сделаем чтобы при упирания левого тоггла в край шкалы движение останавливалось
+          if (coordXToggle < 0) {
+            this.toggle.style.left = `0px`;
+            this.scaleBarElement.style.left = `0px`;
+            this.scaleBarElement.style.width =
+              this.rightToggleElement.offsetLeft +
+              this.rightToggleElement.offsetWidth +
+              `px`;
+            this.inputMin.innerHTML = `${0} ₽`;
+          }
+
+          if (coordXToggle >= this.rightToggleElement.offsetLeft) {
+            this.toggle.style.left = this.rightToggleElement.offsetLeft + `px`;
+            this.scaleBarElement.style.left =
+              this.rightToggleElement.offsetLeft + `px`;
+            this.scaleBarElement.style.width = `0px`;
             this.inputMin.innerHTML = `${this.calculatePriceValue(
-              coordXToggle
-            )} ₽`;
-
-            // Сделаем чтобы при упирания левого тоггла в край шкалы движение останавливалось
-            if (coordXToggle < 0) {
-              toggle.style.left = `0px`;
-              this.scaleBarElement.style.left = `0px`;
-              this.scaleBarElement.style.width =
-                this.rightToggleElement.offsetLeft +
-                this.rightToggleElement.offsetWidth +
-                `px`;
-              this.inputMin.innerHTML = `${0} ₽`;
-            }
-
-            if (coordXToggle >= this.rightToggleElement.offsetLeft) {
-              toggle.style.left = this.rightToggleElement.offsetLeft + `px`;
-              this.scaleBarElement.style.left =
-                this.rightToggleElement.offsetLeft + `px`;
-              this.scaleBarElement.style.width = `0px`;
-              this.inputMin.innerHTML = `${this.calculatePriceValue(
-                this.rightToggleElement.offsetLeft
-              )} ₽`;
-            }
-            break;
-          case Toggles.MAX:
-            this.inputMax.innerHTML = `${this.calculatePriceValue(
               this.rightToggleElement.offsetLeft
             )} ₽`;
+          }
+          break;
+        case Toggles.MAX:
+          this.inputMax.innerHTML = `${this.calculatePriceValue(
+            this.rightToggleElement.offsetLeft
+          )} ₽`;
 
-            // Сделаем чтобы при упирания правого тоггла в край шкалы движение останавливалось
-            if (coordXToggle > this.WIDTH_SCALE) {
-              toggle.style.left = this.WIDTH_SCALE + `px`;
-              this.scaleBarElement.style.width =
-                this.WIDTH_SCALE -
-                this.leftToggleElement.offsetLeft +
-                this.rightToggleElement.offsetWidth +
-                `px`;
-              this.inputMax.innerHTML = `${this.MAX_PRICE} ₽`;
-            }
+          // Сделаем чтобы при упирания правого тоггла в край шкалы движение останавливалось
+          if (coordXToggle > this.WIDTH_SCALE) {
+            this.toggle.style.left = this.WIDTH_SCALE + `px`;
+            this.scaleBarElement.style.width =
+              this.WIDTH_SCALE -
+              this.leftToggleElement.offsetLeft +
+              this.rightToggleElement.offsetWidth +
+              `px`;
+            this.inputMax.innerHTML = `${this.MAX_PRICE} ₽`;
+          }
 
-            if (coordXToggle <= this.leftToggleElement.offsetLeft) {
-              toggle.style.left = this.leftToggleElement.offsetLeft + `px`;
-              this.scaleBarElement.style.width = `0px`;
-              this.inputMax.innerHTML = `${this.calculatePriceValue(
-                this.leftToggleElement.offsetLeft
-              )} ₽`;
-            }
-            break;
-        }
-      };
-
-      movingScaleAndToggle();
-    };
-
-    const onToggleStop = () => {
-      // Проверим находятся ли оба тоггла на max значении
-      if (this.leftToggleElement.offsetLeft === this.WIDTH_SCALE) {
-        this.leftToggleElement.classList.add(`filters__bar-toggle--up`);
-      } else {
-        this.leftToggleElement.classList.remove(`filters__bar-toggle--up`);
+          if (coordXToggle <= this.leftToggleElement.offsetLeft) {
+            this.toggle.style.left = this.leftToggleElement.offsetLeft + `px`;
+            this.scaleBarElement.style.width = `0px`;
+            this.inputMax.innerHTML = `${this.calculatePriceValue(
+              this.leftToggleElement.offsetLeft
+            )} ₽`;
+          }
+          break;
       }
-      enableBodyScroll(evt.target);
-      document.removeEventListener(this.EventsToggle.MOVE, onToggleMove);
-      document.removeEventListener(this.EventsToggle.END, onToggleStop);
     };
 
-    document.addEventListener(this.EventsToggle.MOVE, onToggleMove);
-    document.addEventListener(this.EventsToggle.END, onToggleStop);
+    movingScaleAndToggle();
   }
+
+  onToggleStop() {
+    // Проверим находятся ли оба тоггла на max значении
+    if (this.leftToggleElement.offsetLeft === this.WIDTH_SCALE) {
+      this.leftToggleElement.classList.add(`filters__bar-toggle--up`);
+    } else {
+      this.leftToggleElement.classList.remove(`filters__bar-toggle--up`);
+    }
+    enableBodyScroll(evt.target);
+    document.removeEventListener(this.EventsToggle.MOVE, this.onToggleMove);
+    document.removeEventListener(this.EventsToggle.END, this.onToggleStop);
+  }
+
+  // const onToggleMove = (moveEvt) => {
+  //   let walkX =
+  //     Math.ceil(moveEvt.clientX || moveEvt.touches[0].clientX) - startX;
+
+  //   let coordXToggle = positionToggle + walkX;
+  //   toggle.style.left = coordXToggle + `px`;
+  //   this.scaleBarElement.style.width =
+  //     this.rightToggleElement.offsetLeft -
+  //     this.leftToggleElement.offsetLeft +
+  //     this.rightToggleElement.offsetWidth +
+  //     `px`;
+
+  //   const movingScaleAndToggle = () => {
+  //     switch (toggle.dataset.priceToggle) {
+  //       case Toggles.MIN:
+  //         this.scaleBarElement.style.left = coordXToggle + `px`;
+  //         this.inputMin.innerHTML = `${this.calculatePriceValue(
+  //           coordXToggle
+  //         )} ₽`;
+
+  //         // Сделаем чтобы при упирания левого тоггла в край шкалы движение останавливалось
+  //         if (coordXToggle < 0) {
+  //           toggle.style.left = `0px`;
+  //           this.scaleBarElement.style.left = `0px`;
+  //           this.scaleBarElement.style.width =
+  //             this.rightToggleElement.offsetLeft +
+  //             this.rightToggleElement.offsetWidth +
+  //             `px`;
+  //           this.inputMin.innerHTML = `${0} ₽`;
+  //         }
+
+  //         if (coordXToggle >= this.rightToggleElement.offsetLeft) {
+  //           toggle.style.left = this.rightToggleElement.offsetLeft + `px`;
+  //           this.scaleBarElement.style.left =
+  //             this.rightToggleElement.offsetLeft + `px`;
+  //           this.scaleBarElement.style.width = `0px`;
+  //           this.inputMin.innerHTML = `${this.calculatePriceValue(
+  //             this.rightToggleElement.offsetLeft
+  //           )} ₽`;
+  //         }
+  //         break;
+  //       case Toggles.MAX:
+  //         this.inputMax.innerHTML = `${this.calculatePriceValue(
+  //           this.rightToggleElement.offsetLeft
+  //         )} ₽`;
+
+  //         // Сделаем чтобы при упирания правого тоггла в край шкалы движение останавливалось
+  //         if (coordXToggle > this.WIDTH_SCALE) {
+  //           toggle.style.left = this.WIDTH_SCALE + `px`;
+  //           this.scaleBarElement.style.width =
+  //             this.WIDTH_SCALE -
+  //             this.leftToggleElement.offsetLeft +
+  //             this.rightToggleElement.offsetWidth +
+  //             `px`;
+  //           this.inputMax.innerHTML = `${this.MAX_PRICE} ₽`;
+  //         }
+
+  //         if (coordXToggle <= this.leftToggleElement.offsetLeft) {
+  //           toggle.style.left = this.leftToggleElement.offsetLeft + `px`;
+  //           this.scaleBarElement.style.width = `0px`;
+  //           this.inputMax.innerHTML = `${this.calculatePriceValue(
+  //             this.leftToggleElement.offsetLeft
+  //           )} ₽`;
+  //         }
+  //         break;
+  //     }
+  //   };
+
+  //   movingScaleAndToggle();
+  // };
+
+  // const onToggleStop = () => {
+  //   // Проверим находятся ли оба тоггла на max значении
+  //   if (this.leftToggleElement.offsetLeft === this.WIDTH_SCALE) {
+  //     this.leftToggleElement.classList.add(`filters__bar-toggle--up`);
+  //   } else {
+  //     this.leftToggleElement.classList.remove(`filters__bar-toggle--up`);
+  //   }
+  //   enableBodyScroll(evt.target);
+  //   document.removeEventListener(this.EventsToggle.MOVE, onToggleMove);
+  //   document.removeEventListener(this.EventsToggle.END, onToggleStop);
+  // };
 }
