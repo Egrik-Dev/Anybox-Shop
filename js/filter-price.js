@@ -37,6 +37,7 @@ export class PriceScale {
     };
 
     // Байндинг методов
+    this.restoreAfterResize = this.restoreAfterResize.bind(this);
     this.touchFilterToggle = this.touchFilterToggle.bind(this);
     this.onToggleMove = this.onToggleMove.bind(this);
     this.onToggleStop = this.onToggleStop.bind(this);
@@ -46,6 +47,8 @@ export class PriceScale {
       this.EventsToggle.START,
       this.onScaleHandler
     );
+
+    window.addEventListener(`resize`, this.restoreAfterResize);
   }
 
   init() {
@@ -55,6 +58,29 @@ export class PriceScale {
     this.inputMax.innerHTML = `${this.calculatePriceValue(
       this.rightToggleElement.offsetLeft
     )} ₽`;
+  }
+
+  restoreAfterResize() {
+    const minTogglePrice = this.inputMin.innerHTML.split(` `)[0];
+    const maxTogglePrice = this.inputMax.innerHTML.split(` `)[0];
+
+    this.leftToggleElement.style.left = `${
+      (minTogglePrice / this.MAX_PRICE) * this.rangeElement.offsetWidth
+    }px`;
+    this.rightToggleElement.style.left = `${
+      (maxTogglePrice / this.MAX_PRICE) * this.rangeElement.offsetWidth
+    }px`;
+
+    this.scaleBarElement.style.left = `${this.leftToggleElement.offsetLeft}px`;
+
+    this.scaleBarElement.style.width =
+      this.rightToggleElement.offsetLeft -
+      this.leftToggleElement.offsetLeft +
+      this.rightToggleElement.offsetWidth +
+      `px`;
+
+    this.WIDTH_SCALE =
+      this.rangeElement.offsetWidth - this.leftToggleElement.offsetWidth;
   }
 
   calculatePriceValue(togglePosition) {
