@@ -176,4 +176,20 @@
 }
 
 @media (min-width: $desktop-width) {
+  .filters {
+    padding: 10px 15px 0 0;
+  }
+
+  .filters__search-input {
+    width: 173px;
+  }
+
+  .filters__search-btn,
+  .filters__price-btn {
+    transition: 0.3s;
+
+    &:hover {
+      background-color: rgb(255, 95, 130);
+    }
+  }
 }

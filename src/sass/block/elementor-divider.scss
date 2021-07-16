@@ -5,6 +5,11 @@
   &--no-margin {
     margin-bottom: 0;
   }
+
+  &--no-indent {
+    margin-bottom: 0;
+    padding: 0;
+  }
 }
 
 .elementor-divider__separator {

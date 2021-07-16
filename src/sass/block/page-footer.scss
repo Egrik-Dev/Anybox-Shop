@@ -81,20 +81,13 @@
     width: 25%;
 
     &--social {
+      width: fit-content;
       padding: 0;
 
       justify-content: left;
 
       border: none;
     }
-  }
-
-  .page-footer__social-list {
-    justify-content: left;
-  }
-
-  .page-footer__title--social {
-    text-align: left;
   }
 }
 

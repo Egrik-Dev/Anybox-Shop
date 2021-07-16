@@ -1,0 +1,22 @@
+.sorting__sort-list {
+  width: 100%;
+  padding: 8px 12px;
+
+  color: #3b3d42;
+
+  border-radius: 3px;
+  border: 1px solid #ebeced;
+  background-color: transparent;
+}
+
+@media (min-width: $desktop-width) {
+  .sorting {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .sorting__sort-list {
+    width: 260px;
+  }
+}
