@@ -1,5 +1,11 @@
-.page-main--catalog {
-  padding: 0 20px;
+.page-main {
+  &--catalog {
+    padding: 0 20px;
+  }
+
+  &--product {
+    padding: 50px 25px;
+  }
 }
 
 .page-main__title {
@@ -44,6 +50,10 @@
   margin-bottom: 55px;
 }
 
+.page-main__product-card {
+  margin-bottom: 55px;
+}
+
 @media (min-width: $desktop-width) {
   .page-main {
     &--catalog {
@@ -51,6 +61,10 @@
       display: grid;
       grid-template-columns: 310px auto;
       grid-template-rows: auto 80px auto;
+    }
+
+    &--product {
+      @include desktop-wrapper;
     }
   }
 
@@ -106,4 +120,8 @@
     grid-column: 2/3;
     grid-row: 3/4;
   }
+
+  // .page-main__product-card {
+  //   @include desktop-wrapper;
+  // }
 }

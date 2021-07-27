@@ -4,6 +4,10 @@
   border-top: 1px solid #ebeced;
 }
 
+.products__title {
+  margin-bottom: 35px;
+}
+
 .products__list {
   @include reset-list;
 
@@ -39,7 +43,7 @@
   border-radius: 3px;
 }
 
-.products__title {
+.products__item-title {
   margin: 0 0 10px;
 
   font-size: 14px;

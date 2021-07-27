@@ -25,11 +25,12 @@ const Mode = {
 const MIN_SWIPE_SIZE = 30; // В процентах
 
 export class Slider {
-  constructor(container, options = { mode: Mode.LOOP }) {
+  constructor(container, options = { mode: Mode.LOOP, isRenderToggles: true }) {
     this.container = container;
     this.containerWidth = container.offsetWidth;
     this.containerToggles = container.querySelector(`[data-toggle="list"]`);
     this.mode = options.mode;
+    this.isRenderToggles = options.isRenderToggles;
     this.sliderListElement = container.querySelector(`[data-slider="list"]`); // Список с слайдами
     this.slideElements = container.querySelectorAll(`[data-slider="slide"]`); // Псевомассив со слайдами
     this.slideWidth = null;
@@ -59,7 +60,27 @@ export class Slider {
     this.sliderListElement.addEventListener(`touchend`, this.swipeEnd);
   }
 
+  // calculateWidthContainer() {
+  //   this.goToFirstSlide();
+  //   this.currentStep = 0;
+
+  //   this.containerWidth = this.container.offsetWidth;
+
+  //   this.sliderListElement.style.width = `${
+  //     this.sliderListElement.offsetWidth * this.slideElements.length
+  //   }px`;
+
+  //   this.slideWidth = this.containerWidth;
+  //   this.maxSteps = this.slideElements.length - SlidesQty.MOBILE;
+
+  //   this.listWidth = this.slideWidth * this.slideElements.length;
+  //   this.sliderListElement.style.width = `${this.listWidth}px`;
+  // }
+
   calculateWidthContainer() {
+    this.goToFirstSlide();
+    this.currentStep = 0;
+
     this.containerWidth = this.container.offsetWidth;
 
     if (this.containerWidth < TABLET_WIDTH) {
@@ -200,6 +221,11 @@ export class Slider {
       }
     }
   }
+
+  // listenToggles() {
+  //   console.log(this.containerToggles);
+  //   this.containerToggles.forEach((item) => console.log(item));
+  // }
 
   changeActiveToggle() {
     let activeElement = this.containerToggles.querySelector(
