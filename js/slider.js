@@ -25,11 +25,12 @@ const Mode = {
 const MIN_SWIPE_SIZE = 30; // В процентах
 
 export class Slider {
-  constructor(container, options = { mode: Mode.LOOP }) {
+  constructor(container, options = { mode: Mode.LOOP, isRenderToggles: true }) {
     this.container = container;
     this.containerWidth = container.offsetWidth;
     this.containerToggles = container.querySelector(`[data-toggle="list"]`);
     this.mode = options.mode;
+    this.isRenderToggles = options.isRenderToggles;
     this.sliderListElement = container.querySelector(`[data-slider="list"]`); // Список с слайдами
     this.slideElements = container.querySelectorAll(`[data-slider="slide"]`); // Псевомассив со слайдами
     this.slideWidth = null;
@@ -60,29 +61,39 @@ export class Slider {
   }
 
   calculateWidthContainer() {
+    this.goToFirstSlide();
+    this.currentStep = 0;
+
     this.containerWidth = this.container.offsetWidth;
 
-    if (this.containerWidth < TABLET_WIDTH) {
+    if (this.containerWidth < TABLET_WIDTH || !this.isRenderToggles) {
       this.slideWidth = this.containerWidth;
       this.maxSteps = this.slideElements.length - SlidesQty.MOBILE;
     }
 
     if (
       this.containerWidth >= TABLET_WIDTH &&
-      this.containerWidth < DESKTOP_WIDTH
+      this.containerWidth < DESKTOP_WIDTH &&
+      this.isRenderToggles
     ) {
       this.slideWidth = this.containerWidth / SlidesQty.TABLET;
       this.maxSteps = this.slideElements.length - SlidesQty.TABLET;
     }
 
-    if (this.containerWidth >= DESKTOP_WIDTH) {
+    if (this.containerWidth >= DESKTOP_WIDTH && this.isRenderToggles) {
       this.slideWidth = this.containerWidth / SlidesQty.DESKTOP;
       this.maxSteps = this.slideElements.length - SlidesQty.DESKTOP;
     }
-
     this.listWidth = this.slideWidth * this.slideElements.length;
     this.sliderListElement.style.width = `${this.listWidth}px`;
-    this.appendToggles();
+
+    if (!this.isRenderToggles) {
+      this.listenToggles();
+    } else {
+      this.appendToggles();
+    }
+
+    this.changeActiveToggle();
   }
 
   swipeStart(evt) {
@@ -199,6 +210,15 @@ export class Slider {
         this.containerToggles.append(toggle);
       }
     }
+  }
+
+  listenToggles() {
+    const togglesList = Array.from(this.containerToggles.children);
+    togglesList.forEach((toggle, index) => {
+      toggle.addEventListener(`click`, () => {
+        this.onToggleClick(index);
+      });
+    });
   }
 
   changeActiveToggle() {
