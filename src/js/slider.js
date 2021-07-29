@@ -60,50 +60,40 @@ export class Slider {
     this.sliderListElement.addEventListener(`touchend`, this.swipeEnd);
   }
 
-  // calculateWidthContainer() {
-  //   this.goToFirstSlide();
-  //   this.currentStep = 0;
-
-  //   this.containerWidth = this.container.offsetWidth;
-
-  //   this.sliderListElement.style.width = `${
-  //     this.sliderListElement.offsetWidth * this.slideElements.length
-  //   }px`;
-
-  //   this.slideWidth = this.containerWidth;
-  //   this.maxSteps = this.slideElements.length - SlidesQty.MOBILE;
-
-  //   this.listWidth = this.slideWidth * this.slideElements.length;
-  //   this.sliderListElement.style.width = `${this.listWidth}px`;
-  // }
-
   calculateWidthContainer() {
     this.goToFirstSlide();
     this.currentStep = 0;
 
     this.containerWidth = this.container.offsetWidth;
 
-    if (this.containerWidth < TABLET_WIDTH) {
+    if (this.containerWidth < TABLET_WIDTH || !this.isRenderToggles) {
       this.slideWidth = this.containerWidth;
       this.maxSteps = this.slideElements.length - SlidesQty.MOBILE;
     }
 
     if (
       this.containerWidth >= TABLET_WIDTH &&
-      this.containerWidth < DESKTOP_WIDTH
+      this.containerWidth < DESKTOP_WIDTH &&
+      this.isRenderToggles
     ) {
       this.slideWidth = this.containerWidth / SlidesQty.TABLET;
       this.maxSteps = this.slideElements.length - SlidesQty.TABLET;
     }
 
-    if (this.containerWidth >= DESKTOP_WIDTH) {
+    if (this.containerWidth >= DESKTOP_WIDTH && this.isRenderToggles) {
       this.slideWidth = this.containerWidth / SlidesQty.DESKTOP;
       this.maxSteps = this.slideElements.length - SlidesQty.DESKTOP;
     }
-
     this.listWidth = this.slideWidth * this.slideElements.length;
     this.sliderListElement.style.width = `${this.listWidth}px`;
-    this.appendToggles();
+
+    if (!this.isRenderToggles) {
+      this.listenToggles();
+    } else {
+      this.appendToggles();
+    }
+
+    this.changeActiveToggle();
   }
 
   swipeStart(evt) {
@@ -222,10 +212,14 @@ export class Slider {
     }
   }
 
-  // listenToggles() {
-  //   console.log(this.containerToggles);
-  //   this.containerToggles.forEach((item) => console.log(item));
-  // }
+  listenToggles() {
+    const togglesList = Array.from(this.containerToggles.children);
+    togglesList.forEach((toggle, index) => {
+      toggle.addEventListener(`click`, () => {
+        this.onToggleClick(index);
+      });
+    });
+  }
 
   changeActiveToggle() {
     let activeElement = this.containerToggles.querySelector(

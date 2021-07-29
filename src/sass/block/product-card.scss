@@ -16,7 +16,6 @@
 
 .product-card__img-list {
   display: flex;
-  width: calc(100% * 2); // Временное решение
   @include reset-list;
 }
 
@@ -233,6 +232,11 @@
   border: 1px solid #f8f8f8;
   border-radius: 30px;
   background-color: #f8f8f8;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    opacity: 1;
+  }
 }
 
 .product-card__btn-buy {
@@ -280,11 +284,12 @@
 
   .product-card__img-container {
     width: 50%;
-    margin-right: 40px;
   }
 
   .product-card__info {
     width: 50%;
+    padding-left: 40px;
+    box-sizing: border-box;
   }
 
   .product-card__qty-rewies:hover {
