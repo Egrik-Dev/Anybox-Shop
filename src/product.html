@@ -123,12 +123,12 @@
               </svg>
             </li>
             <li class="product-card__rating-item">
-              <svg class="product-card__rating-image" width="12" height="12">
+              <svg class="product-card__rating-image product-card__rating-image--gold" width="12" height="12">
                 <use xlink:href="img/sprite.svg#icon-star"></use>
               </svg>
             </li>
             <li class="product-card__rating-item">
-              <svg class="product-card__rating-image" width="12" height="12">
+              <svg class="product-card__rating-image product-card__rating-image--gold" width="12" height="12">
                 <use xlink:href="img/sprite.svg#icon-star"></use>
               </svg>
             </li>
@@ -169,6 +169,61 @@
             <span class="product-cart__btn-word">Добавить в корзину</span>
           </button>
         </div>
+      </div>
+      <div class="product-card__details">
+        <input class="visually-hidden product-card__details-input product-card__details-input--description"
+          id="details-desc" type="radio" name="details-toggle" checked>
+        <input class="visually-hidden product-card__details-input product-card__details-input--additional"
+          id="details-additional" type="radio" name="details-toggle">
+        <ul class="product-card__details-menu-list">
+          <li class="product-card__details-menu-item">
+            <label class="product-card__details-menu-label product-card__details-menu-label--description"
+              for="details-desc">Описание</label>
+          </li>
+          <li class="product-card__details-menu-item">
+            <label class="product-card__details-menu-label product-card__details-menu-label--additional"
+              for="details-additional">Дополнительная информация</label>
+          </li>
+        </ul>
+        <ul class="product-card__details-list">
+          <li class="product-card__details-item product-card__details-item--description">
+            <h2 class="product-card__details-title title">Описание</h2>
+            <p class="product-card__details-text">
+              Натуральная мочалка из гибискуса. Прекрасно подходит для бережного пилинга тела, улучшает кровообращение,
+              стимулирует дыхание кожи. Кожа после использования становится мягкой и упругой. Может использоваться как в
+              душе, так и в бане. Выполнена из натуральных материалов с заботой о здоровье. Российское производство.
+            </p>
+          </li>
+          <li class="product-card__details-item product-card__details-item--additional">
+            <h2 class="product-card__details-title title">Дополнительная информация</h2>
+            <table class="product-card__details-table">
+              <tr class="product-card__details-table-row">
+                <td class="product-card__details-table-key">
+                  <span class="product-card__details-table-key-word">Страна-изготовитель</span>
+                </td>
+                <td class="product-card__details-table-value">Россия</td>
+              </tr>
+              <tr class="product-card__details-table-row">
+                <td class="product-card__details-table-key">
+                  <span class="product-card__details-table-key-word">Цвет</span>
+                </td>
+                <td class="product-card__details-table-value">Бежевый</td>
+              </tr>
+              <tr class="product-card__details-table-row">
+                <td class="product-card__details-table-key">
+                  <span class="product-card__details-table-key-word">Вид мочалки</span>
+                </td>
+                <td class="product-card__details-table-value">Пояс</td>
+              </tr>
+              <tr class="product-card__details-table-row">
+                <td class="product-card__details-table-key">
+                  <span class="product-card__details-table-key-word">Материал</span>
+                </td>
+                <td class="product-card__details-table-value">Хлопок</td>
+              </tr>
+            </table>
+          </li>
+        </ul>
       </div>
     </section>
     <section class="page-main__similar-products similar-products">
