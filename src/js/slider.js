@@ -61,8 +61,8 @@ export class Slider {
   }
 
   calculateWidthContainer() {
-    this.goToFirstSlide();
-    this.currentStep = 0;
+    // this.goToFirstSlide();
+    // this.currentStep = 0;
 
     this.containerWidth = this.container.offsetWidth;
 
