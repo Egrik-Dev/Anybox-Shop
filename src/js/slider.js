@@ -61,6 +61,7 @@ export class Slider {
   }
 
   calculateWidthContainer() {
+    alert(`calculateWidthContainer`);
     this.containerWidth = this.container.offsetWidth;
 
     if (this.containerWidth < TABLET_WIDTH || !this.isRenderToggles) {
@@ -165,6 +166,7 @@ export class Slider {
   }
 
   resetToStart() {
+    alert(`resetToStart`);
     this.goToFirstSlide();
     this.currentStep = 0;
   }
@@ -193,7 +195,7 @@ export class Slider {
     if (this.containerToggles.children.length - 1 !== this.maxSteps) {
       // Сначала сбрасываем все показатели
       this.containerToggles.innerHTML = ``;
-      // this.resetToStart();
+      this.resetToStart();
 
       // Отрисовываем тоглы
       for (let i = 0; i <= this.maxSteps; i++) {
