@@ -35,6 +35,7 @@ export class Slider {
     this.slideElements = container.querySelectorAll(`[data-slider="slide"]`); // Псевомассив со слайдами
     this.slideWidth = null;
     this.listWidth = null;
+    this.windowWidth = window.innerWidth;
 
     this.maxSteps = null;
     this.currentStep = 0;
@@ -48,20 +49,28 @@ export class Slider {
     this.isVerticalScroll = false;
 
     // Байндинг методов
-    this.calculateWidthContainer = this.calculateWidthContainer.bind(this);
+    this.checkResize = this.checkResize.bind(this);
     this.swipeStart = this.swipeStart.bind(this);
     this.swipeMove = this.swipeMove.bind(this);
     this.swipeEnd = this.swipeEnd.bind(this);
 
     // Слушатели событий
-    window.addEventListener(`resize`, this.calculateWidthContainer);
+    window.addEventListener(`resize`, this.checkResize);
     this.sliderListElement.addEventListener(`touchstart`, this.swipeStart);
     this.sliderListElement.addEventListener(`touchmove`, this.swipeMove);
     this.sliderListElement.addEventListener(`touchend`, this.swipeEnd);
   }
 
+  checkResize() {
+    if (window.innerWidth !== this.windowWidth) {
+      this.windowWidth = window.innerWidth;
+
+      this.calculateWidthContainer();
+    }
+  }
+
   calculateWidthContainer() {
-    alert(`calculateWidthContainer`);
+    this.resetToStart();
     this.containerWidth = this.container.offsetWidth;
 
     if (this.containerWidth < TABLET_WIDTH || !this.isRenderToggles) {
@@ -166,7 +175,6 @@ export class Slider {
   }
 
   resetToStart() {
-    alert(`resetToStart`);
     this.goToFirstSlide();
     this.currentStep = 0;
   }
@@ -195,7 +203,6 @@ export class Slider {
     if (this.containerToggles.children.length - 1 !== this.maxSteps) {
       // Сначала сбрасываем все показатели
       this.containerToggles.innerHTML = ``;
-      this.resetToStart();
 
       // Отрисовываем тоглы
       for (let i = 0; i <= this.maxSteps; i++) {
@@ -212,7 +219,6 @@ export class Slider {
   }
 
   listenToggles() {
-    // this.resetToStart();
     const togglesList = Array.from(this.containerToggles.children);
     togglesList.forEach((toggle, index) => {
       toggle.addEventListener(`click`, () => {
