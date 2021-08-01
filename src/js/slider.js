@@ -193,7 +193,7 @@ export class Slider {
     if (this.containerToggles.children.length - 1 !== this.maxSteps) {
       // Сначала сбрасываем все показатели
       this.containerToggles.innerHTML = ``;
-      this.resetToStart();
+      // this.resetToStart();
 
       // Отрисовываем тоглы
       for (let i = 0; i <= this.maxSteps; i++) {
@@ -210,7 +210,7 @@ export class Slider {
   }
 
   listenToggles() {
-    this.resetToStart();
+    // this.resetToStart();
     const togglesList = Array.from(this.containerToggles.children);
     togglesList.forEach((toggle, index) => {
       toggle.addEventListener(`click`, () => {
