@@ -6,6 +6,10 @@
   &--product {
     padding: 50px 25px;
   }
+
+  &--cart {
+    padding: 0 20px;
+  }
 }
 
 .page-main__title {
@@ -64,6 +68,10 @@
     }
 
     &--product {
+      @include desktop-wrapper;
+    }
+
+    &--cart {
       @include desktop-wrapper;
     }
   }

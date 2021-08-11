@@ -140,6 +140,7 @@
   justify-self: end;
   margin-right: 15px;
 }
+
 @media (min-width: $tablet-width) {
   .page-header {
     grid-template-columns: 1fr 30px 16px;
@@ -221,6 +222,8 @@
   .page-header__cart {
     grid-column: 3/4;
     grid-row: 1/2;
+
+    cursor: pointer;
   }
 
   .page-header__cart:hover .page-header__cart-icon,
