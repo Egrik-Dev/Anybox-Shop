@@ -152,39 +152,40 @@
         </div>
         <div class="order__delivery">
           <h3 class="order__subtitle">Способ доставки</h3>
+          <input class="order__delivery-input order__delivery-input--pickup visually-hidden" type="radio"
+            name="delivery-method" id="pickup" value="pickup">
+          <input class="order__delivery-input order__delivery-input--msk visually-hidden" type="radio"
+            name="delivery-method" id="delivery-msk" value="delivery-msk">
+          <input class="order__delivery-input order__delivery-input--post visually-hidden" type="radio"
+            name="delivery-method" id="russia-post" value="russia-post" checked>
           <ul class="order__delivery-list">
             <li class="order__delivery-item">
-              <input class="order__delivery-input visually-hidden" type="radio" name="delivery-method" id="pickup"
-                value="pickup">
-              <label class="order__delivery-label" for="pickup">Самовывоз</label>
+              <label class="order__delivery-label order__delivery-label--pickup" for="pickup">Самовывоз</label>
             </li>
             <li class="order__delivery-item">
-              <input class="order__delivery-input visually-hidden" type="radio" name="delivery-method" id="delivery-msk"
-                value="delivery-msk">
-              <label class="order__delivery-label" for="delivery-msk">Курьерская доставка по Москве</label>
+              <label class="order__delivery-label order__delivery-label--msk" for="delivery-msk">Курьерская доставка по
+                Москве</label>
             </li>
             <li class="order__delivery-item">
-              <input class="order__delivery-input visually-hidden" type="radio" name="delivery-method" id="russia-post"
-                value="russia-post" checked>
-              <label class="order__delivery-label" for="russia-post">Почта РФ</label>
+              <label class="order__delivery-label order__delivery-label--post" for="russia-post">Почта РФ</label>
             </li>
           </ul>
           <ul class="order__delivery-adress-list">
-            <li class="order__delivery-adress-item">
+            <li class="order__delivery-adress-item order__delivery-adress-item--zip-code">
               <label class="order__delivery-text-label" for="zip-code-field">
                 <span class="order__delivery-label-title">Почтовый индекс</span>
                 <span class="order__delivery-label-required">*</span>
               </label>
               <input class="order__delivery-text-input" type="number" name="zip-code" id="zip-code-field" required>
             </li>
-            <li class="order__delivery-adress-item">
+            <li class="order__delivery-adress-item order__delivery-adress-item--city">
               <label class="order__delivery-text-label" for="city-field">
                 <span class="order__delivery-label-title">Город</span>
                 <span class="order__delivery-label-required">*</span>
               </label>
               <input class="order__delivery-text-input" type="text" name="city" id="city-field" required>
             </li>
-            <li class="order__delivery-adress-item">
+            <li class="order__delivery-adress-item order__delivery-adress-item--adress">
               <label class="order__delivery-text-label" for="adress-field">
                 <span class="order__delivery-label-title">Адрес</span>
                 <span class="order__delivery-label-required">*</span>

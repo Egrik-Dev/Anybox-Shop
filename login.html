@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Главная</title>
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+  <header class="page-header">
+    <a href="index.html" class="page-header__logo">
+      <picture>
+        <source type="image/webp" srcset="img/icon-logo@1x.webp 1x, img/icon-logo@2x.webp 2x">
+        <img class="page-header__logo" src="img/icon-logo@1x.png" srcset="img/icon-logo@2x.png 2x"
+          alt="Логотип магазина AnyBox">
+      </picture>
+    </a>
+    <button class="page-header__open-btn">
+      <span class="visually-hidden">Открыть меню</span>
+    </button>
+    <nav class="page-header__nav">
+      <button class="page-header__close-btn">
+        <span class="visually-hidden">Закрыть меню</span>
+      </button>
+      <ul class="page-header__nav-list">
+        <li class="page-header__nav-item">
+          <a href="index.html" class="page-header__nav-link">Главная</a>
+        </li>
+        <li class="page-header__nav-item">
+          <a href="for-her" class="page-header__nav-link">Подарки для неё</a>
+        </li>
+        <li class="page-header__nav-item">
+          <a href="for-him" class="page-header__nav-link">Подарки для него</a>
+        </li>
+        <li class="page-header__nav-item">
+          <a href="posts" class="page-header__nav-link">Блог</a>
+        </li>
+        <li class="page-header__nav-item">
+          <a href="catalog.html" class="page-header__nav-link">Каталог</a>
+        </li>
+        <li class="page-header__nav-item">
+          <a href="contacts" class="page-header__nav-link">Контакты</a>
+        </li>
+      </ul>
+    </nav>
+    <a href="cart.html" class="page-header__cart"><span class="visually-hidden">Корзина</span>
+      <svg class="page-header__cart-icon" width="16" height="16">
+        <use xlink:href="img/sprite.svg#icon-cart"></use>
+      </svg>
+      <span class="page-header__cart-qty">2</span>
+    </a>
+    <a href="/search" class="page-header__search"><span class="visually-hidden">Поиск</span>
+      <svg class="page-header__search-icon" width="16" height="16">
+        <use xlink:href="img/sprite.svg#icon-search"></use>
+      </svg>
+    </a>
+  </header>
+  <main class="page-main page-main--login">
+    <h1 class="title title--login">Авторизация</h1>
+    <section class="page-main__login login">
+      <form class="login__form" action="https://echo.anybox.ru" method="POST">
+        <ul class="login__form-list">
+          <li class="login__form-item">
+            <label class="login__form-label" for="login-field">Логин</label>
+            <input class="login__form-input" type="email" name="login" id="login-field" required>
+          </li>
+          <li class="login__form-item">
+            <label class="login__form-label" for="pass-field">Пароль</label>
+            <input class="login__form-input" type="text" name="pass" id="pass-field" required>
+          </li>
+        </ul>
+        <button class="login__btn btn" type="submit" name="send-login">Войти</button>
+      </form>
+    </section>
+  </main>
+  <footer class="page-footer">
+    <h2 class="visually-hidden">Подвал сайта AnyBox</h2>
+    <div class="page-footer__wrapper">
+      <div class="page-footer__container">
+        <h3 class="page-footer__title">О нас</h2>
+          <ul class="page-footer__list">
+            <li class="page-footer__item-list">
+              <a class="page-footer__item-link">Главная</a>
+            </li>
+            <li class="page-footer__item-list">
+              <a href="for-her" class="page-footer__item-link">Подарки для неё</a>
+            </li>
+            <li class="page-footer__item-list">
+              <a href="for-him" class="page-footer__item-link">Подарки для него</a>
+            </li>
+            <li class="page-footer__item-list">
+              <a href="posts" class="page-footer__item-link">Блог</a>
+            </li>
+            <li class="page-footer__item-list">
+              <a href="catalog.html" class="page-footer__item-link">Каталог</a>
+            </li>
+            <li class="page-footer__item-list">
+              <a href="contacts" class="page-footer__item-link">Контакты</a>
+            </li>
+          </ul>
+      </div>
+      <div class="page-footer__container">
+        <h3 class="page-footer__title">Для покупателей</h2>
+          <ul class="page-footer__list">
+            <li class="page-footer__item-list">
+              <a href="/delivery" class="page-footer__item-link">Доставка</a>
+            </li>
+            <li class="page-footer__item-list">
+              <a href="/privacy-policy" class="page-footer__item-link">Политика конфиденциальности</a>
+            </li>
+            <li class="page-footer__item-list">
+              <a href="refund-conditions" class="page-footer__item-link">Условия возврата</a>
+            </li>
+            <li class="page-footer__item-list">
+              <a href="faq" class="page-footer__item-link">FAQs</a>
+            </li>
+          </ul>
+      </div>
+      <div class="page-footer__container">
+        <h3 class="page-footer__title">Контакты</h2>
+          <ul class="page-footer__list">
+            <li class="page-footer__contacts-item">
+              Телефон: <a href="tel:+74951234567" class="page-footer__contacts-link">+7 495 123 4567</a>
+            </li>
+            <li class="page-footer__contacts-item">
+              E-mail: <a href="email:info@anybox.ru" class="page-footer__contacts-link">info@anybox.ru</a>
+            </li>
+          </ul>
+      </div>
+      <div class="page-footer__container page-footer__container--social">
+        <h3 class="page-footer__title page-footer__title--social">Мы в соцсетях</h3>
+        <ul class="page-footer__social-list">
+          <li class="page-footer__social-item">
+            <a href="https://www.instagram.com/anybox" class="page-footer__social-link">
+              <span class="visually-hidden">Мы в инстаграме</span>
+              <svg class="social__link-icon social__link-icon--insta" width="16" height="16">
+                <use xlink:href="img/sprite.svg#icon-insta"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="page-footer__social-item">
+            <a href="https://www.vk.com/anybox" class="page-footer__social-link">
+              <span class="visually-hidden">Мы в ВК</span>
+              <svg class="social__link-icon social__link-icon--vk" width="22" height="12">
+                <use xlink:href="img/sprite.svg#icon-vk"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="page-footer__social-item">
+            <a href="https://www.facebook.com/anybox" class="page-footer__social-link">
+              <span class="visually-hidden">Мы в Facebook</span>
+              <svg class="social__link-icon social__link-icon--fb" width="10" height="19">
+                <use xlink:href="img/sprite.svg#icon-fb"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script type="module" src="js/login.js"></script>
+</body>
+
+</html>
