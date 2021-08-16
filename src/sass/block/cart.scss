@@ -196,7 +196,15 @@
   }
 }
 
-.order__delivery-input:checked ~ .order__delivery-label::after,
+.order__delivery-input--pickup:checked
+  ~ .order__delivery-list
+  .order__delivery-label--pickup::after,
+.order__delivery-input--msk:checked
+  ~ .order__delivery-list
+  .order__delivery-label--msk::after,
+.order__delivery-input--post:checked
+  ~ .order__delivery-list
+  .order__delivery-label--post::after,
 .order__payment-methods-input:checked ~ .order__payment-methods-label::after {
   position: absolute;
   left: -41px;
@@ -208,6 +216,18 @@
   content: "";
   border-radius: 50%;
   background-color: #6fb02e;
+}
+
+.order__delivery-input--pickup:checked
+  ~ .order__delivery-adress-list
+  .order__delivery-adress-item,
+.order__delivery-input--msk:checked
+  ~ .order__delivery-adress-list
+  .order__delivery-adress-item--zip-code,
+.order__delivery-input--msk:checked
+  ~ .order__delivery-adress-list
+  .order__delivery-adress-item--city {
+  display: none;
 }
 
 .order__delivery-adress-list,

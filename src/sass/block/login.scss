@@ -1,0 +1,38 @@
+.login__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login__form-list {
+  @include reset-list;
+  width: 100%;
+}
+
+.login__form-item {
+  margin-bottom: 25px;
+}
+
+.login__form-label {
+  text-transform: capitalize;
+}
+
+.login__form-input {
+  width: 100%;
+  padding: 8px 12px;
+  margin-top: 8px;
+  border: 1px solid #ebeced;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.login__btn {
+  width: 220px;
+}
+
+@media (min-width: $tablet-width) {
+  .login {
+    width: 400px;
+    margin: 0 auto;
+  }
+}
