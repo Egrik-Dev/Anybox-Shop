@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Заказы</title>
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+  <header class="page-header page-header--admin">
+    <a href="index.html" class="page-header__logo">
+      <picture>
+        <source type="image/webp" srcset="img/icon-logo@1x.webp 1x, img/icon-logo@2x.webp 2x">
+        <img class="page-header__logo" src="img/icon-logo@1x.png" srcset="img/icon-logo@2x.png 2x"
+          alt="Логотип магазина AnyBox">
+      </picture>
+    </a>
+    <button class="page-header__open-btn">
+      <span class="visually-hidden">Открыть меню</span>
+    </button>
+    <nav class="page-header__nav">
+      <button class="page-header__close-btn">
+        <span class="visually-hidden">Закрыть меню</span>
+      </button>
+      <ul class="page-header__nav-list">
+        <li class="page-header__nav-item">
+          <a href="index.html" class="page-header__nav-link">Главная</a>
+        </li>
+        <li class="page-header__nav-item">
+          <a class="page-header__nav-link page-header__nav-link--active">Заказы</a>
+        </li>
+        <li class="page-header__nav-item">
+          <a href="index.html" class="page-header__nav-link">Товары</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="page-main page-main--orders">
+    <h1 class="title">Заказы покупателей</h1>
+    <section class="page-main__orders orders">
+      <table class="orders__table">
+        <!-- <thead class="orders__table-header">
+          <tr class="orders__table-row orders__table-row--header">
+            <th class="orders__table-cell orders__table-cell--header">№ заказа</th>
+            <th class="orders__table-cell orders__table-cell--header">Покупатель</th>
+            <th class="orders__table-cell orders__table-cell--header">Товары</th>
+            <th class="orders__table-cell orders__table-cell--header">Способ доставки</th>
+            <th class="orders__table-cell orders__table-cell--header">Итого</th>
+          </tr>
+        </thead> -->
+        <tr class="orders__table-row">
+          <td class="orders__table-cell orders__table-cell--number">
+            <p class="orders__number">
+              №
+              <span class="orders__number-num">98</span>
+              <span class="orders__number-date">от 19.08.21</span>
+            </p>
+            <div class="orders__arrow menu-arrow"></div>
+          </td>
+          <td class="orders__table-cell orders__table-cell--customer">
+            <table class="orders__user-info-table">
+              <tr class="orders__user-info-row">
+                <td class="orders__user-info-key">Имя:</td>
+                <td class="orders__user-info-value">Семен</td>
+              </tr>
+              <tr class="orders__user-info-row">
+                <td class="orders__user-info-key">Конт. телефон:</td>
+                <td class="orders__user-info-value">
+                  <a href="tel:+71234567890">+7 (123) 456-78-90</a>
+                </td>
+              </tr>
+              <tr class="orders__user-info-row">
+                <td class="orders__user-info-key">E-mail:</td>
+                <td class="orders__user-info-value">
+                  <a href="mailto:semen@mail.ru?subject=Заказ в AnyBox №98">semen@mail.ru</a>
+                </td>
+              </tr>
+              <tr class="orders__user-info-row">
+                <td class="orders__user-info-key">Способ оплаты:</td>
+                <td class="orders__user-info-value">Наличными при получении</td>
+              </tr>
+            </table>
+          </td>
+          <td class="orders__table-cell orders__table-cell--products">
+            <ul class="orders__product-list">
+              <li class="orders__product-item">
+                <div class="orders__product-info-block">
+                  <p class="orders__product-row">
+                    <span class="orders__product-qty-num">2 шт.</span>
+                    <span class="orders__product-sku">Артикул: 2313-pink</span>
+                  </p>
+                  <p class="orders__product-row">
+                    <span class="orders__product-title">Бамбуковые ватные палочки</span>
+                  </p>
+                </div>
+                <div class="orders__product-price-block">
+                  <span class="orders__product-price">780 ₽</span>
+                </div>
+              </li>
+              <li class="orders__product-item">
+                <div class="orders__product-info-block">
+                  <p class="orders__product-row">
+                    <span class="orders__product-qty-num">1 шт.</span>
+                    <span class="orders__product-sku">Артикул: 12123111</span>
+                  </p>
+                  <p class="orders__product-row">
+                    <span class="orders__product-title">Восковые салфетки ANYBOX-ECO, 0.3м х 32 см</span>
+                  </p>
+                </div>
+                <div class="orders__product-price-block">
+                  <span class="orders__product-price">930 ₽</span>
+                </div>
+              </li>
+            </ul>
+          </td>
+          <td class="orders__table-cell orders__table-cell--delivery">
+            <p class="orders__delivery-method">Самовывоз</p>
+          </td>
+          <td class="orders__table-cell orders__table-cell--total">
+            <table class="orders__total-table">
+              <tr class="orders__total-row order__total-row--subtotal">
+                <td class="orders__total-key">Итого:</td>
+                <td class="orders__total-value">1710 ₽</td>
+              </tr>
+              <tr class="orders__total-row">
+                <td class="orders__total-key">
+                  <span class="orders__total--word">Товары,</span>
+                  <span class="orders__total-word">3 шт:</span>
+                </td>
+                <td class="orders__total-value">1710 ₽</td>
+              </tr>
+              <tr class="orders__total-row">
+                <td class="orders__total-key">Доставка:</td>
+                <td class="orders__total-value">Бесплатно</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr class="orders__table-row">
+          <td class="orders__table-cell orders__table-cell--number">
+            <p class="orders__number">
+              №
+              <span class="orders__number-num">97</span>
+              <span class="orders__number-date">от 17.08.21</span>
+            </p>
+          </td>
+          <td class="orders__table-cell orders__table-cell--customer">
+            <table class="orders__user-info-table">
+              <tr class="orders__user-info-row">
+                <td class="orders__user-info-key">Имя:</td>
+                <td class="orders__user-info-value">Анастасия</td>
+              </tr>
+              <tr class="orders__user-info-row">
+                <td class="orders__user-info-key">Конт. телефон:</td>
+                <td class="orders__user-info-value">
+                  <a href="tel:+71234297899">+7 (123) 429-78-99</a>
+                </td>
+              </tr>
+              <tr class="orders__user-info-row">
+                <td class="orders__user-info-key">E-mail:</td>
+                <td class="orders__user-info-value">
+                  <a href="mailto:nastya@mail.ru?subject=Заказ в AnyBox №97">nastya@mail.ru</a>
+                </td>
+              </tr>
+              <tr class="orders__user-info-row">
+                <td class="orders__user-info-key">Способ оплаты:</td>
+                <td class="orders__user-info-value">Переводом на карту</td>
+              </tr>
+            </table>
+          </td>
+          <td class="orders__table-cell orders__table-cell--products">
+            <ul class="orders__product-list">
+              <li class="orders__product-item">
+                <div class="orders__product-info-block">
+                  <p class="orders__product-row">
+                    <span class="orders__product-qty-num">1 шт.</span>
+                    <span class="orders__product-sku">Артикул: 12312</span>
+                  </p>
+                  <p class="orders__product-row">
+                    <span class="orders__product-title">Сумка-шоппер</span>
+                  </p>
+                </div>
+                <div class="orders__product-price-block">
+                  <span class="orders__product-price">390 ₽</span>
+                </div>
+              </li>
+            </ul>
+          </td>
+          <td class="orders__table-cell orders__table-cell--delivery">
+            <p class="orders__delivery-method">Курьерская доставка по Москве</p>
+            <span class="ymaps-geolink">
+              г. Москва, Манежная улица, 2/10с2
+            </span>
+          </td>
+          <td class="orders__table-cell orders__table-cell--total">
+            <table class="orders__total-table">
+              <tr class="orders__total-row order__total-row--subtotal">
+                <td class="orders__total-key orders__total-key--subtotal">Итого</td>
+                <td class="orders__total-value">640 ₽</td>
+              </tr>
+              <tr class="orders__total-row">
+                <td class="orders__total-key">
+                  <span class="orders__total--word">Товары,</span>
+                  <span class="orders__total-word">1 шт</span>
+                </td>
+                <td class="orders__total-value">390 ₽</td>
+              </tr>
+              <tr class="orders__total-row">
+                <td class="orders__total-key">Доставка</td>
+                <td class="orders__total-value">250 ₽</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <ul class="orders__pag-list pagination">
+        <li class="pagination__item pagination__item--current">
+          <a class="pagination__item-link pagination__item-link--current">1</a>
+        </li>
+        <li class="pagination__item">
+          <a href="catalog-2.html" class="pagination__item-link">2</a>
+        </li>
+        <li class="pagination__item pagination__item--next">
+          <a href="catalog-2.html" class="pagination__item-link pagination__item-link--next">Дальше</a>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <footer class="page-footer">
+    <h2 class="visually-hidden">Подвал сайта AnyBox</h2>
+    <div class="page-footer__wrapper page-footer__wrapper--admin">
+      <div class="page-footer__container">
+        <h3 class="page-footer__title">Контакты</h2>
+          <ul class="page-footer__list">
+            <li class="page-footer__contacts-item">
+              Телефон: <a href="tel:+74951234567" class="page-footer__contacts-link">+7 495 123 4567</a>
+            </li>
+            <li class="page-footer__contacts-item">
+              E-mail: <a href="email:info@anybox.ru" class="page-footer__contacts-link">info@anybox.ru</a>
+            </li>
+          </ul>
+      </div>
+      <div class="page-footer__container page-footer__container--social">
+        <h3 class="page-footer__title page-footer__title--social">Мы в соцсетях</h3>
+        <ul class="page-footer__social-list">
+          <li class="page-footer__social-item">
+            <a href="https://www.instagram.com/anybox" class="page-footer__social-link">
+              <span class="visually-hidden">Мы в инстаграме</span>
+              <svg class="social__link-icon social__link-icon--insta" width="16" height="16">
+                <use xlink:href="img/sprite.svg#icon-insta"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="page-footer__social-item">
+            <a href="https://www.vk.com/anybox" class="page-footer__social-link">
+              <span class="visually-hidden">Мы в ВК</span>
+              <svg class="social__link-icon social__link-icon--vk" width="22" height="12">
+                <use xlink:href="img/sprite.svg#icon-vk"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="page-footer__social-item">
+            <a href="https://www.facebook.com/anybox" class="page-footer__social-link">
+              <span class="visually-hidden">Мы в Facebook</span>
+              <svg class="social__link-icon social__link-icon--fb" width="10" height="19">
+                <use xlink:href="img/sprite.svg#icon-fb"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script type="module" src="js/orders.js"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU&load=Geolink"
+    type="text/javascript"></script>
+</body>
