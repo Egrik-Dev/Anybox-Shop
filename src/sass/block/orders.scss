@@ -1,0 +1,217 @@
+.orders__table {
+  width: 100%;
+}
+
+// .orders__table-header {
+//   display: none;
+// }
+
+.orders__table-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+  border: 1px solid #ebeced;
+  border-radius: 5px;
+}
+
+.orders__table-cell {
+  position: relative;
+
+  padding: 10px;
+
+  &--number {
+    margin: -1px;
+
+    color: #fff;
+
+    background-color: #33a1ef;
+    border-radius: 5px 5px 0 0;
+  }
+
+  &--customer,
+  &--products,
+  &--delivery,
+  &--total {
+    padding-top: 50px;
+  }
+
+  &--customer::before,
+  &--products::before,
+  &--delivery::before,
+  &--total::before {
+    position: absolute;
+
+    top: 15px;
+    left: 50px;
+
+    color: #383838;
+    font-size: 20px;
+    text-transform: capitalize;
+    line-height: 1.25em;
+    font-weight: 700;
+  }
+
+  &--customer::before {
+    content: "Покупатель";
+  }
+
+  &--products::before {
+    content: "Товары";
+  }
+
+  &--delivery::before {
+    content: "Способ доставки";
+  }
+
+  &--total::before {
+    content: "Итого";
+  }
+
+  &--customer::after,
+  &--products::after,
+  &--delivery::after,
+  &--total::after {
+    position: absolute;
+
+    top: 17px;
+    left: 13px;
+    content: "";
+
+    width: 20px;
+    height: 20px;
+  }
+
+  &--customer::after {
+    background-image: url(../img/icon-customer.svg);
+  }
+
+  &--products::after {
+    background-image: url(../img/icon-products.svg);
+  }
+
+  &--delivery::after {
+    background-image: url(../img/icon-delivery.svg);
+  }
+
+  &--total::after {
+    background-image: url(../img/icon-money.svg);
+  }
+}
+
+.orders__number {
+  margin: 0;
+}
+
+.orders__arrow {
+  top: 15px;
+  right: 14px;
+}
+
+.orders__user-info-key,
+.orders__total-key {
+  color: #a4a9ab;
+}
+
+.orders__user-info-value,
+.orders__total-value {
+  padding-left: 10px;
+}
+
+.orders__product-list {
+  @include reset-list;
+}
+
+.orders__product-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.orders__product-price-block {
+  position: relative;
+
+  padding-left: 40px;
+  min-width: 50px;
+
+  &::before {
+    position: absolute;
+
+    top: 0;
+    left: 20px;
+    content: "";
+
+    width: 1px;
+    height: 100%;
+
+    background-color: #a4a9ab;
+    transform: rotate(20deg);
+  }
+}
+
+.orders__product-row {
+  margin: 0;
+}
+
+.orders__product-title {
+  color: #a4a9ab;
+  font-size: 12px;
+}
+
+.orders__product-qty-num {
+  margin-right: 5px;
+}
+
+.orders__product-price {
+  font-weight: 700;
+}
+
+.orders__delivery-method {
+  margin: 0 0 10px;
+}
+
+.orders__total-table {
+  width: 100%;
+}
+
+.orders__total-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.order__total-row--subtotal {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.orders__total-key--subtotal {
+  color: #000;
+}
+
+@media (min-width: $desktop-width) {
+  .orders__table-row {
+    // display: flex;
+    flex-direction: row;
+    // margin-bottom: 20px;
+
+    // border: 1px solid #ebeced;
+    // border-radius: 5px;
+  }
+
+  .orders__arrow {
+    display: none;
+  }
+
+  .orders__table-cell {
+    &--customer,
+    &--products,
+    &--delivery {
+      width: 100%;
+    }
+
+    &--total {
+      min-width: 160px;
+    }
+  }
+}

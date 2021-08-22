@@ -1,0 +1,11 @@
+.menu-arrow {
+  position: absolute;
+
+  width: 10px;
+  height: 15px;
+
+  background: url("../img/icon-arrowhead.svg") no-repeat 50%;
+  cursor: pointer;
+
+  transition: transform 0.2s ease-in;
+}
