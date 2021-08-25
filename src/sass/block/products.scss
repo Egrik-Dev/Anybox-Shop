@@ -20,6 +20,12 @@
 
   border: 1px solid #ebeced;
   border-radius: 3px;
+
+  &--add-product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }
 
 .products__img-link {
@@ -41,6 +47,10 @@
   aspect-ratio: 1/1;
   object-fit: cover;
   border-radius: 3px;
+
+  &--add-product {
+    fill: #ddddde;
+  }
 }
 
 .products__item-title {
@@ -64,6 +74,12 @@
   line-height: 1em;
   color: #3b3d42;
   text-align: left;
+}
+
+.products__btn-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .products__action-btn {
