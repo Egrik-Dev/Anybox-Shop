@@ -3,6 +3,7 @@
 @import "fonts.scss";
 @import "global.scss";
 @import "mixins.scss";
+@import "./block/form-elements.scss";
 @import "./block/page-header.scss";
 @import "./block/page-main.scss";
 @import "./block/banners.scss";
@@ -20,7 +21,6 @@
 @import "./block/login.scss";
 @import "./block/pagination.scss";
 @import "./block/orders.scss";
-@import "./block/form-elements.scss";
 @import "./block/add-product.scss";
 @import "./block/menu-arrow.scss";
 @import "./block/elementor-divider.scss";

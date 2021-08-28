@@ -159,115 +159,8 @@
   text-decoration: line-through;
 }
 
-.order__delivery-list,
-.order__payment-methods-list {
-  @include reset-list;
-}
-
 .order__delivery-list {
   margin-bottom: 50px;
-}
-
-.order__delivery-item,
-.order__payment-methods-item {
-  margin-bottom: 25px;
-  padding-left: 50px;
-
-  text-transform: capitalize;
-}
-
-.order__delivery-label,
-.order__payment-methods-label {
-  position: relative;
-
-  cursor: pointer;
-
-  &::before {
-    position: absolute;
-    left: -50px;
-    top: -5px;
-
-    width: 28px;
-    height: 28px;
-
-    content: "";
-    border: 1px solid #cecece;
-    border-radius: 50%;
-  }
-}
-
-.order__delivery-input--pickup:checked
-  ~ .order__delivery-list
-  .order__delivery-label--pickup::after,
-.order__delivery-input--msk:checked
-  ~ .order__delivery-list
-  .order__delivery-label--msk::after,
-.order__delivery-input--post:checked
-  ~ .order__delivery-list
-  .order__delivery-label--post::after,
-.order__payment-methods-input:checked ~ .order__payment-methods-label::after {
-  position: absolute;
-  left: -41px;
-  top: 4px;
-
-  width: 12px;
-  height: 12px;
-
-  content: "";
-  border-radius: 50%;
-  background-color: #6fb02e;
-}
-
-.order__delivery-input--pickup:checked
-  ~ .order__delivery-adress-list
-  .order__delivery-adress-item,
-.order__delivery-input--msk:checked
-  ~ .order__delivery-adress-list
-  .order__delivery-adress-item--zip-code,
-.order__delivery-input--msk:checked
-  ~ .order__delivery-adress-list
-  .order__delivery-adress-item--city {
-  display: none;
-}
-
-.order__delivery-adress-list,
-.order__personal-info-list {
-  @include reset-list;
-  display: flex;
-  flex-direction: column;
-}
-
-.order__delivery-adress-item,
-.order__personal-info-item {
-  margin-bottom: 25px;
-}
-
-.order__delivery-text-label,
-.order__personal-info-label {
-  text-transform: capitalize;
-}
-
-.order__delivery-label-required,
-.order__personal-info-requires-star {
-  color: red;
-}
-
-.order__delivery-text-input,
-.order__personal-info-input {
-  width: 100%;
-  padding: 8px 12px;
-  margin-top: 8px;
-
-  border: 1px solid #ebeced;
-  border-radius: 3px;
-  box-sizing: border-box;
-
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
-    display: none;
-    -webkit-appearance: none;
-    margin: 0;
-  }
 }
 
 .order__confirmation-costs-table {
@@ -337,11 +230,6 @@
 
   .order__cart-desc {
     grid-row: 1/3;
-  }
-
-  .order__cart-product-title {
-    font-size: 16px;
-    line-height: 22px;
   }
 
   .order__cart-modifications-list {
