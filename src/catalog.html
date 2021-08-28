@@ -62,43 +62,48 @@
     <h1 class="page-main__title page-main__title--catalog">Каталог</h1>
     <aside class="page-main__aside">
       <section class="page-main__filters filters">
-        <form class="filters__form filters__form--sorting" action="https://js.dump/anybox" method="POST">
-          <input class="filters__search-input" type="search" name="search-product" placeholder="Поиск ..."
-            maxlength="255">
-          <button class="filters__search-btn" type="submit">
-            <svg class="filters__search-icon" width="12" height="12">
-              <use xlink:href="img/sprite.svg#icon-search-strong"></use>
-            </svg>
-          </button>
+        <form class="filters__form form-elements" action="https://js.dump/anybox" method="POST">
+          <div class="form-elements__container">
+            <input class="form-elements__input-text form-elements__input-text--with-icon" type="search"
+              name="search-product" id="search-product-field" placeholder="Поиск ..." maxlength="255">
+            <label class="visually-hidden" for="search-product-field">Поле поиск</label>
+            <button class="form-elements__btn btn" type="submit">
+              <svg class="form-elements__icon" width="12" height="12">
+                <use xlink:href="img/sprite.svg#icon-search-strong"></use>
+              </svg>
+            </button>
+          </div>
         </form>
-        <form class="filters__form filters__form--column" action="https://js.dump/anybox" method="POST">
-          <h2 class="filters__form-title">Фильтр по категориям</h2>
-          <ul class="filters__list">
-            <li class="filters__item-list">
-              <input type="checkbox" class="filters__input-checkbox visually-hidden" name="gift-boxes"
-                id="gift-boxes-field">
-              <label for="gift-boxes-field" class="filters__label">Подарочные наборы</label>
-            </li>
-            <li class="filters__item-list">
-              <input type="checkbox" class="filters__input-checkbox visually-hidden" name="shoulder-bags"
-                id="shoulder-bags-field">
-              <label for="shoulder-bags-field" class="filters__label">Сумки через плечо</label>
-            </li>
-            <li class="filters__item-list">
-              <input type="checkbox" class="filters__input-checkbox visually-hidden" name="body-care"
-                id="body-care-field">
-              <label for="body-care-field" class="filters__label">Уход за телом</label>
-            </li>
-            <li class="filters__item-list">
-              <input type="checkbox" class="filters__input-checkbox visually-hidden" name="cookware"
-                id="cookware-field">
-              <label for="cookware-field" class="filters__label">Посуда</label>
-            </li>
-          </ul>
+        <form class="filters__form form-elements" action="https://js.dump/anybox" method="POST">
+          <div class="form-elements__container form-elements__container--column">
+            <h2 class="title title--form">Фильтр по категориям</h2>
+            <ul class="form-elements__list">
+              <li class="form-elements__item">
+                <input class="form-elements__input-checkbox visually-hidden" type="checkbox" name="gift-boxes"
+                  id="gift-boxes-field">
+                <label class="form-elements__label-checkbox" for="gift-boxes-field">Подарочные наборы</label>
+              </li>
+              <li class="form-elements__item">
+                <input class="form-elements__input-checkbox visually-hidden" type="checkbox" name="shoulder-bags"
+                  id="shoulder-bags-field">
+                <label class="form-elements__label-checkbox" for="shoulder-bags-field">Сумки через плечо</label>
+              </li>
+              <li class="form-elements__item">
+                <input class="form-elements__input-checkbox visually-hidden" type="checkbox" name="body-care"
+                  id="body-care-field">
+                <label class="form-elements__label-checkbox" for="body-care-field">Уход за телом</label>
+              </li>
+              <li class="form-elements__item">
+                <input class="form-elements__input-checkbox visually-hidden" type="checkbox" name="cookware"
+                  id="cookware-field">
+                <label class="form-elements__label-checkbox" for="cookware-field">Посуда</label>
+              </li>
+            </ul>
+          </div>
         </form>
         <form class="filters__form filters__form--column" action="https://js.dump/anybox" method="POST"
           data-price="container">
-          <h2 class="filters__form-title">Фильтр по цене</h2>
+          <h2 class="title title--form">Фильтр по цене</h2>
           <div class="filters__range-controls">
             <div class="filters__scale-bar"></div>
             <div class="filters__bar-toggle" data-price-toggle="min"></div>

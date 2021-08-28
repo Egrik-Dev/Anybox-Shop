@@ -1,112 +1,14 @@
 .filters__form {
-  display: flex;
-  padding: 30px;
   margin-bottom: 30px;
 
-  border: 1px solid #ebeced;
-  border-radius: 3px;
-
   &--column {
+    display: flex;
     flex-direction: column;
-  }
-}
+    padding: 30px;
 
-.filters__search-container {
-  display: flex;
-  padding: 30px;
-
-  border: 1px solid #ebeced;
-  border-radius: 3px;
-}
-
-.filters__search-input {
-  flex-grow: 1;
-  margin-right: 10px;
-  padding: 8px 12px;
-
-  border: 1px solid #ebeced;
-  border-radius: 3px;
-
-  &::-webkit-input-placeholder {
-    color: #adadad;
-  }
-}
-
-.filters__search-btn {
-  padding: 12px 20px;
-
-  border: none;
-  border-radius: 4px;
-  background-color: #fb395c;
-
-  cursor: pointer;
-}
-
-.filters__search-icon {
-  fill: white;
-}
-
-.filters__form-title {
-  font-size: 20px;
-  line-height: 1.2em;
-  text-transform: uppercase;
-  color: #3b3d42;
-  font-weight: 400;
-
-  margin: 0 0 25px;
-}
-
-.filters__list {
-  @include reset-list;
-
-  display: grid;
-  gap: 10px;
-  align-items: start;
-  grid-template-columns: repeat(auto-fill, minmax(180px, auto));
-}
-
-.filters__item-list {
-  display: flex;
-  align-items: center;
-
-  margin-bottom: 10px;
-
-  &:nth-last-child(1) {
-    margin-bottom: 0;
-  }
-}
-
-.filters__label {
-  position: relative;
-
-  padding-left: 30px;
-
-  color: #fb395c;
-  text-transform: capitalize;
-
-  cursor: pointer;
-
-  &::before {
-    position: absolute;
-    top: 3px;
-    left: 0;
-
-    content: "";
-
-    width: 16px;
-    height: 16px;
     border: 1px solid #ebeced;
-    border-radius: 4px;
+    border-radius: 3px;
   }
-}
-
-.filters__input-checkbox:checked ~ .filters__label {
-  color: #3b3d42;
-}
-
-.filters__input-checkbox:checked ~ .filters__label::before {
-  background: url(../img/icon-check-mark.svg) no-repeat center center;
-  background-size: 12px;
 }
 
 .filters__range-controls {
@@ -162,18 +64,5 @@
 @media (min-width: $desktop-width) {
   .filters {
     padding: 10px 15px 0 0;
-  }
-
-  .filters__search-input {
-    width: 173px;
-  }
-
-  .filters__search-btn,
-  .filters__price-btn {
-    transition: 0.3s;
-
-    &:hover {
-      background-color: rgb(255, 95, 130);
-    }
   }
 }
