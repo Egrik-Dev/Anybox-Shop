@@ -234,6 +234,15 @@
 .order__confirmation-btn {
   width: 100%;
   margin-bottom: 20px;
+
+  &--disabled {
+    background-color: #ebebeb;
+    color: #383838;
+
+    &:hover {
+      background-color: #ebebeb;
+    }
+  }
 }
 
 .order__confirmation-post-msg {
