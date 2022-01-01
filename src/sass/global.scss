@@ -65,6 +65,39 @@ img {
   cursor: pointer;
 }
 
+.btn-del {
+  text-decoration: underline;
+
+  border: none;
+  background-color: transparent;
+  opacity: 0.5;
+  cursor: pointer;
+
+  transition: 0.3s;
+
+  &:hover {
+    opacity: 1;
+    color: #fb395c;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  display: none;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  &--show {
+    display: block;
+  }
+}
+
 @media (min-width: $desktop-width) {
   .btn {
     transition: 0.3s;

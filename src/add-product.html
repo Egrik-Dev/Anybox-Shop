@@ -50,6 +50,15 @@
           <label class="add-product__label" for="title-field">Наименование</label>
           <input class="form-elements__input-text" type="text" name="title" id="title-field" required>
         </div>
+        <div class="add-product__form-group">
+          <label class="add-product__label" for="price-field">Цена</label>
+          <input class="form-elements__input-text" type="number" name="price" id="price-field" min="1" required>
+        </div>
+        <div class="add-product__form-group">
+          <input class="form-elements__input-checkbox visually-hidden" type="checkbox" name="in-stock"
+            id="in-stock-field">
+          <label class="add-product__inline-label form-elements__label-checkbox" for="in-stock-field">В наличии</label>
+        </div>
         <div class="add-product__form-group form-elements__container">
           <h2 class="title title--form">Выберите категории</h2>
           <ul class="add-product__form-list form-elements__list">
@@ -81,29 +90,40 @@
           <textarea class="form-elements__text-area" name="description-full" id="description-full-field"
             placeholder="Расскажите подробнее о товаре" rows="6"></textarea>
         </div>
-        <div class="add-product__form-group">
-          <label class="add-product__label" for="price-field">Цена</label>
-          <input class="form-elements__input-text" type="number" name="price" id="price-field" min="1" required>
-        </div>
-        <div class="add-product__form-group">
-          <label class="add-product__label" for="image-field">Картинка</label>
-          <input class="form-elements__input-text" type="text" name="image" id="image-field"
-            placeholder="Ссылка на фото" required>
+        <div class="add-product__form-group form-elements__container">
+          <h2 class="title title--form">Картинки</h2>
+          <ul class="add-product__image-list" data-image="container">
+            <li class="add-product__image-item">
+              <div class="form-elements__item">
+                <input class="form-elements__input-checkbox visually-hidden" type="checkbox" name="prod-name-1"
+                  id="prod-name-1-field">
+                <label class="form-elements__label-checkbox" for="prod-name-1-field">Удалить</label>
+              </div>
+              <div class="add-product__image-wrapper">
+                <img class="add-product__image-preview" src="./img/prodcut-hibiscus-washcloth.webp"
+                  alt="Мочалка для тела из гибискуса">
+              </div>
+            </li>
+            <li class="add-product__image-item add-product__image-item--new" data-image="item">
+              <div class="add-product__image-wrapper">
+                <label class="add-product__label-file" for="image-field-1"><span class="visually-hidden">Картинка</span>
+                  <svg class="add-product__img-add">
+                    <use xlink:href="img/sprite.svg#icon-plus"></use>
+                  </svg>
+                  <input class="form-elements__input-file" type="file" name="image" id="image-field-1"
+                    placeholder="Выберите картинку" data-image-last="true">
+                </label>
+              </div>
+            </li>
+          </ul>
         </div>
         <div class="add-product__form-group form-elements__container">
           <h2 class="title title--form">Характеристики</h2>
-          <ul class="add-product__parameters-list form-elements__list form-elements__list--column">
-            <li class="form-elements__item">
-              <input class="form-elements__input-text" type="text" name="parameter-key-1" id="parameter--key-1-field"
-                placeholder="Ключ" required>
-              <label class="visually-hidden" for="parameter--key-1-field">Ключ параметра 1</label>
-              <span class="form-elements__dash">-</span>
-              <input class="form-elements__input-text" type="text" name="parameter-value-1"
-                id="parameter--value-1-field" placeholder="Значение" required>
-              <label class="visually-hidden" for="parameter--key-1-field">Значение параметра 1</label>
-            </li>
+          <ul class="add-product__parameters-list form-elements__list form-elements__list--column"
+            data-parameters="list">
           </ul>
-          <button class="add-product__parameters-btn btn" type="button">Добавить характеристику</button>
+          <button class="add-product__parameters-btn btn" type="button" data-parameters="btn">Добавить
+            характеристику</button>
         </div>
         <button class="add-product__form-btn btn" type="submit">Создать товар</button>
       </form>

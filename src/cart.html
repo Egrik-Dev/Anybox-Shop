@@ -62,113 +62,167 @@
     <h1 class="page-main__title visually-hidden">Страница оформления заказа</h1>
     <section class="page-main__order order">
       <h2 class="order__title visually-hidden">Форма оформления заказа</h2>
-      <form class="order__form" action="https://echo.anybox.ru" method="POST">
-        <div class="order__cart">
-          <h3 class="order__subtitle">Корзина</h3>
-          <ul class="order__cart-list">
-            <li class="order__cart-item">
-              <a class="order__cart-img-link" href="/product-cutton-buds-pink.html">
-                <img class="order__cart-img" src="./img/product-cutton-buds-pink.webp" alt="Бамбуковые ватные палочки">
-              </a>
-              <div class="order__cart-desc">
-                <h4 class="order__cart-product-title">
-                  <a href="/product-cutton-buds-pink.html" class="order__cart-product-link">Бамбуковые ватные
-                    палочки</a>
-                </h4>
-                <ul class="order__cart-modifications-list">
-                  <li class="order__cart-modifications-item">
-                    <p class="order__cart-modifications-row">
-                      <span class="order__cart-modifications-key">Цвет:</span>
-                      <span class="order__cart-modifications-value">Розовый</span>
-                    </p>
-                  </li>
-                </ul>
-              </div>
-              <div class="order__cart-item-qty">
-                <div class="order__cart-qty-block">
-                  <button class="order__cart-item-btn order__cart-item-btn--dec">–</button>
-                  <input class="order__cart-qty-field" type="number" value="1" name="item-qty" id="qty-field" min="1">
-                  <button class="order__cart-item-btn order__cart-item-btn--inc">+</button>
+
+      <!-- Пустая корзина -->
+      <!-- <div class="order__empty-cart" data-empty-cart="true">
+        <h2 class="title">Корзина пуста</h2>
+        <svg class="order__empty-cart-icon" width="100" height="100">
+          <use xlink:href="img/sprite.svg#icon-empty-cart-3"></use>
+        </svg>
+        <p class="order__empty-cart-text">
+          В корзине пока нет товаров. Воспользуйтесь каталогом чтобы приступить к покупкам.
+        </p>
+        <a href="/catalog" class="order__empty-cart-btn btn">Перейти в каталог</a>
+      </div> -->
+
+      <!-- Нет товаров в коризне -->
+      <div class="message message--error" data-order="warning">
+        <p class="message__text">Минимальная сумма заказа 1000 р. Пожалуйста добавьте товар в
+          корзину для завершения оформления заказа</p>
+        <svg class="message__img" width="16" height="16">
+          <use xlink:href="/img/sprite.svg#icon-error"></use>
+        </svg>
+      </div>
+
+      <div class="order__cart">
+        <h3 class="order__subtitle">Корзина</h3>
+        <ul class="order__cart-list">
+          <li class="order__cart-item">
+            <form class="order__cart-item-form" id="formProduct">
+              <fieldset class="order__cart-form-fieldset" data-form="fieldset">
+                <a class="order__cart-img-link" href="/product-cutton-buds-pink.html">
+                  <picture>
+                    <source type="image/webp" srcset="./img/product-cutton-buds-pink.webp">
+                    <img class="order__cart-img" src="./img/product-cutton-buds-pink.jpeg"
+                      alt="Восковые салфетки ANYBOX-ECO, 0.3м х 32 см">
+                  </picture>
+                </a>
+                <div class="order__cart-desc">
+                  <h4 class="order__cart-product-title">
+                    <a class="order__cart-product-link" href="/product-wax-napkins.html">Восковые салфетки ANYBOX-ECO,
+                      0.3м х 32 см
+                    </a>
+                  </h4>
+                  <ul class="order__cart-modifications-list">
+                    <li class="order__cart-modifications-item">
+                      <p class="order__cart-modifications-row">
+                        <span class="order__cart-modifications-key">Материал:</span>
+                        <span class="order__cart-modifications-value">Воск, Смола, Хлопок</span>
+                      </p>
+                      <p class="order__cart-modifications-row">
+                        <span class="order__cart-modifications-key">Длина, м:</span>
+                        <span class="order__cart-modifications-value">0.3</span>
+                      </p>
+                      <p class="order__cart-modifications-row">
+                        <span class="order__cart-modifications-key">Ширина, см:</span>
+                        <span class="order__cart-modifications-value">32</span>
+                      </p>
+                    </li>
+                  </ul>
                 </div>
-              </div>
-              <div class="order__cart-item-price">
-                <p class="order__cart-current-price">390 ₽</p>
-                <p class="order__cart-old-price">620 ₽</p>
-              </div>
-              <a class="order__cart-btn-delete">
-                <span class="visually-hidden">Удалить</span>
-                <svg class="order__cart-delete-icon" width="22" height="22">
-                  <use xlink:href="img/sprite.svg#icon-delete"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="order__cart-item">
-              <a href="/product-cutton-buds-pink.html" class="order__cart-img-link">
-                <img class="order__cart-img" src="./img/product-wax-napkins.webp"
-                  alt="Восковые салфетки ANYBOX-ECO, 0.3м х 32 см">
-              </a>
-              <div class="order__cart-desc">
-                <h4 class="order__cart-product-title">
-                  <a href="/product-wax-napkins.html" class="order__cart-product-link">Восковые салфетки ANYBOX-ECO,
-                    0.3м х 32 см
-                  </a>
-                </h4>
-                <ul class="order__cart-modifications-list">
-                  <li class="order__cart-modifications-item">
-                    <p class="order__cart-modifications-row">
-                      <span class="order__cart-modifications-key">Материал:</span>
-                      <span class="order__cart-modifications-value">Воск, Смола, Хлопок</span>
-                    </p>
-                    <p class="order__cart-modifications-row">
-                      <span class="order__cart-modifications-key">Длина, м:</span>
-                      <span class="order__cart-modifications-value">0.3</span>
-                    </p>
-                    <p class="order__cart-modifications-row">
-                      <span class="order__cart-modifications-key">Ширина, см:</span>
-                      <span class="order__cart-modifications-value">32</span>
-                    </p>
-                  </li>
-                </ul>
-              </div>
-              <div class="order__cart-item-qty">
-                <div class="order__cart-qty-block">
-                  <button class="order__cart-item-btn order__cart-item-btn--dec">–</button>
-                  <input class="order__cart-qty-field" type="number" value="1" name="item-qty" id="qty-field" min="1">
-                  <button class="order__cart-item-btn order__cart-item-btn--inc">+</button>
+                <div class="order__cart-item-qty">
+                  <div class="order__cart-qty-block">
+                    <button class="order__cart-item-btn order__cart-item-btn--dec" type="button"
+                      data-product="qtyBtn">–</button>
+                    <input class="order__cart-qty-field" type="number" value="1" name="qty"
+                      id="qty-field" min="1" data-product="qtyInput">
+                    <button class="order__cart-item-btn order__cart-item-btn--inc" type="button"
+                      data-product="qtyBtn">+</button>
+                  </div>
                 </div>
-              </div>
-              <div class="order__cart-item-price">
-                <p class="order__cart-current-price">930 ₽</p>
-                <p class="order__cart-old-price">1300 ₽</p>
-              </div>
-              <a class="order__cart-btn-delete">
-                <span class="visually-hidden">Удалить</span>
-                <svg class="order__cart-delete-icon" width="22" height="22">
-                  <use xlink:href="img/sprite.svg#icon-delete"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
-        </div>
+                <div class="order__cart-item-price">
+                  <p class="order__cart-total-price" data-product="price">2600 ₽</p>
+                  <p class="order__cart-per-unite-price" data-product="per-unite-price" >1300 ₽ (за 1 шт.)</p>
+                </div>
+                <button class="order__cart-btn-delete" type="submit" name="del-from-cart" data-product="delete">
+                  <span class="visually-hidden">Удалить</span>
+                  <svg class="order__cart-delete-icon" width="22" height="22">
+                    <use xlink:href="img/sprite.svg#icon-delete"></use>
+                  </svg>
+                  <input type="hidden" id="prodId" name="prodId" value="2">
+                </button>
+              </fieldset>
+            </form>
+          </li>
+          <li class="order__cart-item">
+            <form class="order__cart-item-form" id="formProduct">
+              <fieldset class="order__cart-form-fieldset" data-form="fieldset">
+                <a class="order__cart-img-link" href="/product-cutton-buds-pink.html">
+                  <picture>
+                    <source type="image/webp" srcset="./img/product-cutton-buds-pink.webp">
+                    <img class="order__cart-img" src="./img/product-cutton-buds-pink.jpeg"
+                      alt="Восковые салфетки ANYBOX-ECO, 0.3м х 32 см">
+                  </picture>
+                </a>
+                <div class="order__cart-desc">
+                  <h4 class="order__cart-product-title">
+                    <a class="order__cart-product-link" href="/product-wax-napkins.html">Восковые салфетки ANYBOX-ECO,
+                      0.3м х 32 см
+                    </a>
+                  </h4>
+                  <ul class="order__cart-modifications-list">
+                    <li class="order__cart-modifications-item">
+                      <p class="order__cart-modifications-row">
+                        <span class="order__cart-modifications-key">Материал:</span>
+                        <span class="order__cart-modifications-value">Воск, Смола, Хлопок</span>
+                      </p>
+                      <p class="order__cart-modifications-row">
+                        <span class="order__cart-modifications-key">Длина, м:</span>
+                        <span class="order__cart-modifications-value">0.3</span>
+                      </p>
+                      <p class="order__cart-modifications-row">
+                        <span class="order__cart-modifications-key">Ширина, см:</span>
+                        <span class="order__cart-modifications-value">32</span>
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="order__cart-item-qty">
+                  <div class="order__cart-qty-block">
+                    <button class="order__cart-item-btn order__cart-item-btn--dec" type="button"
+                      data-product="qtyBtn">–</button>
+                    <input class="order__cart-qty-field" type="number" value="2" name="qty"
+                      id="qty-field" min="1" data-product="qtyInput">
+                    <button class="order__cart-item-btn order__cart-item-btn--inc" type="button"
+                      data-product="qtyBtn">+</button>
+                  </div>
+                </div>
+                <div class="order__cart-item-price">
+                  <p class="order__cart-total-price" data-product="price">2600 ₽</p>
+                  <p class="order__cart-per-unite-price" data-product="per-unite-price" >1300 ₽ (за 1 шт.)</p>
+                </div>
+                <button class="order__cart-btn-delete" type="submit" name="del-from-cart" data-product="delete">
+                  <span class="visually-hidden">Удалить</span>
+                  <svg class="order__cart-delete-icon" width="22" height="22">
+                    <use xlink:href="img/sprite.svg#icon-delete"></use>
+                  </svg>
+                  <input type="hidden" id="prodId" name="prodId" value="2">
+                </button>
+              </fieldset>
+            </form>
+          </li>
+        </ul>
+      </div>
+      <form class="order__form" action="/create-order" method="POST">
         <div class="order__delivery">
           <h3 class="order__subtitle">Способ доставки</h3>
           <ul class="order__delivery-list form-elements__list form-elements__list--column">
             <li class="form-elements__item">
-              <input class="form-elements__input-radio visually-hidden" type="radio" name="delivery-method" id="pickup"
+              <input class="form-elements__input-radio visually-hidden" type="radio" name="deliveryMethod" id="pickup"
                 value="pickup">
               <label class="form-elements__label-radio order__delivery-label--pickup" for="pickup">Самовывоз</label>
             </li>
             <li class="form-elements__item">
-              <input class="form-elements__input-radio visually-hidden" type="radio" name="delivery-method"
-                id="delivery-msk" value="delivery-msk">
-              <label class="form-elements__label-radio order__delivery-label--msk" for="delivery-msk">Курьерская
+              <input class="form-elements__input-radio visually-hidden" type="radio" name="deliveryMethod"
+                id="deliveryMsk" value="deliveryMsk">
+              <label class="form-elements__label-radio order__delivery-label--msk" for="deliveryMsk">Курьерская
                 доставка по
                 Москве</label>
             </li>
             <li class="form-elements__item">
-              <input class="form-elements__input-radio visually-hidden" type="radio" name="delivery-method"
-                id="russia-post" value="russia-post" checked>
-              <label class="form-elements__label-radio order__delivery-label--post" for="russia-post">Почта
+              <input class="form-elements__input-radio visually-hidden" type="radio" name="deliveryMethod"
+                id="russiaPost" value="russiaPost" checked>
+              <label class="form-elements__label-radio order__delivery-label--post" for="russiaPost">Почта
                 РФ</label>
             </li>
           </ul>
@@ -178,7 +232,7 @@
                 <span class="form-elements__label-text-title">Почтовый индекс</span>
                 <span class="form-elements__label-text-required">*</span>
               </label>
-              <input class="form-elements__input-text" type="number" name="zip-code" id="zip-code-field" required>
+              <input class="form-elements__input-text" type="number" name="zipСode" id="zip-code-field" required>
             </li>
             <li class="form-elements__item form-elements__item--column">
               <label class="form-elements__label-text" for="city-field">
@@ -200,12 +254,12 @@
           <h3 class="order__subtitle">Способ оплаты</h3>
           <ul class="form-elements__list form-elements__list--column">
             <li class="form-elements__item">
-              <input class="form-elements__input-radio visually-hidden" type="radio" name="payment-method" id="cash"
+              <input class="form-elements__input-radio visually-hidden" type="radio" name="paymentMethod" id="cash"
                 value="cash" checked>
               <label class="form-elements__label-radio" for="cash">Наличными при получении</label>
             </li>
             <li class="form-elements__item">
-              <input class="form-elements__input-radio visually-hidden" type="radio" name="payment-method" id="card"
+              <input class="form-elements__input-radio visually-hidden" type="radio" name="paymentMethod" id="card"
                 value="card">
               <label class="form-elements__label-radio" for="card">Переводом на карту</label>
             </li>
@@ -219,14 +273,14 @@
                 <span class="form-elements__label-text-title">Имя</span>
                 <span class="form-elements__label-text-required">*</span>
               </label>
-              <input type="text" class="form-elements__input-text" name="user-name" id="user-name-field" required>
+              <input type="text" class="form-elements__input-text" name="name" id="user-name-field" required>
             </li>
             <li class="form-elements__item form-elements__item--column">
               <label class="form-elements__label-text" for="user-phone">
                 <span class="form-elements__label-text-title">Контактный телефон</span>
                 <span class="form-elements__label-text-required">*</span>
               </label>
-              <input class="form-elements__input-text" type="tel" name="user-tel" id="user-tel-field"
+              <input class="form-elements__input-text" type="tel" name="phone" id="user-tel-field"
                 pattern="([\+]*[7-8]{1}\s?[\(]*9[0-9]{2}[\)]*\s?\d{3}[-]*\d{2}[-]*\d{2})"
                 placeholder="+7 (960) 900-60-90" required>
             </li>
@@ -235,7 +289,7 @@
                 <span class="form-elements__label-text-title">Электронная почта</span>
                 <span class="form-elements__label-text-required">*</span>
               </label>
-              <input type="email" class="form-elements__input-text" name="user-email" id="user-email-field" required>
+              <input type="email" class="form-elements__input-text" name="email" id="user-email-field" required>
             </li>
           </ul>
         </div>
@@ -245,41 +299,26 @@
             <table class="order__confirmation-costs-table">
               <tr class="order__confirmation-costs-row order__confirmation-costs-row--total">
                 <td class="order__confirmation-costs-key">Итого</td>
-                <td class="order__confirmation-costs-value">1320 ₽</td>
+                <td class="order__confirmation-costs-value" data-confirmation="totalPrice">1320 ₽</td>
+                <input type="hidden" name="totalPrice" value="1320">
               </tr>
               <tr class="order__confirmation-costs-row">
                 <td class="order__confirmation-costs-key">
                   <span class="order__confirmation-costs-word">Товары,</span>
-                  <span class="order__confirmation-costs-word">2 шт</span>
+                  <span class="order__confirmation-costs-word">3 шт</span>
                 </td>
-                <td class="order__confirmation-costs-value">1320 ₽</td>
-              </tr>
-              <tr class="order__confirmation-costs-row">
-                <td class="order__confirmation-costs-key">Скидка</td>
-                <td class="order__confirmation-costs-value">-600 ₽</td>
+                <td class="order__confirmation-costs-value" data-confirmation="productsPrice">2990 ₽</td>
               </tr>
               <tr class="order__confirmation-costs-row">
                 <td class="order__confirmation-costs-key">Доставка</td>
-                <td class="order__confirmation-costs-value">Бесплатно</td>
+                <td class="order__confirmation-costs-value" data-confirmation="deliveryCost">0</td>
+                <input type="hidden" name="deliveryPrice" value="0">
               </tr>
             </table>
           </div>
-          <!-- <div class="order__confirmation-details">
-            <table class="order__confirmation-details-table">
-              <tr class="order__confirmation-details-row">
-                <td class="order__confirmation-details-value">Доставка:</td>
-                <td class="order__confirmation-details-key">Курьером</td>
-              </tr>
-              <tr class="order__confirmation-details-row">
-                <td class="order__confirmation-details-value">Дата:</td>
-                <td class="order__confirmation-details-key">13-15 Августа</td>
-              </tr>
-              <tr class="order__confirmation-details-row">
-                <td class="order__confirmation-details-value">Оплата:</td>
-                <td class="order__confirmation-details-key">Наличными</td>
-              </tr>
-            </table>
-          </div> -->
+          <p class="order__confirmation-post-msg visually-hidden">
+            Итоговая стоимость доставки будет рассчитана менеджером после оформления заказа
+          </p>
           <button class="order__confirmation-btn btn" type="submit" name="send-order">Оформить заказ</button>
           <p class="order__confirmation-terms">Согласен с условиями Правил пользования торговой площадкой и правилами
             возврата</p>

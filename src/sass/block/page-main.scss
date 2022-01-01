@@ -4,6 +4,10 @@
     padding: 0 20px;
   }
 
+  &--catalog {
+    padding-bottom: 30px;
+  }
+
   &--product {
     padding: 50px 25px;
   }
@@ -67,6 +71,7 @@
       display: grid;
       grid-template-columns: 310px auto;
       grid-template-rows: auto 80px auto;
+      // padding-bottom: 20px;
     }
 
     &--product,
@@ -116,5 +121,10 @@
   .page-main__products {
     grid-column: 2/3;
     grid-row: 3/4;
+  }
+
+  .page-main__category-description {
+    grid-column: 2/3;
+    grid-row: 4/4;
   }
 }

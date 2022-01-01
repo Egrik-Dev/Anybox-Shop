@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="/">
+  <title>Оформлен новый заказ</title>
+  <style>
+    .order-email {
+      padding: 0 20px;
+      max-width: 660px;
+      margin: auto;
+    }
+
+    .title {
+      margin: 0 0 20px;
+
+      color: #383838;
+      font-size: 24px;
+      text-transform: capitalize;
+      line-height: 1.25em;
+    }
+
+    .order-email__text-block {
+      margin-bottom: 30px;
+    }
+
+    .order-email__text {
+      font-size: 18px;
+      line-height: 1.69em;
+      margin: 0;
+    }
+
+    .orders__table {
+      width: 100%;
+
+      border: 1px solid #ebeced;
+      border-radius: 5px;
+    }
+
+    .orders__table>tbody {
+      /* outline: 1px solid #ebeced; */
+      margin-bottom: 20px;
+    }
+
+    .orders__table-title {
+      margin: 0 0 20px;
+    }
+
+    .orders__table-row--number {
+      margin: -1px;
+
+      color: #fff;
+
+      background-color: #33a1ef;
+      border-radius: 5px 5px 0 0;
+    }
+
+    .orders__table-cell {
+      padding: 10px;
+    }
+
+    .orders__table-title {
+      color: #383838;
+      font-size: 20px;
+      text-transform: capitalize;
+      line-height: 1.25em;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    .orders__product-info-block {
+      margin-bottom: 15px;
+    }
+
+    .orders__number {
+      margin: 0;
+    }
+
+    .orders__arrow {
+      top: 15px;
+      right: 14px;
+    }
+
+    .orders__user-info-key,
+    .orders__total-key {
+      color: #a4a9ab;
+    }
+
+    .orders__user-info-value,
+    .orders__total-value {
+      padding-left: 10px;
+    }
+
+    .orders__product-list {
+      margin: 0;
+      padding: 0;
+
+      list-style: none;
+    }
+
+    .orders__product-item {
+      margin-bottom: 10px;
+    }
+
+    .orders__product-price-block {
+      position: relative;
+
+      padding-left: 40px;
+      min-width: 50px;
+    }
+
+    .orders__product-row {
+      margin: 0;
+    }
+
+    .orders__product-title {
+      color: #a4a9ab;
+      font-size: 12px;
+    }
+
+    .orders__product-qty-num {
+      margin-right: 5px;
+    }
+
+    .orders__product-price {
+      font-weight: 700;
+    }
+
+    .orders__delivery-method {
+      margin: 0 0 10px;
+    }
+
+    .orders__total-table {
+      width: 100%;
+      border-spacing: 10px;
+      -webkit-border-horizontal-spacing: 0
+    }
+
+    .orders__total-value {
+      text-align: right;
+    }
+
+    .order__total-row--subtotal {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .orders__total-key--subtotal {
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <!-- <header>
+    <a href="/" class="page-header__logo">
+      <picture>
+        <source type="image/webp" srcset="img/icon-logo@1x.webp 1x, img/icon-logo@2x.webp 2x">
+        <img class="page-header__logo" src="img/icon-logo@1x.png" srcset="img/icon-logo@2x.png 2x"
+          alt="Логотип магазина AnyBox">
+      </picture>
+    </a>
+  </header> -->
+  <main class="order-email">
+    <h1 class="title">Благодарим вас за оформление заказа № 42145</h1>
+    <div class="order-email__text-block">
+      <p class="order-email__text">Здравствуйте!<br>
+        Вы оформили заказ 42145, и мы уже начали его обрабатывать.<br>
+        В ближайшее время с вами свяжется менеджер для обсуждения деталей</p>
+    </div>
+    <table class="orders__table">
+      <tr class="orders__table-row orders__table-row--number">
+        <td class="orders__table-cell orders__table-cell--number">
+          <p class="orders__number">
+            №
+            <span class="orders__number-num">42145</span>
+            <span class="orders__number-date">от 23.09.21</span>
+          </p>
+          <div class="orders__arrow menu-arrow"></div>
+        </td>
+      </tr>
+      <tr class="orders__table-row orders__table-row--products">
+        <td class="orders__table-cell orders__table-cell--products">
+          <h2 class="orders__table-title">Товары</h2>
+          <table>
+            <tr class="orders__table-product-row">
+              <td>
+                <div class="orders__product-info-block">
+                  <p class="orders__product-row">
+                    <span class="orders__product-qty-num">2 шт.</span>
+                    <span class="orders__product-sku">Артикул: 28328012</span>
+                  </p>
+                  <p class="orders__product-row">
+                    <span class="orders__product-title">Восковые салфетки ANYBOX-ECO, 0.3м х 32 см</span>
+                  </p>
+                </div>
+              </td>
+              <td>
+                <div class="orders__product-price-block">
+                  <span class="orders__product-price">2600 ₽</span>
+                </div>
+              </td>
+            </tr>
+            <tr class="orders__table-product-row">
+              <td>
+                <div class="orders__product-info-block">
+                  <p class="orders__product-row">
+                    <span class="orders__product-qty-num">1 шт.</span>
+                    <span class="orders__product-sku">Артикул: 24428012</span>
+                  </p>
+                  <p class="orders__product-row">
+                    <span class="orders__product-title">Бамбуковые ватные палочки</span>
+                  </p>
+                </div>
+              </td>
+              <td>
+                <div class="orders__product-price-block">
+                  <span class="orders__product-price">390 ₽</span>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr class="orders__table-row orders__table-row--delivery">
+        <td class="orders__table-cell orders__table-cell--delivery">
+          <h2 class="orders__table-title">Способ доставки</h2>
+          <p class="orders__delivery-method">Доставка по Москве</p>
+          <span class="ymaps-geolink">
+            г. Москва, 2-я улица Марьиной Рощи, 12с2
+          </span>
+        </td>
+      </tr>
+      <tr class="orders__table-row orders__table-row--total">
+        <td class="orders__table-cell orders__table-cell--total">
+          <h2 class="orders__table-title">К оплате</h2>
+          <table class="orders__total-table">
+            <tr class="orders__total-row order__total-row--subtotal">
+              <td class="orders__total-key">Итого:</td>
+              <td class="orders__total-value">3240 ₽</td>
+            </tr>
+            <tr class="orders__total-row">
+              <td class="orders__total-key">
+                <span class="orders__total--word">Товары,</span>
+                <span class="orders__total-word">3 шт:</span>
+              </td>
+              <td class="orders__total-value">2990 ₽</td>
+            </tr>
+            <tr class="orders__total-row">
+              <td class="orders__total-key">Доставка:</td>
+              <td class="orders__total-value">250 ₽</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </main>
+</body>

@@ -15,3 +15,49 @@
 .add-product__label {
   margin-bottom: 8px;
 }
+
+.add-product__inline-label {
+  align-self: flex-start;
+}
+
+.add-product__parameters-del-btn {
+  position: relative;
+
+  margin-left: 20px;
+
+  background-color: transparent;
+  border: 1px solid #ebeced;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &::after,
+  &::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    width: 3px;
+    height: 70%;
+    margin: auto;
+
+    content: "";
+
+    border-radius: 4px;
+    background-color: #fb395c;
+  }
+
+  &::after {
+    transform: rotate(45deg);
+  }
+
+  &::before {
+    transform: rotate(-45deg);
+  }
+
+  &:hover::after,
+  &:hover::before {
+    background-color: white;
+  }
+}

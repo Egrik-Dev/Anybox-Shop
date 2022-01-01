@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Добавление новой категории</title>
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+  <header class="page-header page-header--admin">
+    <a href="index.html" class="page-header__logo">
+      <picture>
+        <source type="image/webp" srcset="img/icon-logo@1x.webp 1x, img/icon-logo@2x.webp 2x">
+        <img class="page-header__logo" src="img/icon-logo@1x.png" srcset="img/icon-logo@2x.png 2x"
+          alt="Логотип магазина AnyBox">
+      </picture>
+    </a>
+    <button class="page-header__open-btn">
+      <span class="visually-hidden">Открыть меню</span>
+    </button>
+    <nav class="page-header__nav">
+      <button class="page-header__close-btn">
+        <span class="visually-hidden">Закрыть меню</span>
+      </button>
+      <ul class="page-header__nav-list">
+        <li class="page-header__nav-item">
+          <a href="index.html" class="page-header__nav-link">Главная</a>
+        </li>
+        <li class="page-header__nav-item">
+          <a href="orders.html" class="page-header__nav-link">Заказы</a>
+        </li>
+        <li class="page-header__nav-item">
+          <a href="admin-products.html" class="page-header__nav-link">Товары</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="page-main page-main--admin">
+    <h1 class="title">Новая категория</h1>
+    <section class="page-main__add-category add-category">
+      <form class="add-category__form" action="/admin/add-category" method="POST" enctype="multipart/form-data">
+        <!-- Наименование -->
+        <div class="add-category__form-group">
+          <label class="add-category__label" for="title-field">Наименование</label>
+          <input class="form-elements__input-text" type="text" name="title" id="title-field" required>
+        </div>
+        <!-- Родительская категория -->
+        <div class="add-category__form-group form-elements__container">
+          <h2 class="title title--form">Родительская категория</h2>
+          <label class="visually-hidden" for="category-box">Родительская категория</label>
+          <select class="add-category__form-select" name="category" id="category-box">
+            <option value="main">Начало</option>
+          </select>
+        </div>
+        <!-- Описание -->
+        <div class="add-category__form-group form-elements__container">
+          <h2 class="title title--form">Описание</h2>
+          <textarea class="form-elements__text-area" name="description" id="description-field" placeholder="О категории"
+            rows="6"></textarea>
+        </div>
+        <!-- Картинка -->
+        <div class="add-category__form-group form-elements__container">
+          <h2 class="title title--form">Картинка</h2>
+          <ul class="form-elements__image-list" data-image="container">
+            <li class="form-elements__image-item form-elements__image-item--new" data-image="item">
+              <div class="form-elements__image-wrapper">
+                <label class="form-elements__label-file" for="image-field-1"><span
+                    class="visually-hidden">Картинка</span>
+                  <svg class="form-elements__img-add">
+                    <use xlink:href="/img/sprite.svg#icon-plus"></use>
+                  </svg>
+                  <input class="form-elements__input-file" type="file" name="image" id="image-field-1"
+                    placeholder="Выберите картинку" data-image-last="true">
+                </label>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <input type="hidden" value="<%= csrfToken %>" name="_csrf">
+        <div class="add-category__form-group add-category__form-group--btns">
+          <button class="add-category__form-btn btn" type="submit">Создать категорию</button>
+          <button class="btn-del" type="button" data-btn="del">Удалить категорию</button>
+        </div>
+      </form>
+    </section>
+  </main>
+  <footer class="page-footer">
+    <h2 class="visually-hidden">Подвал сайта AnyBox</h2>
+    <div class="page-footer__wrapper page-footer__wrapper--admin">
+      <div class="page-footer__container">
+        <h3 class="page-footer__title">Контакты</h2>
+          <ul class="page-footer__list">
+            <li class="page-footer__contacts-item">
+              Телефон: <a href="tel:+74951234567" class="page-footer__contacts-link">+7 495 123 4567</a>
+            </li>
+            <li class="page-footer__contacts-item">
+              E-mail: <a href="email:info@anybox.ru" class="page-footer__contacts-link">info@anybox.ru</a>
+            </li>
+          </ul>
+      </div>
+      <div class="page-footer__container page-footer__container--social">
+        <h3 class="page-footer__title page-footer__title--social">Мы в соцсетях</h3>
+        <ul class="page-footer__social-list">
+          <li class="page-footer__social-item">
+            <a href="https://www.instagram.com/anybox" class="page-footer__social-link">
+              <span class="visually-hidden">Мы в инстаграме</span>
+              <svg class="social__link-icon social__link-icon--insta" width="16" height="16">
+                <use xlink:href="img/sprite.svg#icon-insta"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="page-footer__social-item">
+            <a href="https://www.vk.com/anybox" class="page-footer__social-link">
+              <span class="visually-hidden">Мы в ВК</span>
+              <svg class="social__link-icon social__link-icon--vk" width="22" height="12">
+                <use xlink:href="img/sprite.svg#icon-vk"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="page-footer__social-item">
+            <a href="https://www.facebook.com/anybox" class="page-footer__social-link">
+              <span class="visually-hidden">Мы в Facebook</span>
+              <svg class="social__link-icon social__link-icon--fb" width="10" height="19">
+                <use xlink:href="img/sprite.svg#icon-fb"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script type="module" src="js/add-product.js"></script>
+</body>

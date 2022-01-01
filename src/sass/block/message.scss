@@ -1,0 +1,14 @@
+.message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin-bottom: 20px;
+
+  border: 1px solid #fb395c;
+  border-radius: 3px;
+}
+
+.message__text {
+  margin-right: 10px;
+}
