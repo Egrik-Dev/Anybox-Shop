@@ -179,14 +179,29 @@
           </ul>
         </div> -->
         <div class="product-card__cart-block">
+
+          <!-- Товар в наличии и не в корзине -->
           <!-- <input class="product-card__qty-input" type="number" name="quantity-goods" id="quantity-product" min="1"
             step="1" value="1" inputmode="numeric">
           <button class="product-card__btn-buy" type="button">
             <span class="product-cart__btn-word">Добавить в корзину</span>
           </button> -->
-          <div class="product-card__sold-out">
+
+          <!-- Товара нет в наличии -->
+<!--           <div class="product-card__sold-out">
             <p class="product-card__sold-out-msg">Товар закончился</p>
-          </div>
+          </div> -->
+
+          <!-- Товар добавлен в корзину -->
+          <a href="/cart" class="product-card__in-сart">
+            <svg class="product-card__action-img" width="20" height="20">
+              <use xlink:href="/img/sprite.svg#icon-circle-check"></use>
+            </svg>
+            <div class="product-card__words-block">
+              <span class="product-card__action-word">В корзине</span>
+              <span class="product-card__action-word--proceed">(Перейти)</span>
+            </div>
+          </a>
         </div>
       </div>
       <div class="product-card__details">
