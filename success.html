@@ -58,28 +58,20 @@
       </svg>
     </a>
   </header>
-  <main class="page-main page-main--login">
-    <h1 class="title title--login">Авторизация</h1>
-    <section class="page-main__login login">
-      <div class="login__message message">
-        <p class="message__text">Неправильный логин или пароль</p>
-        <svg class="message__img" width="16" height="16">
-          <use xlink:href="img/sprite.svg#icon-error"></use>
+  <main class="page-main page-main--success">
+    <h1 class="title title--login">Ваш заказ успешно оформлен</h1>
+    <section class="page-main__success success">
+      <div class="success__block">
+        <svg class="success__icon" width="100" height="100">
+          <use xlink:href="img/sprite.svg#icon-success"></use>
         </svg>
+        <p class="success__text">
+          Поздравляем! Ваш заказ <span class="success__order-number">№ 39</span> принят, и мы уже начали его
+          обрабатывать.
+          В ближайшее время с вами свяжется менеджер для обсуждения деталей
+        </p>
+        <a href="/" class="success__btn btn">Перейти на главную</a>
       </div>
-      <form class="login__form" action="https://echo.anybox.ru" method="POST">
-        <ul class="login__form-list">
-          <li class="login__form-item">
-            <label class="login__form-label" for="login-field">Логин</label>
-            <input class="login__form-input" type="email" name="login" id="login-field" required>
-          </li>
-          <li class="login__form-item">
-            <label class="login__form-label" for="pass-field">Пароль</label>
-            <input class="login__form-input" type="text" name="pass" id="pass-field" required>
-          </li>
-        </ul>
-        <button class="login__btn btn" type="submit" name="send-login">Войти</button>
-      </form>
     </section>
   </main>
   <footer class="page-footer">
@@ -167,7 +159,6 @@
       </div>
     </div>
   </footer>
-  <script type="module" src="js/login.js"></script>
 </body>
 
 </html>

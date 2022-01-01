@@ -62,6 +62,60 @@
     <h1 class="page-main__title page-main__title--catalog">Каталог</h1>
     <aside class="page-main__aside">
       <section class="page-main__filters filters">
+        <div class="filters__categories form-elements__container form-elements__container--column">
+          <h2 class="title title--form">Категория</h2>
+          <ul class="form-elements__category-list">
+            <li class="form-elements__category-item form-elements__category-item--parent">
+              <a href="/" class="form-elements__category-link form-elements__category-link--parent">Books</a>
+              <a href="" class="form-elements__category-link">
+                <svg class="form-elements__category-icon" width="14" height="14">
+                  <use xlink:href="img/sprite.svg#icon-wrench"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="form-elements__category-item form-elements__category-item--current">
+              <a href="/" class="form-elements__category-link">Programming</a>
+              <a href="edit" class="form-elements__category-link">
+                <svg class="form-elements__category-icon" width="12" height="12">
+                  <use xlink:href="img/sprite.svg#icon-wrench"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="form-elements__category-item form-elements__category-item--child">
+              <a href="/" class="form-elements__category-link">Languages</a>
+              <a href="edit" class="form-elements__category-link">
+                <svg class="form-elements__category-icon" width="12" height="12">
+                  <use xlink:href="img/sprite.svg#icon-wrench"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="form-elements__category-item form-elements__category-item--child">
+              <a href="/" class="form-elements__category-link">MongoDb</a>
+              <a href="edit" class="form-elements__category-link">
+                <svg class="form-elements__category-icon" width="12" height="12">
+                  <use xlink:href="img/sprite.svg#icon-wrench"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="form-elements__category-item form-elements__category-item--child">
+              <a href="/" class="form-elements__category-link">MySQL</a>
+              <a href="edit" class="form-elements__category-link">
+                <svg class="form-elements__category-icon" width="12" height="12">
+                  <use xlink:href="img/sprite.svg#icon-wrench"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="form-elements__category-item form-elements__category-item--add">
+              <a href="/add-category" class="form-elements__category-link form-elements__category-link--add">Добавить
+                категорию</a>
+              <a href="/add-category" class="form-elements__category-link">
+                <svg class="form-elements__category-icon" width="12" height="12">
+                  <use xlink:href="img/sprite.svg#icon-plus"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
         <form class="filters__form form-elements" action="https://js.dump/anybox" method="POST">
           <div class="form-elements__container">
             <input class="form-elements__input-text form-elements__input-text--with-icon" type="search"
@@ -75,7 +129,7 @@
           </div>
         </form>
         <form class="filters__form form-elements" action="https://js.dump/anybox" method="POST">
-          <div class="form-elements__container form-elements__container--column">
+          <!-- <div class="form-elements__container form-elements__container--column">
             <h2 class="title title--form">Фильтр по категориям</h2>
             <ul class="form-elements__list">
               <li class="form-elements__item">
@@ -99,7 +153,7 @@
                 <label class="form-elements__label-checkbox" for="cookware-field">Посуда</label>
               </li>
             </ul>
-          </div>
+          </div> -->
         </form>
         <form class="filters__form filters__form--column" action="https://js.dump/anybox" method="POST"
           data-price="container">
@@ -124,6 +178,7 @@
       </section>
     </aside>
     <section class="page-main__sorting sorting">
+      <h2 class="visually-hidden">Параметры сортировки товаров</h2>
       <select class="sorting__sort-list" name="sort-list" id="sort-list-box">
         <option value="По популярности">Сортировка по популярности</option>
         <option value="По цене (по возрастанию)">По цене (по возрастанию)</option>
@@ -167,11 +222,11 @@
             <span class="products__price-divider"> – </span>
             <span class="products__price products__price--max">990 ₽</span>
           </div>
-          <a href="/to-choose.html" class="products__action-btn btn">
-            <svg class="products__action-img" width="12" height="12">
+          <a class="products__action-btn products__action-btn--sold-out btn">
+            <!-- <svg class="products__action-img" width="12" height="12">
               <use xlink:href="img/sprite.svg#icon-wrench"></use>
-            </svg>
-            <span class="proucts__action-word">Выбрать модель</span>
+            </svg> -->
+            <span class="proucts__action-word proucts__action-word--sold-out">Товар закончился</span>
           </a>
         </li>
         <li class="products__list-item">
@@ -211,11 +266,14 @@
           <div class="products__price-block">
             <span class="products__price">2440 ₽</span>
           </div>
-          <a href="/to-choose.html" class="products__action-btn btn">
+          <a class="btn products__action-btn products__action-btn--in-cart" href="/to-choose.html">
             <svg class="products__action-img" width="12" height="12">
-              <use xlink:href="img/sprite.svg#icon-cart"></use>
+              <use xlink:href="img/sprite.svg#icon-circle-check"></use>
             </svg>
-            <span class="proucts__action-word">Добавить в корзину</span>
+            <div class="products__words-block">
+              <span class="proucts__action-word">В корзине</span>
+              <span class="proucts__action-word--proceed">(Перейти)</span>
+            </div>
           </a>
         </li>
         <li class="products__list-item">
@@ -275,6 +333,35 @@
           <a href="catalog-2.html" class="pagination__item-link pagination__item-link--next">Дальше</a>
         </li>
       </ul>
+    </section>
+    <section class="page-main__category-description category-description">
+      <h2 class="category-description__title title">Описание</h2>
+      <div class="category-description__container">
+        <p class="category-description__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, quibusdam asperiores. Tempora error
+          rerum quibusdam, magni optio neque, voluptates sunt enim atque fuga minus veniam? Esse dolorem fugit alias
+          eos.
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio cum aperiam ipsam animi nesciunt iste
+          quibusdam eveniet. Iusto amet sunt sequi suscipit. Officia nihil nulla pariatur non! Consequuntur, quis
+          quaerat.
+        </p>
+      </div>
+    </section>
+    <section class="page-main__modal modal" data-modal="container">
+      <button class="modal__close" type="button"><span class="visually-hidden">Закрыть</span></button>
+      <div class="modal__wrapper modal__wrapper--title">
+        <span class="visually-hidden">Товар в корзине</span>
+        <svg class="modal__icon" width="60" height="60">
+          <use xlink:href="img/sprite.svg#icon-circle-check"></use>
+        </svg>
+        <h2 class="modal__title title">Товар добавлен в корзину!</h2>
+      </div>
+      <div class="modal__footer">
+        <div class="modal__wrapper">
+          <a class="btn modal__btn modal__btn--order" href="order.html">Оформить заказ</a>
+          <button class="btn modal__btn modal__btn--next" type="button">Продолжить покупки</button>
+        </div>
+      </div>
     </section>
   </main>
   <footer class="page-footer">
@@ -362,6 +449,7 @@
       </div>
     </div>
   </footer>
+  <div class="overlay" data-overlay="element"></div>
   <script type="module" src="js/catalog.js"></script>
 </body>
 
