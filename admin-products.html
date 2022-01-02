@@ -38,212 +38,278 @@
       </ul>
     </nav>
   </header>
-  <main class="page-main page-main--admin">
-    <h1 class="title">Товары</h1>
-    <section class="page-main__admin-products products">
+  <main class="page-main page-main--catalog">
+    <h1 class="page-main__title page-main__title--catalog">Каталог</h1>
+    <aside class="page-main__aside">
+      <section class="page-main__filters filters">
+        <div class="filters__categories form-elements__container form-elements__container--column">
+          <h2 class="title title--form">Категория</h2>
+          <ul class="form-elements__category-list">
+            <li class="form-elements__category-item form-elements__category-item--current">
+              <a class="form-elements__category-link">Каталог</a>
+            </li>
+            <li class="form-elements__category-item form-elements__category-item--child">
+               <a href="/admin/catalog/books" class="form-elements__category-link">Books</a>
+              <a href="/admin/edit-category/61900cfb9aa89a7a12d5c065" class="form-elements__category-link">
+                <svg class="form-elements__category-icon" width="14" height="14">
+                  <use xlink:href="/img/sprite.svg#icon-wrench"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="form-elements__category-item form-elements__category-item--add">
+              <a href="/admin/add-category" class="form-elements__category-link form-elements__category-link--add">Добавить
+                категорию</a>
+              <a href="/admin/add-category" class="form-elements__category-link">
+                <svg class="form-elements__category-icon" width="12" height="12">
+                  <use xlink:href="/img/sprite.svg#icon-plus"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <form class="filters__form form-elements" action="https://js.dump/anybox" method="POST">
+          <div class="form-elements__container">
+            <input class="form-elements__input-text form-elements__input-text--with-icon" type="search" name="search-product" id="search-product-field" placeholder="Поиск ..." maxlength="255">
+            <label class="visually-hidden" for="search-product-field">Поле поиск</label>
+            <button class="form-elements__btn btn" type="submit">
+              <svg class="form-elements__icon" width="12" height="12">
+                <use xlink:href="/img/sprite.svg#icon-search-strong"></use>
+              </svg>
+            </button>
+          </div>
+        </form>
+      </section>
+    </aside>
+    <section class="page-main__sorting sorting">
+      <h2 class="visually-hidden">Параметры сортировки товаров</h2>
+      <select class="sorting__sort-list" name="sort-list" id="sort-list-box">
+        <option value="По популярности">Сортировка по популярности</option>
+        <option value="По цене (по возрастанию)">По цене (по возрастанию)</option>
+        <option value="По цене (по убыванию)">По цене (по убыванию)</option>
+      </select>
+    </section>
+    <section class="page-main__products products">
       <ul class="products__list">
-        <li class="products__list-item">
-          <a href="/product-cutton-buds-pink.html" class="products__img-link">
-            <picture>
-              <!-- <source type="image/webp" srcset="img/@1x.webp 1x, img/@1x.webp 2x"> -->
-              <img class="products__img" src="./img/product-cutton-buds-pink.webp" alt="Бамбуковые ватные палочки">
-            </picture>
-          </a>
-          <h2 class="products__item-title">
-            <a href="/product-cutton-buds-pink.html" class="products__title-link">Бамбуковые ватные палочки</a>
-          </h2>
-          <div class="products__price-block">
-            <span class="products__price">390 ₽</span>
-          </div>
-          <div class="products__btn-container">
-            <a href="/edit-product.html" class="products__action-btn btn">
-              <svg class="products__action-img" width="12" height="12">
-                <use xlink:href="img/sprite.svg#icon-wrench"></use>
-              </svg>
-              <span class="proucts__action-word">Редактрировать</span>
-            </a>
-            <a href="/delete-product.html" class="products__action-btn btn">
-              <svg class="products__action-img" width="12" height="12">
-                <use xlink:href="img/sprite.svg#icon-delete"></use>
-              </svg>
-              <span class="proucts__action-word">Удалить</span>
-            </a>
-          </div>
-        </li>
-        <li class="products__list-item">
-          <a href="/shopper-bag.html" class="products__img-link">
-            <picture>
-              <!-- <source type="image/webp" srcset="img/@1x.webp 1x, img/@1x.webp 2x"> -->
-              <img class="products__img" src="./img/product-string-bag.webp" alt="Сумка-шоппер">
-            </picture>
-          </a>
-          <h2 class="products__item-title">
-            <a href="/shopper-bag.html" class="products__title-link">Сумка-шоппер</a>
-          </h2>
-          <div class="products__price-block">
-            <span class="products__price products__price--min">700 ₽</span>
-            <span class="products__price-divider"> – </span>
-            <span class="products__price products__price--max">990 ₽</span>
-          </div>
-          <div class="products__btn-container">
-            <a href="/edit-product.html" class="products__action-btn btn">
-              <svg class="products__action-img" width="12" height="12">
-                <use xlink:href="img/sprite.svg#icon-wrench"></use>
-              </svg>
-              <span class="proucts__action-word">Редактрировать</span>
-            </a>
-            <a href="/delete-product.html" class="products__action-btn btn">
-              <svg class="products__action-img" width="12" height="12">
-                <use xlink:href="img/sprite.svg#icon-delete"></use>
-              </svg>
-              <span class="proucts__action-word">Удалить</span>
-            </a>
-          </div>
-        </li>
-        <li class="products__list-item">
-          <a href="/prodcut-hibiscus-washcloth.html" class="products__img-link">
-            <picture>
-              <!-- <source type="image/webp" srcset="img/@1x.webp 1x, img/@1x.webp 2x"> -->
-              <img class="products__img" src="./img/prodcut-hibiscus-washcloth.webp"
-                alt="Мочалка для тела из гибискуса">
-            </picture>
-          </a>
-          <h2 class="products__item-title">
-            <a href="/prodcut-hibiscus-washcloth.html" class="products__title-link">Мочалка для тела из гибискуса</a>
-          </h2>
-          <div class="products__price-block">
-            <span class="products__price">370 ₽</span>
-          </div>
-          <div class="products__btn-container">
-            <a href="/edit-product.html" class="products__action-btn btn">
-              <svg class="products__action-img" width="12" height="12">
-                <use xlink:href="img/sprite.svg#icon-wrench"></use>
-              </svg>
-              <span class="proucts__action-word">Редактрировать</span>
-            </a>
-            <a href="/delete-product.html" class="products__action-btn btn">
-              <svg class="products__action-img" width="12" height="12">
-                <use xlink:href="img/sprite.svg#icon-delete"></use>
-              </svg>
-              <span class="proucts__action-word">Удалить</span>
-            </a>
-          </div>
-        </li>
-        <li class="products__list-item">
-          <a href="/product-eco-friendly-gift-set.html" class="products__img-link">
-            <picture>
-              <!-- <source type="image/webp" srcset="img/@1x.webp 1x, img/@1x.webp 2x"> -->
-              <img class="products__img" src="./img/product-eco-friendly-gift-set.webp"
-                alt="Мочалка для тела из гибискуса">
-            </picture>
-          </a>
-          <h2 class="products__item-title">
-            <a href="/product-eco-friendly-gift-set.html" class="products__title-link">Подарочный ЭКО набор
-              "EveryDay" в крафтовой коробке
-            </a>
-          </h2>
-          <div class="products__price-block">
-            <span class="products__price">2440 ₽</span>
-          </div>
-          <div class="products__btn-container">
-            <a href="/edit-product.html" class="products__action-btn btn">
-              <svg class="products__action-img" width="12" height="12">
-                <use xlink:href="img/sprite.svg#icon-wrench"></use>
-              </svg>
-              <span class="proucts__action-word">Редактрировать</span>
-            </a>
-            <a href="/delete-product.html" class="products__action-btn btn">
-              <svg class="products__action-img" width="12" height="12">
-                <use xlink:href="img/sprite.svg#icon-delete"></use>
-              </svg>
-              <span class="proucts__action-word">Удалить</span>
-            </a>
-          </div>
-        </li>
-        <li class="products__list-item">
-          <a href="/product-wax-napkins.html" class="products__img-link">
-            <picture>
-              <!-- <source type="image/webp" srcset="img/@1x.webp 1x, img/@1x.webp 2x"> -->
-              <img class="products__img" src="./img/product-wax-napkins.webp"
-                alt="Восковые салфетки ANYBOX-ECO, 0.3м х 32 см">
-            </picture>
-          </a>
-          <h2 class="products__item-title">
-            <a href="/product-wax-napkins.html" class="products__title-link">Восковые салфетки ANYBOX-ECO, 0.3м х 32 см
-            </a>
-          </h2>
-          <div class="products__price-block">
-            <span class="products__price">960 ₽</span>
-          </div>
-          <div class="products__btn-container">
-            <a href="/edit-product.html" class="products__action-btn btn">
-              <svg class="products__action-img" width="12" height="12">
-                <use xlink:href="img/sprite.svg#icon-wrench"></use>
-              </svg>
-              <span class="proucts__action-word">Редактрировать</span>
-            </a>
-            <a href="/delete-product.html" class="products__action-btn btn">
-              <svg class="products__action-img" width="12" height="12">
-                <use xlink:href="img/sprite.svg#icon-delete"></use>
-              </svg>
-              <span class="proucts__action-word">Удалить</span>
-            </a>
-          </div>
-        </li>
-        <li class="products__list-item">
-          <a href="/product-metal-cocktail-tubes.html" class="products__img-link">
-            <picture>
-              <!-- <source type="image/webp" srcset="img/@1x.webp 1x, img/@1x.webp 2x"> -->
-              <img class="products__img" src="./img/product-metal-cocktail-tubes.webp"
-                alt="Трубочки для коктейлей многоразовые, 21.5 см, 5 шт">
-            </picture>
-          </a>
-          <h2 class="products__item-title">
-            <a href="/product-metal-cocktail-tubes.html" class="products__title-link">Трубочки для коктейлей
-              многоразовые, 21.5 см, 5 шт
-            </a>
-          </h2>
-          <div class="products__price-block">
-            <span class="products__price">820 ₽</span>
-          </div>
-          <div class="products__btn-container">
-            <a href="/edit-product.html" class="products__action-btn btn">
-              <svg class="products__action-img" width="12" height="12">
-                <use xlink:href="img/sprite.svg#icon-wrench"></use>
-              </svg>
-              <span class="proucts__action-word">Редактрировать</span>
-            </a>
-            <a href="/delete-product.html" class="products__action-btn btn">
-              <svg class="products__action-img" width="12" height="12">
-                <use xlink:href="img/sprite.svg#icon-delete"></use>
-              </svg>
-              <span class="proucts__action-word">Удалить</span>
-            </a>
-          </div>
-        </li>
         <li class="products__list-item products__list-item--add-product">
-          <a href="add-product.html" class="products__img-link">
+          <a href="/admin/add-product" class="products__img-link">
             <svg class="products__img products__img--add-product">
-              <use xlink:href="img/sprite.svg#icon-plus"></use>
+              <use xlink:href="/img/sprite.svg#icon-plus"></use>
             </svg>
             <span class="visually-hidden">Добавить товар</span>
           </a>
-          <a href="add-product.html" class="products__action-btn btn">
+          <a href="/admin/add-product" class="products__action-btn btn">
             <span class="proucts__action-word">Добавить товар</span>
           </a>
         </li>
+        <li class="products__list-item">
+          <a href="product.html" class="products__img-link">
+            <picture>
+              <source type="image/webp" srcset="/img/product-string-bag.webp">
+              <img class="products__img" src="/img/product-string-bag.webp" alt="Массажер роликовый деревянный Eco">
+            </picture>
+          </a>
+          <h2 class="products__item-title">
+            <a href="/product/619bec0473ac3b8831d9ba2a" class="products__title-link">
+              Массажер роликовый деревянный Eco
+            </a>
+          </h2>
+          <div class="products__price-block">
+            <span class="products__price">
+              540 ₽
+            </span>
+          </div>
+          <div class="products__btn-container">
+            <a href="/admin/edit-product/619bec0473ac3b8831d9ba2a" class="products__action-btn btn">
+              <svg class="products__action-img" width="12" height="12">
+                <use xlink:href="/img/sprite.svg#icon-wrench"></use>
+              </svg>
+              <span class="proucts__action-word">Редактрировать</span>
+            </a>
+            <form action="/admin/delete-product" method="POST">
+              <button type="submit" class="products__action-btn btn">
+                <svg class="products__action-img" width="12" height="12">
+                  <use xlink:href="/img/sprite.svg#icon-delete"></use>
+                </svg>
+                <span class="proucts__action-word">Удалить</span>
+              </button>
+              <input type="hidden" name="prodId" value="619bec0473ac3b8831d9ba2a">
+              <!-- <input type="hidden" id="csrfToken" value="7WnuV8FT-2AbIh4TL1HSNLjKwdkq_KFuZNkw" name="_csrf"> -->
+            </form>
+          </div>
+        </li>
+        <li class="products__list-item">
+          <a href="product.html" class="products__img-link">
+            <picture>
+              <source type="image/webp" srcset="/img/product-string-bag.webp">
+              <img class="products__img" src="/img/product-string-bag.webp" alt="Массажер роликовый деревянный Eco">
+            </picture>
+          </a>
+          <h2 class="products__item-title">
+            <a href="/product/61a1d42743a890a5bbc89a12" class="products__title-link">
+              Мочалка для тела из гибискуса
+            </a>
+          </h2>
+          <div class="products__price-block">
+            <span class="products__price">
+              900 ₽
+            </span>
+          </div>
+          <div class="products__btn-container">
+            <a href="/admin/edit-product/61a1d42743a890a5bbc89a12" class="products__action-btn btn">
+              <svg class="products__action-img" width="12" height="12">
+                <use xlink:href="/img/sprite.svg#icon-wrench"></use>
+              </svg>
+              <span class="proucts__action-word">Редактрировать</span>
+            </a>
+            <form action="/admin/delete-product" method="POST">
+              <button type="submit" class="products__action-btn btn">
+                <svg class="products__action-img" width="12" height="12">
+                  <use xlink:href="/img/sprite.svg#icon-delete"></use>
+                </svg>
+                <span class="proucts__action-word">Удалить</span>
+              </button>
+              <input type="hidden" name="prodId" value="61a1d42743a890a5bbc89a12">
+              <!-- <input type="hidden" id="csrfToken" value="7WnuV8FT-2AbIh4TL1HSNLjKwdkq_KFuZNkw" name="_csrf"> -->
+            </form>
+          </div>
+        </li>
+        <li class="products__list-item">
+          <a href="product.html" class="products__img-link">
+            <picture>
+              <source type="image/webp" srcset="/img/product-string-bag.webp">
+              <img class="products__img" src="/img/product-string-bag.webp" alt="Массажер роликовый деревянный Eco">
+            </picture>
+          </a>
+          <h2 class="products__item-title">
+            <a href="/product/61ad82abcea17df36d154ab2" class="products__title-link">
+              Расческа Из Сибири с любовью
+            </a>
+          </h2>
+          <div class="products__price-block">
+            <span class="products__price">
+              135 ₽
+            </span>
+          </div>
+          <div class="products__btn-container">
+            <a href="/admin/edit-product/61ad82abcea17df36d154ab2" class="products__action-btn btn">
+              <svg class="products__action-img" width="12" height="12">
+                <use xlink:href="/img/sprite.svg#icon-wrench"></use>
+              </svg>
+              <span class="proucts__action-word">Редактрировать</span>
+            </a>
+            <form action="/admin/delete-product" method="POST">
+              <button type="submit" class="products__action-btn btn">
+                <svg class="products__action-img" width="12" height="12">
+                  <use xlink:href="/img/sprite.svg#icon-delete"></use>
+                </svg>
+                <span class="proucts__action-word">Удалить</span>
+              </button>
+              <input type="hidden" name="prodId" value="61ad82abcea17df36d154ab2">
+              <!-- <input type="hidden" id="csrfToken" value="7WnuV8FT-2AbIh4TL1HSNLjKwdkq_KFuZNkw" name="_csrf"> -->
+            </form>
+          </div>
+        </li>
+        <li class="products__list-item">
+          <a href="product.html" class="products__img-link">
+            <picture>
+              <source type="image/webp" srcset="/img/product-string-bag.webp">
+              <img class="products__img" src="/img/product-string-bag.webp" alt="Массажер роликовый деревянный Eco">
+            </picture>
+          </a>
+          <h2 class="products__item-title">
+            <a href="/product/61b4e252aeacc4f09c5f6511" class="products__title-link">
+              Трубочки для коктейлей Grand Price, 21.5 см х 6 мм, 8 шт
+            </a>
+          </h2>
+          <div class="products__price-block">
+            <span class="products__price">
+              334 ₽
+            </span>
+          </div>
+          <div class="products__btn-container">
+            <a href="/admin/edit-product/61b4e252aeacc4f09c5f6511" class="products__action-btn btn">
+              <svg class="products__action-img" width="12" height="12">
+                <use xlink:href="/img/sprite.svg#icon-wrench"></use>
+              </svg>
+              <span class="proucts__action-word">Редактрировать</span>
+            </a>
+            <form action="/admin/delete-product" method="POST">
+              <button type="submit" class="products__action-btn btn">
+                <svg class="products__action-img" width="12" height="12">
+                  <use xlink:href="/img/sprite.svg#icon-delete"></use>
+                </svg>
+                <span class="proucts__action-word">Удалить</span>
+              </button>
+              <input type="hidden" name="prodId" value="61b4e252aeacc4f09c5f6511">
+              <!-- <input type="hidden" id="csrfToken" value="7WnuV8FT-2AbIh4TL1HSNLjKwdkq_KFuZNkw" name="_csrf"> -->
+            </form>
+          </div>
+        </li>
+        <li class="products__list-item">
+          <a href="product.html" class="products__img-link">
+            <picture>
+              <source type="image/webp" srcset="/img/product-string-bag.webp">
+              <img class="products__img" src="/img/product-string-bag.webp" alt="Массажер роликовый деревянный Eco">
+            </picture>
+          </a>
+          <h2 class="products__item-title">
+            <a href="/product/61d1629651f999ff523e2dbe" class="products__title-link">
+              Бамбуковая зубная щетка, средней жесткости
+            </a>
+          </h2>
+          <div class="products__price-block">
+            <span class="products__price">
+              190 ₽
+            </span>
+          </div>
+          <div class="products__btn-container">
+            <a href="/admin/edit-product/61d1629651f999ff523e2dbe" class="products__action-btn btn">
+              <svg class="products__action-img" width="12" height="12">
+                <use xlink:href="/img/sprite.svg#icon-wrench"></use>
+              </svg>
+              <span class="proucts__action-word">Редактрировать</span>
+            </a>
+            <form action="/admin/delete-product" method="POST">
+              <button type="submit" class="products__action-btn btn">
+                <svg class="products__action-img" width="12" height="12">
+                  <use xlink:href="/img/sprite.svg#icon-delete"></use>
+                </svg>
+                <span class="proucts__action-word">Удалить</span>
+              </button>
+              <input type="hidden" name="prodId" value="61d1629651f999ff523e2dbe">
+              <!-- <input type="hidden" id="csrfToken" value="7WnuV8FT-2AbIh4TL1HSNLjKwdkq_KFuZNkw" name="_csrf"> -->
+            </form>
+          </div>
+        </li>
       </ul>
-      <ul class="products__pag-list pagination">
-        <li class="pagination__item pagination__item--current">
+      <ul class="orders__pag-list pagination">
+        <li class="pagination__item">
           <a class="pagination__item-link pagination__item-link--current">1</a>
         </li>
-        <li class="pagination__item">
-          <a href="catalog-2.html" class="pagination__item-link">2</a>
-        </li>
-        <li class="pagination__item pagination__item--next">
-          <a href="catalog-2.html" class="pagination__item-link pagination__item-link--next">Дальше</a>
-        </li>
       </ul>
+      <input type="hidden" id="_csrf" value="7WnuV8FT-2AbIh4TL1HSNLjKwdkq_KFuZNkw" name="_csrf">
+    </section>
+    <section class="page-main__category-description category-description">
+      <h2 class="category-description__title title">Описание</h2>
+      <div class="category-description__container">
+        <p class="category-description__text">Главный каталог интернет-магазина AnyBox. Здесь представлен огромный выбор товаров для ухода за кожей и телом а также много другой эко-продукции.</p>
+      </div>
+    </section>
+    <section class="page-main__modal modal" data-modal="container">
+      <button class="modal__close" type="button" data-modal="close"><span class="visually-hidden">Закрыть</span></button>
+      <div class="modal__wrapper modal__wrapper--title">
+        <span class="visually-hidden">Товар в корзине</span>
+        <svg class="modal__icon" width="60" height="60">
+          <use xlink:href="img/sprite.svg#icon-circle-check"></use>
+        </svg>
+        <h2 class="modal__title title">Товар добавлен в корзину!</h2>
+      </div>
+      <div class="modal__footer">
+        <div class="modal__wrapper">
+          <a class="btn modal__btn modal__btn--order" href="/cart">Оформить заказ</a>
+          <button class="btn modal__btn modal__btn--next" type="button" data-modal="close">Продолжить покупки</button>
+        </div>
+      </div>
     </section>
   </main>
   <footer class="page-footer">
