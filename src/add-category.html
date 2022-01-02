@@ -40,29 +40,30 @@
   </header>
   <main class="page-main page-main--admin">
     <h1 class="title">Новая категория</h1>
-    <section class="page-main__add-category add-category">
+<section class="page-main__add-category add-category">
+
       <form class="add-category__form" action="/admin/add-category" method="POST" enctype="multipart/form-data">
         <!-- Наименование -->
         <div class="add-category__form-group">
           <label class="add-category__label" for="title-field">Наименование</label>
-          <input class="form-elements__input-text" type="text" name="title" id="title-field" required>
+          <input class="form-elements__input-text " type="text" name="title" id="title-field" value="" required="">
         </div>
         <!-- Родительская категория -->
-        <div class="add-category__form-group form-elements__container">
+        <div class="add-category__form-group form-elements__container" data-parent="containr">
           <h2 class="title title--form">Родительская категория</h2>
           <label class="visually-hidden" for="category-box">Родительская категория</label>
-          <select class="add-category__form-select" name="category" id="category-box">
-            <option value="main">Начало</option>
+          <select class="add-category__form-select" name="parent" id="category-box" required="">
+            <option value="start" data-leaf="start" style="display: none;">Выберите категорию</option><option value="catalog" data-leaf="catalog"> Каталог</option><option value="books" data-leaf="books">... Books</option><option value="programming" data-leaf="programming">... ... Programming</option><option value="databases" data-leaf="databases">... ... ... Databases</option><option value="mysql" data-leaf="mysql">... ... ... ... MySQL</option><option value="mongodb" data-leaf="mongodb">... ... ... ... MongoDB</option><option value="languages" data-leaf="languages">... ... ... Languages</option><option value="php" data-leaf="php">... ... ... ... PHP</option><option value="javsscript" data-leaf="javsscript">... ... ... ... JavsScript</option>
           </select>
+
         </div>
         <!-- Описание -->
         <div class="add-category__form-group form-elements__container">
           <h2 class="title title--form">Описание</h2>
-          <textarea class="form-elements__text-area" name="description" id="description-field" placeholder="О категории"
-            rows="6"></textarea>
+          <textarea class="form-elements__text-area " name="description" id="description-field" placeholder="О категории" rows="6"></textarea>
         </div>
-        <!-- Картинка -->
-        <div class="add-category__form-group form-elements__container">
+        <!-- Картинка (Временно отказались) -->
+        <!-- <div class="add-category__form-group form-elements__container">
           <h2 class="title title--form">Картинка</h2>
           <ul class="form-elements__image-list" data-image="container">
             <li class="form-elements__image-item form-elements__image-item--new" data-image="item">
@@ -78,11 +79,14 @@
               </div>
             </li>
           </ul>
-        </div>
-        <input type="hidden" value="<%= csrfToken %>" name="_csrf">
+        </div> -->
+        <input type="hidden" value="40LbwtWU-3t3K2czRVytoPjSULiHROBkJNkA" id="csrf" name="_csrf">
+
         <div class="add-category__form-group add-category__form-group--btns">
-          <button class="add-category__form-btn btn" type="submit">Создать категорию</button>
-          <button class="btn-del" type="button" data-btn="del">Удалить категорию</button>
+          <button class="add-category__form-btn btn" type="submit">
+            Создать категорию
+          </button>
+
         </div>
       </form>
     </section>
