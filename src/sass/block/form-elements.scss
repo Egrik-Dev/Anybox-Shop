@@ -167,6 +167,10 @@
     margin-right: 10px;
   }
 
+  &--error {
+    border-color: #fb395c;
+  }
+
   &:focus {
     outline: green solid 1px;
   }
@@ -184,7 +188,6 @@
   font-size: 14px;
   line-height: 1.6em;
 
-  border: 1px solid #ebeced;
   resize: vertical;
 
   &:focus {
