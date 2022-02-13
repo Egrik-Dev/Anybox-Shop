@@ -154,11 +154,15 @@
   padding: 6px 20px;
 }
 
-.form-elements__text-symbol {
-  margin: 0;
+.form-elements__label-block {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
 }
 
-.form-elements__qty-symbols {
+.form-elements__text-symbol {
+  margin: 0;
+
   color: #fb395c;
 
   &--not-enough {
