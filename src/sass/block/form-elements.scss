@@ -154,6 +154,22 @@
   padding: 6px 20px;
 }
 
+.form-elements__text-symbol {
+  margin: 0;
+}
+
+.form-elements__qty-symbols {
+  color: #fb395c;
+
+  &--not-enough {
+    color: orange;
+  }
+
+  &--enough {
+    color: green;
+  }
+}
+
 .form-elements__input-text,
 .form-elements__text-area {
   padding: 8px 12px;
