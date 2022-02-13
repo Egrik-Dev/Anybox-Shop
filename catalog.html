@@ -179,10 +179,10 @@
     </aside>
     <section class="page-main__sorting sorting">
       <h2 class="visually-hidden">Параметры сортировки товаров</h2>
-      <select class="sorting__sort-list" name="sort-list" id="sort-list-box">
-        <option value="По популярности">Сортировка по популярности</option>
-        <option value="По цене (по возрастанию)">По цене (по возрастанию)</option>
-        <option value="По цене (по убыванию)">По цене (по убыванию)</option>
+      <select class="sorting__sort-list" name="sort-list" id="sort-list-box" data-element="sort">
+        <option value="default">Сортировка по умолчанию</option>
+        <option value="priceAscending">По цене (по возрастанию)</option>
+        <option value="priceDescending">По цене (по убыванию)</option>
       </select>
     </section>
     <section class="page-main__products products">
@@ -347,7 +347,7 @@
         </p>
       </div>
     </section>
-    <section class="page-main__modal modal modal--show" data-modal="container">
+    <section class="page-main__modal modal" data-modal="container">
       <button class="modal__close" type="button"><span class="visually-hidden">Закрыть</span></button>
       <div class="modal__wrapper modal__wrapper--title">
         <span class="visually-hidden">Товар в корзине</span>
@@ -449,7 +449,7 @@
       </div>
     </div>
   </footer>
-  <div class="overlay overlay--show" data-overlay="element"></div>
+  <div class="overlay" data-overlay="element"></div>
   <script type="module" src="js/catalog.js"></script>
 </body>
 
