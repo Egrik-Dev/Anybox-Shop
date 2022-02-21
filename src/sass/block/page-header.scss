@@ -119,6 +119,11 @@
 
   &--active {
     color: #fb395c;
+    cursor: default;
+  }
+
+  &--disabled {
+    opacity: 0.3;
   }
 }
 
@@ -144,6 +149,10 @@
   grid-row: 2/3;
   justify-self: end;
   margin-right: 15px;
+}
+
+.page-header__search-icon {
+  opacity: 0.3;
 }
 
 @media (min-width: $tablet-width) {
@@ -231,6 +240,11 @@
     color: #fb395c;
   }
 
+  .page-header__nav-link--disabled:hover {
+    color: #454545;
+    cursor: default;
+  }
+
   .page-header__cart {
     grid-column: 3/4;
     grid-row: 1/2;
@@ -238,8 +252,7 @@
     cursor: pointer;
   }
 
-  .page-header__cart:hover .page-header__cart-icon,
-  .page-header__search-icon:hover {
+  .page-header__cart:hover .page-header__cart-icon {
     fill: #fb395c;
   }
 

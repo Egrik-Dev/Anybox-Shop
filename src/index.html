@@ -29,7 +29,7 @@
         <li class="page-header__nav-item">
           <a class="page-header__nav-link page-header__nav-link--active">Главная</a>
         </li>
-        <li class="page-header__nav-item">
+<!--         <li class="page-header__nav-item">
           <a href="for-her" class="page-header__nav-link">Подарки для неё</a>
         </li>
         <li class="page-header__nav-item">
@@ -37,12 +37,12 @@
         </li>
         <li class="page-header__nav-item">
           <a href="posts" class="page-header__nav-link">Блог</a>
-        </li>
+        </li> -->
         <li class="page-header__nav-item">
           <a href="catalog.html" class="page-header__nav-link">Каталог</a>
         </li>
         <li class="page-header__nav-item">
-          <a href="contacts" class="page-header__nav-link">Контакты</a>
+          <a class="page-header__nav-link page-header__nav-link--disabled">Контакты</a>
         </li>
       </ul>
     </nav>
@@ -52,7 +52,7 @@
       </svg>
       <span class="page-header__cart-qty">2</span>
     </a>
-    <a href="/search" class="page-header__search"><span class="visually-hidden">Поиск</span>
+    <a class="page-header__search page-header__search--disabled"><span class="visually-hidden">Поиск</span>
       <svg class="page-header__search-icon" width="16" height="16">
         <use xlink:href="img/sprite.svg#icon-search"></use>
       </svg>
@@ -64,7 +64,7 @@
       <div class="banners__wrapper">
         <h2 class="visually-hidden">Спец предложения нашего магазина</h2>
         <article class="banners__offer banners__offer--big">
-          <a href="/holiday-gifts.html" class="banners__link banners__link--big-offer">
+          <a class="banners__link banners__link--big-offer">
             <div class="banners__offer-big-block">
               <p class="banners__text-adv">Подарки к празднику</p>
               <h3 class="banners__title">Нужна идея для подарка?</h3>
@@ -75,7 +75,7 @@
           </a>
         </article>
         <article class="banners__offer banners__offer--medium">
-          <a href="/boxes.html" class="banners__link banners__link--medium-offer">
+          <a href="/catalog/eko-nabori" class="banners__link banners__link--medium-offer">
             <div class="banners__img-block">
               <picture>
                 <source type="image/webp" srcset="img/box-opened@1x.webp 1x, img/box-opened@1x.webp 2x">
@@ -90,7 +90,7 @@
           </a>
         </article>
         <article class="banners__offer banners__offer--small">
-          <a href="/create-box.html" class="banners__link">
+          <a class="banners__link">
             <div class="banners__offer-wrapper">
               <p class="banners__tect-occasions">Собери свой подарочный бокс</p>
               <h3 class="banners__title banners__title--lower">- На любой случай -</h3>
@@ -98,7 +98,7 @@
           </a>
         </article>
         <article class="banners__offer banners__offer--small banners__offer--upper-title">
-          <a href="/holiday-gifts.html" class="banners__link banners__link--small-offer">
+          <a class="banners__link banners__link--small-offer">
             <h3 class="banners__title banners__title--upper">Лучшие подарки</h3>
             <picture>
               <source type="image/webp" srcset="img/string-bag-heart@1x.webp 1x, img/string-bag-heart@2x.webp 2x">
@@ -112,10 +112,8 @@
     <section class="page-main__about-us about-us">
       <div class="about-us__wrapper">
         <h2 class="about-us__title title">Магазин AnyBox</h2>
-        <p class="about-us_desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus, facere cum
-          culpa quod dignissimos minima architecto vitae excepturi soluta debitis officiis beatae. Temporibus fugiat
-          velit
-          aperiam sapiente eveniet iusto placeat.</p>
+        <p class="about-us_desc">Болльшой ассортимент ЭКО товаров на каждый день. Функциональные и стильные боксы с любовью о природе. Движемся маленькими шагами к здоровой планете. Осуществляем доставку по всей России.
+        </p>
       </div>
     </section>
     <div class="page-main__elementor-divider elementor-divider">
@@ -123,43 +121,54 @@
       </span>
     </div>
     <section class="page-main__categories categories">
-      <h2 class="categories__title title">Категории</h2>
+      <h2 class="categories__title title">Популярные категории</h2>
       <ul class="categories__list">
         <li class="categories__item">
           <a href="/catalog/bath.html" class="categories__link">
-            <h3 class="categories__item-title">Для бани</h3>
             <picture>
               <!-- <source type="image/webp" srcset="img/@1x.webp 1x, img/@1x.webp 2x"> -->
-              <img class="categories__item-img" src="./img/category-promo-1.webp" alt="Товары для бани">
+              <img class="categories__item-img" src="./img/sport.jpg" alt="Товары для фитнеса">
             </picture>
           </a>
+          <h3 class="categories__item-title">
+            <a href="" class="categories__item-title-link">Финтес-инвентарь</a>
+          </h3>
         </li>
         <li class="categories__item">
           <a href="/catalog/fitness.html" class="categories__link">
-            <h3 class="categories__item-title">Для йоги и фитнеса</h3>
+            <!-- <h3 class="categories__item-title">Мочалки</h3> -->
             <picture>
               <!-- <source type="image/webp" srcset="img/@1x.webp 1x, img/@1x.webp 2x"> -->
-              <img class="categories__item-img" src="./img/category-promo-2.webp" alt="Товары для йоги и фитнеса">
+              <img class="categories__item-img" src="./img/washcloths.jpeg" alt="Мочалки">
             </picture>
           </a>
+          <h3 class="categories__item-title">
+            <a href="" class="categories__item-title-link">Мочалки</a>
+          </h3>
         </li>
         <li class="categories__item">
           <a href="/catalog/kitchen.html" class="categories__link">
-            <h3 class="categories__item-title">Для кухни</h3>
+            <!-- <h3 class="categories__item-title">Сумки</h3> -->
             <picture>
               <!-- <source type="image/webp" srcset="img/@1x.webp 1x, img/@1x.webp 2x"> -->
-              <img class="categories__item-img" src="./img/category-promo-3.webp" alt="Товары для кухни">
+              <img class="categories__item-img" src="./img/bags.jpg" alt="Сумки">
             </picture>
           </a>
+          <h3 class="categories__item-title">
+            <a href="" class="categories__item-title-link">Сумки</a>
+          </h3>
         </li>
         <li class="categories__item">
           <a href="/catalog/massage.html" class="categories__link">
-            <h3 class="categories__item-title">Для массажа</h3>
+            <!-- <h3 class="categories__item-title">Товары для праздника</h3> -->
             <picture>
               <!-- <source type="image/webp" srcset="img/@1x.webp 1x, img/@1x.webp 2x"> -->
-              <img class="categories__item-img" src="./img/category-promo-4.webp" alt="Товары для массажа">
+              <img class="categories__item-img" src="./img/boxes.jpg" alt="Товары для праздника">
             </picture>
           </a>
+          <h3 class="categories__item-title">
+            <a href="" class="categories__item-title-link">Товары для праздника</a>
+          </h3>
         </li>
       </ul>
     </section>
@@ -186,10 +195,12 @@
             </h3>
             <p class="product-info__price">390 ₽</p>
           </div>
-          <picture>
-            <!-- <source type="image/webp" srcset="img/@1x.webp 1x, img/@1x.webp 2x"> -->
-            <img class="product-list__img" src="./img/product-cutton-buds-pink.webp" alt="Бамбуковые ватные палочки">
-          </picture>
+                              <a href="/product" class="product-info__img-link">
+            <picture>
+              <!-- <source type="image/webp" srcset="img/@1x.webp 1x, img/@1x.webp 2x"> -->
+              <img class="product-list__img" src="./img/product-cutton-buds-pink.webp" alt="Бамбуковые ватные палочки">
+            </picture>
+          </a>
         </li>
         <li class="product-list__list-item">
           <div class="product-list__desc-container product-info">
@@ -304,12 +315,12 @@
     <section class="page-main__big-banner big-banner">
       <h2 class="visually-hidden">Спец предложения нашего магазина</h2>
       <article class="big-banner__offer banners__offer banners__offer--fullscreen">
-        <a href="/create-box.html" class="banners__link banners__link--fullscreen">
+        <a href="/catalog/eko-nabori" class="banners__link banners__link--fullscreen">
           <div class="banners__offer-big-block banners__offer-big-block--radius">
             <p class="banners__text-adv">Подарки к празднику</p>
-            <h3 class="banners__title">Собери свой эко-бокс</h3>
+            <h3 class="banners__title">Выбери свой эко-бокс</h3>
             <p class="banners__text-special">Спец предложение</p>
-            <p class="banners__text-price">От 2000 ₽</p>
+            <p class="banners__text-price">От 1500 ₽</p>
           </div>
           <span class="banners__text-delivery banners__text-delivery--left-corner">Бесплатная доставка</span>
         </a>
@@ -348,7 +359,7 @@
                 </a>
               </h3>
               <p class="product-info__price">370 ₽</p>
-              <ul class="product-slider__rating-stars">
+<!--               <ul class="product-slider__rating-stars">
                 <li class="product-slider__rating-item">
                   <svg class="product-slider__rating-img product-slider__rating-img--gold" width="17" height="17">
                     <use xlink:href="img/sprite.svg#icon-star"></use>
@@ -374,7 +385,7 @@
                     <use xlink:href="img/sprite.svg#icon-star"></use>
                   </svg>
                 </li>
-              </ul>
+              </ul> -->
             </li>
             <li class="product-slider__item" data-slider="slide">
               <div class="product-slider__img-wrapper">
@@ -405,7 +416,7 @@
                 </a>
               </h3>
               <p class="product-info__price">390 ₽</p>
-              <ul class="product-slider__rating-stars">
+<!--               <ul class="product-slider__rating-stars">
                 <li class="product-slider__rating-item">
                   <svg class="product-slider__rating-img product-slider__rating-img--gold" width="17" height="17">
                     <use xlink:href="img/sprite.svg#icon-star"></use>
@@ -431,7 +442,7 @@
                     <use xlink:href="img/sprite.svg#icon-star"></use>
                   </svg>
                 </li>
-              </ul>
+              </ul> -->
             </li>
             <li class="product-slider__item" data-slider="slide">
               <div class="product-slider__img-wrapper">
