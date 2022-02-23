@@ -29,7 +29,7 @@
         <li class="page-header__nav-item">
           <a class="page-header__nav-link page-header__nav-link--active">Главная</a>
         </li>
-<!--         <li class="page-header__nav-item">
+        <!--         <li class="page-header__nav-item">
           <a href="for-her" class="page-header__nav-link">Подарки для неё</a>
         </li>
         <li class="page-header__nav-item">
@@ -112,7 +112,8 @@
     <section class="page-main__about-us about-us">
       <div class="about-us__wrapper">
         <h2 class="about-us__title title">Магазин AnyBox</h2>
-        <p class="about-us_desc">Болльшой ассортимент ЭКО товаров на каждый день. Функциональные и стильные боксы с любовью о природе. Движемся маленькими шагами к здоровой планете. Осуществляем доставку по всей России.
+        <p class="about-us_desc">Болльшой ассортимент ЭКО товаров на каждый день. Функциональные и стильные боксы с
+          любовью о природе. Движемся маленькими шагами к здоровой планете. Осуществляем доставку по всей России.
         </p>
       </div>
     </section>
@@ -195,7 +196,7 @@
             </h3>
             <p class="product-info__price">390 ₽</p>
           </div>
-                              <a href="/product" class="product-info__img-link">
+          <a href="/product" class="product-info__img-link">
             <picture>
               <!-- <source type="image/webp" srcset="img/@1x.webp 1x, img/@1x.webp 2x"> -->
               <img class="product-list__img" src="./img/product-cutton-buds-pink.webp" alt="Бамбуковые ватные палочки">
@@ -331,20 +332,22 @@
       <div class="product-slider__container">
         <div class="product-slider__wrapper">
           <ul class="product-slider__list" data-slider="list">
+            <!-- Кнопка "Добавить в корзину" -->
             <li class="product-slider__item" data-slider="slide">
               <div class="product-slider__img-wrapper">
                 <a class=" product-slider__img-link" href="/product">
                   <img class="product-slider__img" src="./img/prodcut-hibiscus-washcloth.webp"
                     alt="Мочалка для тела из гибискуса">
                 </a>
-                <div class="product-slider__action-popup">
-                  <a href="/to-cart.html" class="product-slider__action-link">
+                <form class="product-slider__btn-form" action="/add-to-cart" method="POST">
+                  <button class="product-slider__action-btn" type="submit" name="add-to-cart" data-product="add-to-cart"
+                    data-prod-box="add-to-cart-box">
                     <svg class="product-slider__action-img" width="12" height="12">
                       <use xlink:href="img/sprite.svg#icon-cart"></use>
                     </svg>
                     <span class="prouct-slider__action-word">Добавить в корзину</span>
-                  </a>
-                </div>
+                  </button>
+                </form>
               </div>
               <ul class="product-info__category-list product-info__category-list--left">
                 <li class="product-info__category-list-item product-info__category-list-item--biggest">
@@ -359,7 +362,7 @@
                 </a>
               </h3>
               <p class="product-info__price">370 ₽</p>
-<!--               <ul class="product-slider__rating-stars">
+              <!-- <ul class="product-slider__rating-stars">
                 <li class="product-slider__rating-item">
                   <svg class="product-slider__rating-img product-slider__rating-img--gold" width="17" height="17">
                     <use xlink:href="img/sprite.svg#icon-star"></use>
@@ -387,20 +390,19 @@
                 </li>
               </ul> -->
             </li>
+            <!-- Кнопка "Нет в наличии" -->
             <li class="product-slider__item" data-slider="slide">
               <div class="product-slider__img-wrapper">
                 <a class=" product-slider__img-link" href="/product">
                   <img class="product-slider__img" src="./img/product-cutton-buds-pink.webp"
                     alt="Бамбуковые ватные палочки">
                 </a>
-                <div class="product-slider__action-popup">
-                  <a href="/to-cart.html" class="product-slider__action-link">
-                    <svg class="product-slider__action-img" width="12" height="12">
-                      <use xlink:href="img/sprite.svg#icon-cart"></use>
-                    </svg>
-                    <span class="prouct-slider__action-word">Добавить в корзину</span>
-                  </a>
-                </div>
+                <form class="product-slider__btn-form" action="/add-to-cart" method="POST">
+                  <button class="product-slider__action-btn product-slider__action-btn--sold-out" disabled>
+                    <span class="prouct-slider__action-word prouct-slider__action-word--sold-out">Товар
+                      закончился</span>
+                  </button>
+                </form>
               </div>
               <ul class="product-info__category-list product-info__category-list--left">
                 <li class="product-info__category-list-item product-info__category-list-item--biggest">
@@ -416,7 +418,7 @@
                 </a>
               </h3>
               <p class="product-info__price">390 ₽</p>
-<!--               <ul class="product-slider__rating-stars">
+              <!--               <ul class="product-slider__rating-stars">
                 <li class="product-slider__rating-item">
                   <svg class="product-slider__rating-img product-slider__rating-img--gold" width="17" height="17">
                     <use xlink:href="img/sprite.svg#icon-star"></use>
@@ -444,20 +446,28 @@
                 </li>
               </ul> -->
             </li>
+            <!-- Кнопка "В корзине" -->
             <li class="product-slider__item" data-slider="slide">
               <div class="product-slider__img-wrapper">
                 <a class=" product-slider__img-link" href="/product">
                   <img class="product-slider__img" src="./img/product-eco-friendly-gift-set.webp"
                     alt="Подарочный ЭКО набор EveryDay в крафтовой коробке">
                 </a>
-                <div class="product-slider__action-popup">
-                  <a href="/to-cart.html" class="product-slider__action-link">
-                    <svg class="product-slider__action-img" width="12" height="12">
-                      <use xlink:href="img/sprite.svg#icon-cart"></use>
+                <form class="product-slider__btn-form" action="/add-to-cart" method="POST">
+                  <!-- <div class="product-slider__action-popup product-slider__action-popup--inCart"> -->
+                  <a href="/cart" class="product-slider__action-btn product-slider__action-btn--in-cart">
+                    <svg class="product-slider__action-img" width="15" height="15">
+                      <use xlink:href="img/sprite.svg#icon-circle-check"></use>
                     </svg>
-                    <span class="prouct-slider__action-word">Добавить в корзину</span>
+                    <div class="prouct-slider__words-block">
+                      <span>В корзине</span>
+                      <span class="prouct-slider__action-word-proceed">(Перейти)</span>
+                    </div>
                   </a>
-                </div>
+                  <input type="hidden" name="prodId" value="62040f661bd30768756f2f11">
+                  <input type="hidden" name="prodPrice" value="2440">
+                  <!-- </div> -->
+                </form>
               </div>
               <ul class="product-info__category-list product-info__category-list--left">
                 <li class="product-info__category-list-item product-info__category-list-item--biggest">
