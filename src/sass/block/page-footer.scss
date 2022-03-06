@@ -42,6 +42,15 @@
   &:active {
     color: #fb395c;
   }
+
+  &--disabled {
+    opacity: 0.3;
+    cursor: default;
+
+    &:hover {
+      color: #a4a9ab;
+    }
+  }
 }
 
 .page-footer__contacts-item {
@@ -54,6 +63,7 @@
 
 .page-footer__container--social {
   padding: 25px 0 0;
+  margin-left: auto;
 
   border: none;
   border-top: 3px dotted #a3c6da;

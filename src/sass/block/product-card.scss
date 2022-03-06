@@ -52,8 +52,10 @@
 }
 
 .product-card__breadcrumbs-item:nth-last-child(1)
-  .product-card__breadcrumbs-link {
-  position: inherit;
+  .product-card__breadcrumbs-link::after,
+.product-card__breadcrumbs-item:nth-last-child(1)
+  .product-card__breadcrumbs-link::before {
+  display: none;
 }
 
 .product-card__img-container {
@@ -356,7 +358,6 @@
   background-color: #71af2e;
   text-decoration: none;
   color: white;
-
 
   &:hover {
     background-color: #5e9b1c;
